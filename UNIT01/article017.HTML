@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عادات التعلم: قوة السلوكيات التلقائية وصناعة المستقبل</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الأكاديمية لضمان راحة العين أثناء القراءة الطويلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<!-- شريط تقدم القراءة اللاصق في أعلى الشاشة -->
+<div class="reading-progress-header" aria-hidden="true">
+  <div class="progress-bar-fill" id="article-reading-progress" style="width: 0%;"></div>
+</div>
+
+<main class="article-page-container">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="dashboard.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات البحثية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=learning-habits">المستوى الأكاديمي</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">عادات التعلم</span>
+  </nav>
+
+  <!-- ترويسة المقال ومعلومات الباحث الناشر -->
+  <header class="article-hero">
+    <div class="article-category-row">
+      <span class="category-pill">تطوير الذات وبناء العادات</span>
+      
+      <!-- شريط أدوات القارئ التفاعلية -->
+      <div class="article-actions-group">
+        <button class="action-icon-btn" id="btn-theme-toggle" title="تفعيل الوضع الليلي للقراءة" aria-label="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-bookmark" title="حفظ المقال للمراجعة لاحقاً" aria-label="حفظ المقال">
+          <i class="far fa-bookmark"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-share" title="نسخ رابط المقال" aria-label="مشاركة المقال">
+          <i class="fas fa-share-nodes"></i>
+        </button>
+        <button class="action-icon-btn" onclick="window.print()" title="طباعة المقال كملف PDF" aria-label="طباعة">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="article-title">عادات التعلم: قوة السلوكيات التلقائية وصناعة المستقبل</h1>
+    <p class="article-subtitle">دراسة تحليلية لمفهوم العادات كخيارات افتراضية للدماغ، فوائدها النفسية والسلوكية، والخطوات العملية لتشكيلها بنجاح.</p>
+
+    <!-- بطاقة الكاتب والبيانات الإحصائية للمقال -->
+    <div class="article-metadata-panel">
+      <div class="author-profile">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">فريق البحث الأكاديمي</span>
+          <span class="author-institution">وحدة علم النفس المعرفي وتطوير السلوك • فريق البحث الموحد</span>
+        </div>
+      </div>
+      
+      <div class="article-stats-grid">
+        <div class="stat-badge"><i class="far fa-clock"></i> 8 دقائق قراءة</div>
+        <div class="stat-badge"><i class="fas fa-shield-halved"></i> مستوى متقدم</div>
+        <div class="stat-badge"><i class="far fa-calendar"></i> نُشر في 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- فضاء القراءة والتصميم ثنائي الأعمدة -->
+  <div class="article-workspace-grid">
+    
+    <!-- العمود الأيمن: الفهرس اللاصق التفاعلي (Scrollspy Sidebar) -->
+    <aside class="toc-sidebar" aria-label="فهرس محتويات المقال">
+      <div class="toc-sticky-wrapper">
+        <h3 class="toc-title">محتويات المقال</h3>
+        <nav class="toc-navigation">
+          <ul class="toc-list" id="dynamic-toc-list">
+            <li><a href="#section-definition" class="toc-link active">1. ما هي العادات؟</a></li>
+            <li><a href="#section-doublesided" class="toc-link">2. سلاح ذو حدين: الخبر السار والسيئ</a></li>
+            <li><a href="#section-benefits" class="toc-link">3. الفوائد النفسية والسلوكية</a></li>
+            <li><a href="#section-practical" class="toc-link">4. الدليل العملي لتشكيل العادات</a></li>
+            <li><a href="#section-conclusion" class="toc-link">5. خلاصة المقال والمراجع</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: متن المقال العلمي المنسق -->
+    <article class="article-body-wrapper" id="article-content">
+      
+      <!-- المقطع الأول: ما هي العادات؟ -->
+      <section id="section-definition" class="article-section">
+        <p class="paragraph-lead">
+          تعرف العادة بأنها شيء تفعله باستمرار حتى يصبح فعله سهلاً وبسيطاً. إنها باختصار سلوكيات نقوم بها بطريقة تلقائية ومن دون أيّ جهد واعٍ حيث تصبح محفورة في لاوعي الإنسان، ويمارسها تكراراً عن وعي أو عن غير وعي مرات عديدة جداً إلى درجة تحولها إلى آلية ميكانيكية.
+        </p>
+        <p>
+          في الواقع، تعمل العادات بمثابة "الخيارات الافتراضية" (Default Settings) في أدمغتنا. إنها الاستجابة الفورية التي يُفعّلها الدماغ لتوفير الطاقة، ونقوم بها من غير مراجعة أو تحليل واعٍ.
+        </p>
+
+        <!-- بطاقة تنويه للمفاهيم الأساسية -->
+        <div class="callout-box info-box">
+          <i class="fas fa-circle-info callout-icon"></i>
+          <div class="callout-content">
+            <h4>الخيارات الافتراضية للدماغ</h4>
+            <p>تعتبر العادات آليات توفير طاقة عصبية، حيث تتحول الأفعال المتكررة إلى مسارات تلقائية لا تتطلب تدخلاً تحليلياً مستمراً.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثاني: سلاح ذو حدين -->
+      <section id="section-doublesided" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">سلاح ذو حدين: الخبر السار والسيئ</h2>
+          <button class="btn-copy-heading" data-anchor="section-doublesided" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <ul class="article-bullet-list">
+          <li><strong>الخبر الجيد:</strong> تساعد العادات في تحرير ذهنك ووقتك؛ فأثناء عمل جسمك بشكل تلقائي، يتاح لعقلك مساحة حرة للتفكير والإبداع. هذا يسمح لك، على سبيل المثال، بتخطيط يومك أو حل مشكلة في رأسك أثناء اغتسالك صباحاً.</li>
+          <li><strong>الخبر السيئ:</strong> تكمن الخطورة في أنك قد تتعلّق بالعادات التي لا تخدم مصلحتك، كأنماط السلوك الانهزامية والتسويف التي تعيق نموك الشخصي والأكاديمي دون أن تشعر.</li>
+        </ul>
+      </section>
+
+      <!-- المقطع الثالث: الفوائد النفسية والسلوكية -->
+      <section id="section-benefits" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">الفوائد النفسية والسلوكية لبناء العادات الجيدة</h2>
+          <button class="btn-copy-heading" data-anchor="section-benefits" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          أثبتت الدراسات العلمية أن الاستثمار في تشكيل روتين إيجابي ينعكس مباشرة على جودة الحياة وصحة العقل، وتتمثل أبرز هذه الفوائد في:
+        </p>
+
+        <div class="clinical-note-card" style="margin-top: 20px;">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-brain"></i> العوائد الإيجابية للعادات المنتظمة</span>
+          </div>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>1. تحسين صنع القرار</h5>
+              <p>وجدت دراسة نشرت في مجلة "Plos One" أن أصحاب العادات الجيدة يتخذون قرارات أفضل وأسرع.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>2. انخفاض التوتر</h5>
+              <p>الروتين الإيجابي يجعل كل شيء في يومك متوقعاً وقابلاً للإدارة، مما يقلل الضغوط.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>3. الدافعية وثقة النفس</h5>
+              <p>يمنحك الروتين إحساساً بالسيطرة، ويحسن احترامك لذاتك عند إنجاز تغييرات جديدة.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الرابع: الدليل العملي -->
+      <section id="section-practical" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">الدليل العملي: كيف تتشكل العادات بنجاح؟</h2>
+          <button class="btn-copy-heading" data-anchor="section-practical" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          لتستطيع تشكيل عاداتك بنجاح، يجب أولاً أن تعرف ذاتك وتفهمها. تكوين العادات يختلف من شخص لآخر، لكن هناك خطوات استراتيجية بسيطة تشبه ضبط خيارات الحاسوب لجعله يعمل بكفاءة:
+        </p>
+        <div class="clinical-note-card" style="margin-top: 20px;">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-list-check"></i> الخطوات الاستراتيجية لبناء العادات</span>
+          </div>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>1. روتين يومي ثابت</h5>
+              <p>يغنيك عن التفكير المستهلك للطاقة عند الاستيقاظ أو النوم.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>2. المراقبة والمتابعة</h5>
+              <p>تسجيل السلوكيات اليومية يمنحك وعياً تاماً بمدى تقدمك.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>3. المحافظة على السلسلة</h5>
+              <p>الاستمرار وعدم القطع يمنح العادة ثباتاً ونشأة صحيحة.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>4. تراكم العادات</h5>
+              <p>ربط السلوك الجديد بأمر تفعله تلقائياً مثل شرب القهوة.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>5. السماح بالمرونة</h5>
+              <p>المرونة تحافظ على جوهر عاداتك وسط ظروف الضغط.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>6. مكافأة النفس</h5>
+              <p>رفع الدوبامين بمكافأة فورية لتعزيز رغبة الاستمرار.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الخامس: خلاصة المقال والمراجع -->
+      <section id="section-conclusion" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">خلاصة المقال: حساب الاستثمار في العادات</h2>
+          <button class="btn-copy-heading" data-anchor="section-conclusion" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          إن عاداتك الحالية هي التي تحدد نتائجك ومستقبلك في نهاية المطاف. التغييرات التي تبدو بسيطة وغير مهمة في البداية، ستتراكم وتحول إلى نتائج مذهلة لو أنك واصلت الالتزام بها لسنوات. كلنا نواجه عقبات وتحديات، لكن جودة حياتنا على المدى البعيد تعتمد في الأساس على جودة عاداتنا.
+        </p>
+        
+        <!-- صندوق صياغة القاعدة الذهبية -->
+        <div class="formula-block" style="margin-top: 20px;">
+          <div class="formula-expression" style="font-size: 1.05rem; line-height: 1.8;">
+            لا تصبح فوائد العادات الحسنة وتكاليف العادات السيئة جلية إلا حين نتأملها بعد مرور عدة أعوام لاحقة! إنك تدفع تكلفة عاداتك الحسنة في الحاضر لجني ثمارها في المستقبل، بينما تدفع تكلفة عاداتك السيئة في المستقبل مقابل متعة الحاضر المؤقتة.
+          </div>
+          <span class="formula-caption">القاعدة الذهبية للاستثمار السلوكي.</span>
+        </div>
+
+        <div class="references-section" style="margin-top: 30px;">
+          <h4 class="references-title"><i class="fas fa-bookmark"></i> المصادر والمراجع المعتمدة</h4>
+          <ul class="references-list">
+            <li><strong>[1]</strong> مدونات الجزيرة. أنت حصيلة عاداتك. متاح على الرابط: <a href="https://www.aljazeera.net/blogs/2025/7/13/%D8%A3%D9%86%D8%AA-%D8%AD%D8%B5%D9%8A%D9%84%D8%A9-%D8%B9%D8%A7%D8%AF%D8%A7%D8%AA%D9%83" target="_blank" style="color: var(--primary);">الجزيرة نت</a>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- تذييل الكاتب ونبذته التعريفية -->
+      <footer class="article-author-bio-footer">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="bio-avatar">
+        <div class="bio-details">
+          <h4>حول فريق النشر</h4>
+          <p>فريق بحثي أكاديمي مختص بدراسة آليات تكوين العادات السلوكية والنفسية لرفع كفاءة الأداء الإنساني والأكاديمي.</p>
+        </div>
+      </footer>
+
+      <!-- بوابة حث الطالب على قياس الفهم -->
+      <section class="understanding-check-panel">
+        <div class="check-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="check-content">
+          <h3 class="check-title">هل أنت مستعد لقياس مدى استيعابك؟</h3>
+          <p class="check-description">أهلاً بك! لقد أنهيت قراءة مقال "عادات التعلم". اختبر فهمك الآن لحصد نقاط الخبرة والانتقال للمستوى التالي.</p>
+          <div class="check-actions">
+            <a href="quiz.html" class="btn btn-primary" id="btn-start-quiz">ابدأ اختبار الفهم السريع <i class="fas fa-arrow-left"></i></a>
+            <a href="unit.html" class="btn btn-secondary">العودة لفضاء الوحدة</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي -->
+<script src="article.js"></script>
+</body>
+</html>

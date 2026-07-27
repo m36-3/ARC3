@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ما هي خرائط المفاهيم؟ دليل التنظيم المرئي للمعرفة</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الأكاديمية لضمان راحة العين أثناء القراءة الطويلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<!-- شريط تقدم القراءة اللاصق في أعلى الشاشة -->
+<div class="reading-progress-header" aria-hidden="true">
+  <div class="progress-bar-fill" id="article-reading-progress" style="width: 0%;"></div>
+</div>
+
+<main class="article-page-container">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="dashboard.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات البحثية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=concept-maps">المستوى الأكاديمي</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">خرائط المفاهيم</span>
+  </nav>
+
+  <!-- ترويسة المقال ومعلومات الباحث الناشر -->
+  <header class="article-hero">
+    <div class="article-category-row">
+      <span class="category-pill">استراتيجيات التنظيم المعرفي</span>
+      
+      <!-- شريط أدوات القارئ التفاعلية -->
+      <div class="article-actions-group">
+        <button class="action-icon-btn" id="btn-theme-toggle" title="تفعيل الوضع الليلي للقراءة" aria-label="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-bookmark" title="حفظ المقال للمراجعة لاحقاً" aria-label="حفظ المقال">
+          <i class="far fa-bookmark"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-share" title="نسخ رابط المقال" aria-label="مشاركة المقال">
+          <i class="fas fa-share-nodes"></i>
+        </button>
+        <button class="action-icon-btn" onclick="window.print()" title="طباعة المقال كملف PDF" aria-label="طباعة">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="article-title">ما هي خرائط المفاهيم؟ دليل التنظيم المرئي للمعرفة</h1>
+    <p class="article-subtitle">دراسة تحليلية لمفهوم المنظمات الرسومية، مكوناتها الأساسية، أنواعها المختلفة، والخطوات العملية لبناء خريطة مفاهيمية ناجحة.</p>
+
+    <!-- بطاقة الكاتب والبيانات الإحصائية للمقال -->
+    <div class="article-metadata-panel">
+      <div class="author-profile">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">فريق البحث الأكاديمي</span>
+          <span class="author-institution">وحدة تصميم المناهج والتمثيل البصري • فريق البحث الموحد</span>
+        </div>
+      </div>
+      
+      <div class="article-stats-grid">
+        <div class="stat-badge"><i class="far fa-clock"></i> 6 دقائق قراءة</div>
+        <div class="stat-badge"><i class="fas fa-shield-halved"></i> مستوى متقدم</div>
+        <div class="stat-badge"><i class="far fa-calendar"></i> نُشر في 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- فضاء القراءة والتصميم ثنائي الأعمدة -->
+  <div class="article-workspace-grid">
+    
+    <!-- العمود الأيمن: الفهرس اللاصق التفاعلي (Scrollspy Sidebar) -->
+    <aside class="toc-sidebar" aria-label="فهرس محتويات المقال">
+      <div class="toc-sticky-wrapper">
+        <h3 class="toc-title">محتويات المقال</h3>
+        <nav class="toc-navigation">
+          <ul class="toc-list" id="dynamic-toc-list">
+            <li><a href="#section-definition" class="toc-link active">1. تعريف خرائط المفاهيم</a></li>
+            <li><a href="#section-components" class="toc-link">2. المكونات الأساسية للبناء</a></li>
+            <li><a href="#section-types" class="toc-link">3. أنواع خرائط المفاهيم</a></li>
+            <li><a href="#section-steps" class="toc-link">4. خطوات الإنشاء الناجح</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: متن المقال العلمي المنسق -->
+    <article class="article-body-wrapper" id="article-content">
+      
+      <!-- المقطع الأول: التعريف -->
+      <section id="section-definition" class="article-section">
+        <p class="paragraph-lead">
+          تُعرَّف خرائط المفاهيم بأنها منظمات رسومية مرئية تُستخدم لهيكلة وتنظيم المعرفة، وتقوم فكرتها الأساسية على ربط الأفكار الرئيسية ببعضها البعض باستخدام أشكال هندسية وأسهم موجهة ومكتوب عليها توضح طبيعة العلاقة بين هذه الأفكار.
+        </p>
+
+        <!-- بطاقة تنويه للمفاهيم الأساسية -->
+        <div class="callout-box info-box">
+          <i class="fas fa-circle-info callout-icon"></i>
+          <div class="callout-content">
+            <h4>التمثيل البصري للمعلومات</h4>
+            <p>تحويل النصوص المعقدة إلى شبكات بصرية يسهل على الدماغ استيعاب العلاقات الكلية والجزئية بين المفاهيم بسرعة.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثاني: المكونات الأساسية -->
+      <section id="section-components" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">المكونات الأساسية للبناء</h2>
+          <button class="btn-copy-heading" data-anchor="section-components" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          تتكون أي خريطة مفاهيمية من ثلاثة عناصر رئيسية تمنحها شكلها الهيكلي:
+        </p>
+
+        <div class="clinical-note-card" style="margin-top: 20px;">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-sitemap"></i> العناصر الهيكلية الأساسية</span>
+          </div>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>1. العُقَد (Nodes)</h5>
+              <p>الصناديق أو الدوائر التي تحتوي على الأفكار، أو الأحداث، أو المفاهيم الأساسية المراد شرحها.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>2. التسلسل الهرمي</h5>
+              <p>تُبنى الخريطة غالباً من الأعلى للأسفل؛ بوضع المفهوم الشامل في القمة وتدريج التفاصيل تحته.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>3. روابط وكلمات الربط</h5>
+              <p>الأسهم والخطوط التي تصل بين العُقَد مع عبارات قصيرة (مثل: يؤدي إلى، يتكون من) لتحديد نوع العلاقة.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثالث: أنواع خرائط المفاهيم -->
+      <section id="section-types" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">أنواع خرائط المفاهيم</h2>
+          <button class="btn-copy-heading" data-anchor="section-types" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          تتعدد أشكال الخرائط بحسب طبيعة الهدف منها، ومن أبرز أنواعها الشائعة:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>الخرائط العنكبوتية (Spider Maps):</strong> تبدأ من فكرة مركزية في المنتصف وتتفرع منها الأفكار للخارج، وتُعد ممتازة لعمليات العصف الذهني.</li>
+          <li><strong>المخططات الانسيابية (Flowcharts):</strong> تُستخدم لتوضيح العمليات وسير العمل أو تسلسل السبب والنتيجة خطوة بخطوة.</li>
+          <li><strong>خرائط التسلسل الهرمي (Hierarchy Maps):</strong> ترتب المعلومات بناءً على الأهمية أو التصنيف، وتضع المفهوم الرئيسي دائماً في القمة.</li>
+          <li><strong>خرائط الأنظمة (System Maps):</strong> تُستخدم لتحليل البيئات المعقدة والمترابطة، حيث تُظهر المدخلات، المخرجات، وعمليات التغذية الراجعة.</li>
+        </ul>
+      </section>
+
+      <!-- المقطع الرابع: خطوات الإنشاء -->
+      <section id="section-steps" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">خطوات عملية لإنشاء خريطة مفاهيمية ناجحة</h2>
+          <button class="btn-copy-heading" data-anchor="section-steps" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          إذا كنت تريد تصميم خريطة مفاهيم خاصة بك، يمكنك اتباع الخطوات الأربع التالية:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>1. حدد الموضوع الأساسي:</strong> اختر فكرة رئيسية واحدة، أو سؤالاً جوهرياً، أو سمة عامة تود استكشافها.</li>
+          <li><strong>2. العصف الذهني:</strong> اكتب قائمة بكل الأفكار، والمصطلحات، والتفاصيل الفرعية التي تتعلق بالموضوع.</li>
+          <li><strong>3. الهيكلة والربط:</strong> رتب المفاهيم منطقياً (من العام إلى الخاص)، وصل بينها بأسهم واضحة مع كتابة كلمات الربط المناسبة.</li>
+          <li><strong>4. المراجعة والتحسين:</strong> تأكد من أن كلمات الربط تصنع جملًا مفيدة وصحيحة عند قراءتها، واضبط المظهر العام لتضمن سهولة القراءة والوضوح.</li>
+        </ul>
+
+        <!-- صندوق صياغة الفائدة المعرفية -->
+        <div class="formula-block" style="margin-top: 20px;">
+          <div class="formula-expression" style="font-size: 1.05rem; line-height: 1.8;">
+            الخريطة الناجحة تحول شبكة الأفكار المعقدة إلى بناء منطقي متكامل، تجعل استرجاع المعارف وفهم العلاقات أمراً يسيراً وعميقاً.
+          </div>
+          <span class="formula-caption">رؤية تحليلية: دور التنظيم الهيكلي في تجويد الفهم.</span>
+        </div>
+      </section>
+
+      <!-- تذييل الكاتب ونبذته التعريفية -->
+      <footer class="article-author-bio-footer">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="bio-avatar">
+        <div class="bio-details">
+          <h4>حول فريق النشر</h4>
+          <p>فريق بحثي أكاديمي مختص بتطوير أدوات التمثيل البصري والمنظمات المعرفية لتعزيز كفاءة التحصيل الدراسي.</p>
+        </div>
+      </footer>
+
+      <!-- بوابة حث الطالب على قياس الفهم -->
+      <section class="understanding-check-panel">
+        <div class="check-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="check-content">
+          <h3 class="check-title">هل أنت مستعد لقياس مدى استيعابك؟</h3>
+          <p class="check-description">أهلاً بك! لقد أنهيت قراءة مقال "ما هي خرائط المفاهيم؟". اختبر فهمك الآن لحصد نقاط الخبرة والانتقال للمستوى التالي.</p>
+          <div class="check-actions">
+            <a href="quiz.html" class="btn btn-primary" id="btn-start-quiz">ابدأ اختبار الفهم السريع <i class="fas fa-arrow-left"></i></a>
+            <a href="unit.html" class="btn btn-secondary">العودة لفضاء الوحدة</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي -->
+<script src="article.js"></script>
+</body>
+</html>

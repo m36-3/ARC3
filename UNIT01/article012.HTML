@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ما هو التعلم النشط؟</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الأكاديمية لضمان راحة العين أثناء القراءة الطويلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<!-- شريط تقدم القراءة اللاصق في أعلى الشاشة -->
+<div class="reading-progress-header" aria-hidden="true">
+  <div class="progress-bar-fill" id="article-reading-progress" style="width: 0%;"></div>
+</div>
+
+<main class="article-page-container">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="dashboard.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات البحثية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=active-learning">المستوى الأكاديمي</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">ما هو التعلم النشط؟</span>
+  </nav>
+
+  <!-- ترويسة المقال ومعلومات الباحث الناشر -->
+  <header class="article-hero">
+    <div class="article-category-row">
+      <span class="category-pill">استراتيجيات التعلم الحديثة</span>
+      
+      <!-- شريط أدوات القارئ التفاعلية -->
+      <div class="article-actions-group">
+        <button class="action-icon-btn" id="btn-theme-toggle" title="تفعيل الوضع الليلي للقراءة" aria-label="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-bookmark" title="حفظ المقال للمراجعة لاحقاً" aria-label="حفظ المقال">
+          <i class="far fa-bookmark"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-share" title="نسخ رابط المقال" aria-label="مشاركة المقال">
+          <i class="fas fa-share-nodes"></i>
+        </button>
+        <button class="action-icon-btn" onclick="window.print()" title="طباعة المقال كملف PDF" aria-label="طباعة">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="article-title">ما هو التعلم النشط؟</h1>
+    <p class="article-subtitle">دراسة تحليلية حول استراتيجيات التعلم التي تركز على تطوير المهارات والذهن، ودور النظرية البنائية في بناء المعرفة وتصحيح المفاهيم.</p>
+
+    <!-- بطاقة الكاتب والبيانات الإحصائية للمقال -->
+    <div class="article-metadata-panel">
+      <div class="author-profile">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">فريق البحث الأكاديمي</span>
+          <span class="author-institution">وحدة تطوير استراتيجيات التدريس • فريق البحث الموحد</span>
+        </div>
+      </div>
+      
+      <div class="article-stats-grid">
+        <div class="stat-badge"><i class="far fa-clock"></i> 7 دقائق قراءة</div>
+        <div class="stat-badge"><i class="fas fa-shield-halved"></i> مستوى متقدم</div>
+        <div class="stat-badge"><i class="far fa-calendar"></i> نُشر في 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- فضاء القراءة والتصميم ثنائي الأعمدة -->
+  <div class="article-workspace-grid">
+    
+    <!-- العمود الأيمن: الفهرس اللاصق التفاعلي (Scrollspy Sidebar) -->
+    <aside class="toc-sidebar" aria-label="فهرس محتويات المقال">
+      <div class="toc-sticky-wrapper">
+        <h3 class="toc-title">محتويات المقال</h3>
+        <nav class="toc-navigation">
+          <ul class="toc-list" id="dynamic-toc-list">
+            <li><a href="#section-core" class="toc-link active">1. جوهر التعلم النشط وركائزه</a></li>
+            <li><a href="#section-flexibility" class="toc-link">2. مرونة الأنشطة ومعايير القياس</a></li>
+            <li><a href="#section-constructivist" class="toc-link">3. نظرية التعلم البنائية</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: متن المقال العلمي المنسق -->
+    <article class="article-body-wrapper" id="article-content">
+      
+      <!-- المقطع الأول: جوهر التعلم النشط -->
+      <section id="section-core" class="article-section">
+        <p class="paragraph-lead">
+          في جوهره، يعتمد التعلم النشط على استراتيجيات تعلم تركز على تطوير مهاراتنا وذهننا كطلاب أكثر من تركيزها على مجرد حفظ المعلومات، وهذا يتطلب منّا القيام بأنشطة فعلية مثل القراءة، المناقشة، أو الكتابة.
+        </p>
+        <p>
+          ويمكن تلخيص ركائزه الأساسية في الآتي:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>الانخراط الفعلي:</strong> يعني أن ننخرط كطلاب في التفكير بالمعلومات لا مجرد تدوين الملاحظات أو اتباع التوجيهات الروتينية.</li>
+          <li><strong>التفكير عالي المستوى (Higher-order thinking):</strong> يستلزم كطلاب أن نقوم بممارسة مهارات عقلية متقدمة كالتحليل والتقييم، والابتكار، بالإضافة إلى استكشاف مواقف وقيمنا الخاصة.</li>
+          <li><strong>بناء المعرفة وتطوير المهارات:</strong> يجب علينا كطلاب المشاركة في أنشطة تهدف إلى بناء معرفة جديدة وتطوير مهارات علمية جيدة لبناء مهاراتنا وقدراتنا.</li>
+        </ul>
+
+        <!-- بطاقة تنويه للمفاهيم الأساسية -->
+        <div class="callout-box info-box">
+          <i class="fas fa-circle-info callout-icon"></i>
+          <div class="callout-content">
+            <h4>التحول من التلقي إلى التفاعل</h4>
+            <p>التعلم النشط يحيل الطالب من متلقٍ سلبي للمعلومة إلى صانع وبانٍ حقيقي للمعرفة والمهارات النقدية.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثاني: مرونة الأنشطة ومعايير القياس -->
+      <section id="section-flexibility" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">مرونة الأنشطة ومعايير القياس الأسترالية (AUSSE)</h2>
+          <button class="btn-copy-heading" data-anchor="section-flexibility" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          يتميز التعلم النشط بأنه مفهوم واسع يضم طيفاً متنوعاً من الأنشطة التي تتدرج بحسب طبيعة الصف والمادة التعليمية، ومنها:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>الأنشطة البسيطة جداً:</strong> مثل إيقاف المحاضرة لتدوين الملاحظة والتفكير بالمعلومة ومناقشتها مع زملائنا.</li>
+          <li><strong>الأنشطة الأكثر تعقيداً:</strong> مثل تجربة دراسات عميقة للتدريب على تحليل المعطيات واتخاذ نتائج بناء على التحليل والمفهوم.</li>
+        </ul>
+
+        <div class="clinical-note-card" style="margin-top: 20px;">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-tasks"></i> عناصر مسح مشاركة الطلاب الأسترالي (AUSSE)</span>
+          </div>
+          <p style="margin-bottom: 12px; font-size: 0.95rem;">وضع مسح مشاركة الطلاب الأسترالي عناصر محددة لقياس مدى تطبيق التعلم النشط داخل وخارج بيئة الفصل وتشمل:</p>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>التفاعل الصفي</h5>
+              <p>العمل مع طلاب آخرين في مشاريع أثناء الفصل، تقديم العروض، وطرح الأسئلة أو المساهمة في النقاشات.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>التفاعل المجتمعي</h5>
+              <p>المشاركة في مشاريع قائمة على المجتمع كجزء من المنهج، والعمل مع الطلاب خارج الفصل لإنجاز الواجبات.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>المشاركة المجتمعية الواسعة</h5>
+              <p>مناقشة الأفكار المستوحاة من المنهج مع آخرين في المحيط الخارجي، وتدريس الزملاء ومساعدتهم على الفهم.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثالث: نظرية التعلم البنائية -->
+      <section id="section-constructivist" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">نظرية التعلم البنائية (Constructivist learning theory)</h2>
+          <button class="btn-copy-heading" data-anchor="section-constructivist" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          تؤكد هذه النظرية أن الأفراد لا يتلقون المعرفة جاهزة، بل يتعلمون من خلال بناء معرفتهم الخاصة حيث يربطون الأفكار والخبرات الجديدة بالمعرفة والخبرات السابقة لتشكيل فهم جديد أو معزز.
+        </p>
+        <p>
+          بناءً على ذلك، تطلب أساليب التعلم النشط من الطلاب صراحة:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>إيجاد روابط:</strong> بين المعلومات الجديدة ونماذجها الذهنية الحالية لتوسيع الفهم.</li>
+          <li><strong>مواجهة المفاهيم الخاطئة:</strong> عبر أنشطة تعليمية مصممة لتدفعنا لإعادة بناء نماذجنا الذهنية على أساسيات أكثر دقة.</li>
+        </ul>
+
+        <!-- صندوق صياغة الفائدة المعرفية -->
+        <div class="formula-block" style="margin-top: 20px;">
+          <div class="formula-expression" style="font-size: 1.05rem; line-height: 1.8;">
+            التعلم البناء يعيد صياغة النماذج الذهنية للطلاب من خلال الاحتكاك المعرفي المباشر وتصحيح المفاهيم الخاطئة بأساليب تفاعلية منهجية.
+          </div>
+          <span class="formula-caption">رؤية تحليلية: دور النظرية البنائية في ترسيخ التعلم النشط.</span>
+        </div>
+      </section>
+
+      <!-- تذييل الكاتب ونبذته التعريفية -->
+      <footer class="article-author-bio-footer">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="bio-avatar">
+        <div class="bio-details">
+          <h4>حول فريق النشر</h4>
+          <p>فريق بحثي أكاديمي متخصص في دراسة نظريات التعلم الحديثة وتطبيقاتها الميدانية لرفع جودة مخرجات التعليم وتفعيل مشاركة الطلاب.</p>
+        </div>
+      </footer>
+
+      <!-- بوابة حث الطالب على قياس الفهم -->
+      <section class="understanding-check-panel">
+        <div class="check-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="check-content">
+          <h3 class="check-title">هل أنت مستعد لقياس مدى استيعابك؟</h3>
+          <p class="check-description">أهلاً بك! لقد أنهيت قراءة مقال "ما هو التعلم النشط؟". اختبر فهمك الآن لحصد نقاط الخبرة والانتقال للمستوى التالي.</p>
+          <div class="check-actions">
+            <a href="../unit1.HTML" class="btn btn-primary" id="btn-start-quiz">ابدأ اختبار الفهم السريع <i class="fas fa-arrow-left"></i></a>
+            <a href="../unit.HTML" class="btn btn-secondary">العودة لفضاء الوحدة</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي -->
+<script src="article.js"></script>
+</body>
+</html>

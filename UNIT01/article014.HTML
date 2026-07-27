@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التكرار المتباعد: الأسلوب العلمي الأمثل لتعزيز الذاكرة</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الأكاديمية لضمان راحة العين أثناء القراءة الطويلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<!-- شريط تقدم القراءة اللاصق في أعلى الشاشة -->
+<div class="reading-progress-header" aria-hidden="true">
+  <div class="progress-bar-fill" id="article-reading-progress" style="width: 0%;"></div>
+</div>
+
+<main class="article-page-container">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="dashboard.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات البحثية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=spaced-repetition">المستوى الأكاديمي</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">التكرار المتباعد</span>
+  </nav>
+
+  <!-- ترويسة المقال ومعلومات الباحث الناشر -->
+  <header class="article-hero">
+    <div class="article-category-row">
+      <span class="category-pill">استراتيجيات الذاكرة والتعلم</span>
+      
+      <!-- شريط أدوات القارئ التفاعلية -->
+      <div class="article-actions-group">
+        <button class="action-icon-btn" id="btn-theme-toggle" title="تفعيل الوضع الليلي للقراءة" aria-label="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-bookmark" title="حفظ المقال للمراجعة لاحقاً" aria-label="حفظ المقال">
+          <i class="far fa-bookmark"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-share" title="نسخ رابط المقال" aria-label="مشاركة المقال">
+          <i class="fas fa-share-nodes"></i>
+        </button>
+        <button class="action-icon-btn" onclick="window.print()" title="طباعة المقال كملف PDF" aria-label="طباعة">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="article-title">التكرار المتباعد: الأسلوب العلمي الأمثل لتعزيز الذاكرة</h1>
+    <p class="article-subtitle">دراسة تحليلية لمفهوم التكرار المتباعد، منحنى النسيان لإيبنغهاوس، وكيفية توظيفه للدراسة بذكاء وتقليل وقت المراجعة.</p>
+
+    <!-- بطاقة الكاتب والبيانات الإحصائية للمقال -->
+    <div class="article-metadata-panel">
+      <div class="author-profile">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">فريق البحث الأكاديمي</span>
+          <span class="author-institution">وحدة علم النفس المعرفي وتطوير الذاكرة • فريق البحث الموحد</span>
+        </div>
+      </div>
+      
+      <div class="article-stats-grid">
+        <div class="stat-badge"><i class="far fa-clock"></i> 6 دقائق قراءة</div>
+        <div class="stat-badge"><i class="fas fa-shield-halved"></i> مستوى متقدم</div>
+        <div class="stat-badge"><i class="far fa-calendar"></i> نُشر في 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- فضاء القراءة والتصميم ثنائي الأعمدة -->
+  <div class="article-workspace-grid">
+    
+    <!-- العمود الأيمن: الفهرس اللاصق التفاعلي (Scrollspy Sidebar) -->
+    <aside class="toc-sidebar" aria-label="فهرس محتويات المقال">
+      <div class="toc-sticky-wrapper">
+        <h3 class="toc-title">محتويات المقال</h3>
+        <nav class="toc-navigation">
+          <ul class="toc-list" id="dynamic-toc-list">
+            <li><a href="#section-intro" class="toc-link active">1. مفهوم التكرار المتباعد</a></li>
+            <li><a href="#section-mechanism" class="toc-link">2. آلية العمل ومنحنى النسيان</a></li>
+            <li><a href="#section-benefits" class="toc-link">3. فوائد التكرار المتباعد</a></li>
+            <li><a href="#section-methods" class="toc-link">4. أفضل طرق التطبيق والمراجعة</a></li>
+            <li><a href="#section-references" class="toc-link">5. المصادر والمراجع</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: متن المقال العلمي المنسق -->
+    <article class="article-body-wrapper" id="article-content">
+      
+      <!-- المقطع الأول: المقدمة والمفهوم -->
+      <section id="section-intro" class="article-section">
+        <p class="paragraph-lead">
+          التكرار المتباعد أسلوبٌ مثبت علميًا، يعتمد على مراجعة المعلومات على فترات متقاربة، مما يُحسّن الذاكرة ويُقلّل من احتمالية النسيان. تُشير الدراسات إلى أنه يُحسّن التعلّم بشكلٍ ملحوظ ويُقلّل وقت الدراسة.
+        </p>
+        <p>
+          تخيل عقلك كمكتبة. ربما تكون قد خزّنت المعلومات التي تعلمتها على رفّ، ولكن إن لم يكن لديك فهرس أو نظام تصنيف جيد، فسيكون من الصعب جدًا العثور عليها مرة أخرى. يعمل التكرار المتباعد كفهرس، يُدرّب عقلك على إيجاد المعلومات عندما تحتاجها.
+        </p>
+
+        <!-- بطاقة تنويه للمفاهيم الأساسية -->
+        <div class="callout-box info-box">
+          <i class="fas fa-circle-info callout-icon"></i>
+          <div class="callout-content">
+            <h4>فهرسة الذاكرة</h4>
+            <p>التكرار المتباعد ينظم استرجاع المعارف تماماً كفهرس المكتبة الدقيق، مما يمنع ضياع المعلومات المخزنة.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثاني: آلية العمل ومنحنى النسيان -->
+      <section id="section-mechanism" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">لماذا يُعدّ التكرار المتباعد فعالاً ومنحنى النسيان؟</h2>
+          <button class="btn-copy-heading" data-anchor="section-mechanism" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          تعتمد طريقة التكرار المتباعد على منحنى النسيان (الذي اكتشفه الفيلسوف الألماني إيبنغهاوس)، والذي يوضح كيف نفقد القدرة على استرجاع المعلومات في ذاكرتنا بمرور الوقت.
+        </p>
+        <p>
+          من خلال دراسة موضوع ما على فترات زمنية مدروسة، ستتذكر المزيد. وقد ثبت أن هذه الطريقة، التي تعتمد على توزيع جلسات الدراسة القصيرة، أكثر فعالية من جلسة واحدة مكثفة ومحاولة استيعاب كل شيء دفعة واحدة.
+        </p>
+
+        <!-- صندوق صياغة الفائدة المعرفية -->
+        <div class="formula-block" style="margin-top: 20px;">
+          <div class="formula-expression" style="font-size: 1.05rem; line-height: 1.8;">
+            توزيع جلسات الدراسة القصيرة يتفوق على الجلسات المكثفة الواحدة، لأنه يكسر حدة منحنى النسيان ويُثبت المعلومات بكفاءة عالية.
+          </div>
+          <span class="formula-caption">استنتاج علمي: فاعلية التوزيع الزمني مقابل الحفظ المكثف.</span>
+        </div>
+      </section>
+
+      <!-- المقطع الثالث: فوائد التكرار المتباعد -->
+      <section id="section-benefits" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">ما هي فوائد التكرار المتباعد؟</h2>
+          <button class="btn-copy-heading" data-anchor="section-benefits" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          يحقق تطبيق التكرار المتباعد مكاسب أكاديمية ونفسية بارزة يمكن تلخيصها في الآتي:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>تقليل الحفظ المكثف:</strong> تخلص من التوتر في اللحظات الأخيرة واستمتع بروتين دراسي أكثر هدوءًا وانتظامًا.</li>
+          <li><strong>ذاكرة أقوى:</strong> احتفظ بالمعلومات بفعالية، مما يعزز أداءك في الامتحانات ومعرفتك العامة.</li>
+          <li><strong>اضبط وقتك بذكاء:</strong> اقضِ وقتًا أقل في الدراسة وحقق نتائج أفضل.</li>
+        </ul>
+      </section>
+
+      <!-- المقطع الرابع: أفضل الطرق للتطبيق -->
+      <section id="section-methods" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">أفضل الطرق لاستخدام التكرار المتباعد للمراجعة</h2>
+          <button class="btn-copy-heading" data-anchor="section-methods" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          استخدم أسلوب التكرار المتباعد بعد تعلم شيء ما لتحقيق أقصى قدر من النتائج. أفضل طريقة للاستفادة من قوة التكرار المتباعد هي استخدامه مباشرةً بعد دراسة أي موضوع جديد لترسيخ المعلومات. ورغم إغراء التسويف والحفظ المكثف، إلا أن مراجعة المحتوى بعد الدرس تُعدّ طريقةً أفضل بكثير لحفظه في الذاكرة طويلة الأمد، وهذا مهمٌّ للغاية في المواد العملية كالتمريض.
+        </p>
+        
+        <div class="clinical-note-card" style="margin-top: 20px;">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-toolbox"></i> الأدوات التطبيقية الأساسية</span>
+          </div>
+          <p style="margin-bottom: 12px; font-size: 0.95rem;">تتمثل أبرز الوسائل المدعومة لاستخدام التكرار المتباعد بفعالية في:</p>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>1. البطاقات التعليمية</h5>
+              <p>استخدام البطاقات الرقمية أو الورقية لجدولة الأسئلة واختبار الذاكرة على فترات متباعدة.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>2. الاستدعاء النشط</h5>
+              <p>إجبار العقل على استرجاع المعارف دون النظر للمصادر لتقوية المسارات العصبية.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الخامس: المصادر والمراجع -->
+      <section id="section-references" class="article-section">
+        <h2 class="section-heading">المراجع البحثية</h2>
+        <div class="references-section">
+          <h4 class="references-title"><i class="fas fa-bookmark"></i> المصادر والمراجع المعتمدة</h4>
+          <ul class="references-list">
+            <li><strong>[1]</strong> Birmingham City University (BCU). Best ways to revise: Spaced repetition. Retrieved from <a href="https://www.bcu.ac.uk/exams-and-revision/best-ways-to-revise/spaced-repetition" target="_blank" style="color: var(--primary);">BCU Exams & Revision Guide</a>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- تذييل الكاتب ونبذته التعريفية -->
+      <footer class="article-author-bio-footer">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="bio-avatar">
+        <div class="bio-details">
+          <h4>حول فريق النشر</h4>
+          <p>فريق بحثي أكاديمي مختص بنشر استراتيجيات الكفاءة الدراسية وعلوم الذاكرة لتطوير الأداء الأكاديمي للطلاب.</p>
+        </div>
+      </footer>
+
+      <!-- بوابة حث الطالب على قياس الفهم -->
+      <section class="understanding-check-panel">
+        <div class="check-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="check-content">
+          <h3 class="check-title">هل أنت مستعد لقياس مدى استيعابك؟</h3>
+          <p class="check-description">أهلاً بك! لقد أنهيت قراءة مقال "التكرار المتباعد". اختبر فهمك الآن لحصد نقاط الخبرة والانتقال للمستوى التالي.</p>
+          <div class="check-actions">
+            <a href="quiz.html" class="btn btn-primary" id="btn-start-quiz">ابدأ اختبار الفهم السريع <i class="fas fa-arrow-left"></i></a>
+            <a href="unit.html" class="btn btn-secondary">العودة لفضاء الوحدة</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي -->
+<script src="article.js"></script>
+</body>
+</html>

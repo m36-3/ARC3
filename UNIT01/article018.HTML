@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حل المشكلات: المنهجية العلمية والتحليل الجذري للأزمات</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الأكاديمية لضمان راحة العين أثناء القراءة الطويلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<!-- شريط تقدم القراءة اللاصق في أعلى الشاشة -->
+<div class="reading-progress-header" aria-hidden="true">
+  <div class="progress-bar-fill" id="article-reading-progress" style="width: 0%;"></div>
+</div>
+
+<main class="article-page-container">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="dashboard.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات البحثية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=problem-solving">المستوى الأكاديمي</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">حل المشكلات</span>
+  </nav>
+
+  <!-- ترويسة المقال ومعلومات الباحث الناشر -->
+  <header class="article-hero">
+    <div class="article-category-row">
+      <span class="category-pill">التفكير التحليلي وإدارة الأزمات</span>
+      
+      <!-- شريط أدوات القارئ التفاعلية -->
+      <div class="article-actions-group">
+        <button class="action-icon-btn" id="btn-theme-toggle" title="تفعيل الوضع الليلي للقراءة" aria-label="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-bookmark" title="حفظ المقال للمراجعة لاحقاً" aria-label="حفظ المقال">
+          <i class="far fa-bookmark"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-share" title="نسخ رابط المقال" aria-label="مشاركة المقال">
+          <i class="fas fa-share-nodes"></i>
+        </button>
+        <button class="action-icon-btn" onclick="window.print()" title="طباعة المقال كملف PDF" aria-label="طباعة">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="article-title">حل المشكلات: المنهجية العلمية والتحليل الجذري للأزمات</h1>
+    <p class="article-subtitle">دراسة تحليلية لآليات تحديد الأسباب الجذرية، تطبيق الخطوات الأربع لحل المشكلات، وضمان ديمومة النتائج المستدامة.</p>
+
+    <!-- بطاقة الكاتب والبيانات الإحصائية للمقال -->
+    <div class="article-metadata-panel">
+      <div class="author-profile">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">فريق البحث الأكاديمي</span>
+          <span class="author-institution">وحدة الجودة الشاملة وتطوير الإجراءات • فريق البحث الموحد</span>
+        </div>
+      </div>
+      
+      <div class="article-stats-grid">
+        <div class="stat-badge"><i class="far fa-clock"></i> 8 دقائق قراءة</div>
+        <div class="stat-badge"><i class="fas fa-shield-halved"></i> مستوى متقدم</div>
+        <div class="stat-badge"><i class="far fa-calendar"></i> نُشر في 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- فضاء القراءة والتصميم ثنائي الأعمدة -->
+  <div class="article-workspace-grid">
+    
+    <!-- العمود الأيمن: الفهرس اللاصق التفاعلي (Scrollspy Sidebar) -->
+    <aside class="toc-sidebar" aria-label="فهرس محتويات المقال">
+      <div class="toc-sticky-wrapper">
+        <h3 class="toc-title">محتويات المقال</h3>
+        <nav class="toc-navigation">
+          <ul class="toc-list" id="dynamic-toc-list">
+            <li><a href="#section-core" class="toc-link active">1. جوهر حل المشكلات وطبيعتها</a></li>
+            <li><a href="#section-step1" class="toc-link">2. الخطوة 1: تحديد المشكلة بدقة</a></li>
+            <li><a href="#section-step2" class="toc-link">3. الخطوة 2: تشخيص السبب الجذري</a></li>
+            <li><a href="#section-step3" class="toc-link">4. الخطوة 3: تحديد وتنفيذ الحل</a></li>
+            <li><a href="#section-step4" class="toc-link">5. الخطوة 4 والدايماومة والمراجع</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: متن المقال العلمي المنسق -->
+    <article class="article-body-wrapper" id="article-content">
+      
+      <!-- المقطع الأول: جوهر حل المشكلات وطبيعتها -->
+      <section id="section-core" class="article-section">
+        <p class="paragraph-lead">
+          في جوهره، يعتمد حل أي مشكلة على تحديد سببها بدقة؛ فهذا التحديد هو البوصلة التي تسمح باختيار الحل الأمثل وتطبيقه لتحقيق نتائج مستدامة. وتتفاوت المشكلات في حجمها وتأثيرها؛ فقد تؤثر على مجموعة عمل صغيرة أو عملية واحدة محددة، أو قد تتسع لتتسبب في أزمات على مستوى المؤسسة بأكملها.
+        </p>
+        <p>
+          كما تختلف المشكلات من حيث طبيعة تكرارها:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>مشكلات متكررة:</strong> تحدث كثيرًا أو أكثر من مرة، وغالبًا ما تشير إلى خلل في النظام أو الإجراءات المتبعة.</li>
+          <li><strong>مشكلات فريدة (طارئة):</strong> تُعتبر حادثًا أو واقعة جسيمة تحدث للمرة الأولى، وتتطلب استجابة سريعة ومرنة.</li>
+        </ul>
+
+        <!-- بطاقة تنويه للمفاهيم الأساسية -->
+        <div class="callout-box info-box">
+          <i class="fas fa-circle-info callout-icon"></i>
+          <div class="callout-content">
+            <h4>المنهجية العلمية المتكاملة</h4>
+            <p>لأجل التعامل مع هذا التنوع، يُنصح باتباع منهجية علمية منظمة تتكون من أربع خطوات رئيسية لضمان فعالية الحلول.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثاني: الخطوة الأولى -->
+      <section id="section-step1" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">الخطوة 1: تحديد المشكلة (Problem Identification)</h2>
+          <button class="btn-copy-heading" data-anchor="section-step1" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          تبدأ الرحلة بصياغة المشكلة وتحديدها بدقة استثنائية. في هذه المرحلة، من الضروري جدًا:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>التمييز بين الحقيقة والرأي:</strong> الاعتماد على البيانات والأرقام الملموسة بدلاً من الانطباعات الشخصية.</li>
+          <li><strong>التركيز على المشكلة لا الأعراض:</strong> على سبيل المثال، هبوط حاد في طاقة الجسم (عرض) قد يعود لنقص الفيتامينات أو قلة النوم (المشكلة الحقيقية). اكتشاف الأسباب الكامنة يضمن صبّ التركيز في المكان الصحيح.</li>
+        </ul>
+      </section>
+
+      <!-- المقطع الثالث: الخطوة الثانية -->
+      <section id="section-step2" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">الخطوة 2: تشخيص السبب الجذري (Root Cause Analysis)</h2>
+          <button class="btn-copy-heading" data-anchor="section-step2" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          السبب الجذري هو المشكلة الأساسية — السبب الرئيسي — الذي يُطلق سلسلة من ردود الفعل السببية التي تؤدي في النهاية إلى ظهور المشكلة السطحية.
+        </p>
+
+        <div class="clinical-note-card" style="margin-top: 20px;">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-magnifying-glass-chart"></i> أبعاد تحليل الأسباب الجذرية</span>
+          </div>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>خطورة الإهمال</h5>
+              <p>بدون تحديد السبب الجذري، لن يقدم أي حل سوى مسكن مؤقت حتى تعود المشكلة مجدداً.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>مكامن الأسباب</h5>
+              <p>غالباً ما تتورط سياسات الإدارة، نقص التدريب، أو فجوات النظام في القضايا الجوية الواسعة.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>التعقيد</h5>
+              <p>المشاكل المعقدة قد تحمل أكثر من سبب جذري، وعلاجها العميق يحل المشكلات المرتبطة تلقائياً.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الرابع: الخطوة الثالثة -->
+      <section id="section-step3" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">الخطوة 3: تحديد الحل وتنفيذه (Solution Generation & Implementation)</h2>
+          <button class="btn-copy-heading" data-anchor="section-step3" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          المفتاح هنا هو توليد حلول محتملة متعددة وتأجيل اختيار حل واحد حتى يتم اقتراح عدة بدائل (مثل حلول قصيرة الأجل للتعامل مع الموقف الفوري، وحلول طويلة الأجل لجذر المشكلة).
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>فخ الفكرة الأولى:</strong> غالبًا ما تبدأ الفرق بالتخطيط لتنفيذ فكرتها الأولى مباشرة. لكن تجربة أفكار إضافية ومناقشتها تُحسن الفكرة الأولى بشكل ملحوظ وترفع من قيمة الحل النهائي.</li>
+          <li><strong>التفكير الإبداعي:</strong> حان الوقت للتفكير بجرأة وإبداع؛ كدمج حلّين متوسطين في حلّ واحد متكامل وممتاز يفوق التوقعات.</li>
+        </ul>
+      </section>
+
+      <!-- المقطع الخامس: الخطوة الرابعة والخاتمة والمراجع -->
+      <section id="section-step4" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">الخطوة 4: الحفاظ على النتائج والخاتمة</h2>
+          <button class="btn-copy-heading" data-anchor="section-step4" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          إن نجاح الحل لا ينتهي بمجرد تطبيقه، بل يمتد إلى ضمان ديمومته من خلال:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>قنوات التغذية الراجعة:</strong> تضمين آليات واضحة للرجوع والتقييم المستمر ضمن عملية التنفيذ لمراقبة واختبار الأحداث الفعلية مقارنة بالتوقعات.</li>
+          <li><strong>المرونة والتحديث:</strong> تكون عملية حل المشكلات أكثر فعالية إذا ظل الحل قائماً وتم تحديثه باستمرار لمواكبة التغييرات والظروف المتطورة.</li>
+        </ul>
+
+        <!-- صندوق صياغة الفائدة المعرفية -->
+        <div class="formula-block" style="margin-top: 20px;">
+          <div class="formula-expression" style="font-size: 1.05rem; line-height: 1.8;">
+            إن امتلاك عقلية تحليلية تبحث وراء الأعراض وتغوص في الأعماق لفك شفرات الأسباب الجذرية هو ما يفرق بين التعامل السطحي مع الأزمات وبين القيادة الحقيقية والابتكار. حل المشكلات ليس مجرد أداة لتصحيح الأخطاء، بل هو أسلوب تطوير مستمر.
+          </div>
+          <span class="formula-caption">خاتمة استراتيجية: القيادة عبر حل المشكلات.</span>
+        </div>
+
+        <div class="references-section" style="margin-top: 30px;">
+          <h4 class="references-title"><i class="fas fa-bookmark"></i> المصادر والمراجع المعتمدة</h4>
+          <ul class="references-list">
+            <li><strong>[1]</strong> ASQ (American Society for Quality). Problem Solving Resources. متاح على الرابط: <a href="https://asq.org/quality-resources/problem-solving" target="_blank" style="color: var(--primary);">ASQ Quality Resources</a>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- تذييل الكاتب ونبذته التعريفية -->
+      <footer class="article-author-bio-footer">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="bio-avatar">
+        <div class="bio-details">
+          <h4>حول فريق النشر</h4>
+          <p>فريق بحثي أكاديمي مختص بتحليل منهجيات الجودة وإدارة العمليات وحل الأزمات التنظيمية بفاعلية.</p>
+        </div>
+      </footer>
+
+      <!-- بوابة حث الطالب على قياس الفهم -->
+      <section class="understanding-check-panel">
+        <div class="check-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="check-content">
+          <h3 class="check-title">هل أنت مستعد لقياس مدى استيعابك؟</h3>
+          <p class="check-description">أهلاً بك! لقد أنهيت قراءة مقال "حل المشكلات". اختبر فهمك الآن لحصد نقاط الخبرة والانتقال للمستوى التالي.</p>
+          <div class="check-actions">
+            <a href="quiz.html" class="btn btn-primary" id="btn-start-quiz">ابدأ اختبار الفهم السريع <i class="fas fa-arrow-left"></i></a>
+            <a href="unit.html" class="btn btn-secondary">العودة لفضاء الوحدة</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي -->
+<script src="article.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كيف يتعلم الدماغ؟</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الأكاديمية لضمان راحة العين أثناء القراءة الطويلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<!-- شريط تقدم القراءة اللاصق في أعلى الشاشة -->
+<div class="reading-progress-header" aria-hidden="true">
+  <div class="progress-bar-fill" id="article-reading-progress" style="width: 0%;"></div>
+</div>
+
+<main class="article-page-container">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="dashboard.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات البحثية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=PF1">المستوى PF1</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">كيف يتعلم الدماغ؟</span>
+  </nav>
+
+  <!-- ترويسة المقال ومعلومات الباحث الناشر -->
+  <header class="article-hero">
+    <div class="article-category-row">
+      <span class="category-pill">العلوم العصبية والتعلم</span>
+      
+      <!-- شريط أدوات القارئ التفاعلية -->
+      <div class="article-actions-group">
+        <button class="action-icon-btn" id="btn-theme-toggle" title="تفعيل الوضع الليلي للقراءة" aria-label="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-bookmark" title="حفظ المقال للمراجعة لاحقاً" aria-label="حفظ المقال">
+          <i class="far fa-bookmark"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-share" title="نسخ رابط المقال" aria-label="مشاركة المقال">
+          <i class="fas fa-share-nodes"></i>
+        </button>
+        <button class="action-icon-btn" onclick="window.print()" title="طباعة المقال كملف PDF" aria-label="طباعة">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="article-title">كيف يتعلم الدماغ؟</h1>
+    <p class="article-subtitle">دراسة تحليلية في آليات المرونة العصبية، ومراحل تثبيت المعلومات في الذاكرة، وقيمة التفاعل النشط في بناء الروابط المعرفية.</p>
+
+    <!-- بطاقة الكاتب والبيانات الإحصائية للمقال -->
+    <div class="article-metadata-panel">
+      <div class="author-profile">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80" alt="فاطمة هيثم حسن" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">فاطمة هيثم حسن</span>
+          <span class="author-institution">باحثة في علم الأعصاب المعرفي • فريق البحث الموحد</span>
+        </div>
+      </div>
+      
+      <div class="article-stats-grid">
+        <div class="stat-badge"><i class="far fa-clock"></i> 6 دقائق قراءة</div>
+        <div class="stat-badge"><i class="fas fa-shield-halved"></i> مستوى PF1</div>
+        <div class="stat-badge"><i class="far fa-calendar"></i> نُشر في 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- فضاء القراءة والتصميم ثنائي الأعمدة -->
+  <div class="article-workspace-grid">
+    
+    <!-- العمود الأيمن: الفهرس اللاصق التفاعلي (Scrollspy Sidebar) -->
+    <aside class="toc-sidebar" aria-label="فهرس محتويات المقال">
+      <div class="toc-sticky-wrapper">
+        <h3 class="toc-title">محتويات المقال</h3>
+        <nav class="toc-navigation">
+          <ul class="toc-list" id="dynamic-toc-list">
+            <li><a href="#section-neuro" class="toc-link active">1. المرونة العصبية وبناء الروابط</a></li>
+            <li><a href="#section-stages" class="toc-link">2. المراحل الثلاث لتثبيت المعلومة</a></li>
+            <li><a href="#section-active" class="toc-link">3. أهمية التفاعل النشط في التعلم</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: متن المقال العلمي المنسق -->
+    <article class="article-body-wrapper" id="article-content">
+      
+      <!-- المقطع الأول: المرونة العصبية -->
+      <section id="section-neuro" class="article-section">
+        <p class="paragraph-lead">
+          عندما نتعلم شيئاً جديداً لا يعني أن دماغنا يقوم ببناء خلايا عصبية جديدة، بل يعني بناء روابط جديدة وأكثر كفاءة بين الخلايا ومناطق الدماغ المختلفة.
+        </p>
+        <p>
+          يحدث التعلم من خلال ما يعرف بالمرونة العصبية (Neuroplasticity)، وهي قدرة الدماغ على التغير جسدياً والتكيف وبناء مسارات جديدة بناءً على ما نكتسبه من معلومات أو مهارات.
+        </p>
+        <p>
+          وفي كل مرة نتعلم بها، تقوم مليارات الخلايا العصبية (Neurons) بتعديل كيفية اتصالها وتواصلها.
+        </p>
+
+        <!-- بطاقة تنويه للمفاهيم الأساسية -->
+        <div class="callout-box info-box">
+          <i class="fas fa-circle-info callout-icon"></i>
+          <div class="callout-content">
+            <h4>المفهوم التأسيسي: كفاءة الروابط</h4>
+            <p>التطور المعرفي لا يعتمد على عدد الخلايا، بل على قوة وكفاءة المشابك العصبية والمسارات الناشئة بينها.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثاني: المراحل الثلاث للتعلم -->
+      <section id="section-stages" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">المراحل الثلاث للتعلم وتثبيت المعلومة</h2>
+          <button class="btn-copy-heading" data-anchor="section-stages" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          تمر عملية التعلم وتحولها إلى مهارة دائمة بثلاث مراحل أساسية:
+        </p>
+
+        <div class="clinical-note-card">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-layer-group"></i> مسار معالجة المعلومات العصبي</span>
+          </div>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>1. الاكتساب والاستقبال</h5>
+              <p><strong>(Acquisition / Receiving):</strong> تبدأ بمواجهة معلومات جديدة تحتفظ بها الذاكرة العاملة (Working Memory) مؤقتيًا لإرسال الإشارات الأولية.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>2. الترسيخ والربط</h5>
+              <p><strong>(Consolidation / Connecting):</strong> بالممارسة المتكررة والتركيز تقوى الروابط عبر التعزيز طويل الأمد (Long-Term Potentiation - LTP).</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>3. الاسترجاع والتذكر</h5>
+              <p><strong>(Retrieval / Recalling):</strong> تنتقل المهارة للذاكرة طويلة المدى، لتصل للمعلومة بلا جهد واعٍ (الطلاقة الطبيعية أو الذاكرة العضلية).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثالث: أهمية التفاعل النشط -->
+      <section id="section-active" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">أهمية التفاعل النشط في التعلم</h2>
+          <button class="btn-copy-heading" data-anchor="section-active" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          بما أن التعلم يغير بنية الدماغ حرفياً، فإن التفاعل النشط (مثل الإجابة على أسئلة التدريب، الشرح للآخرين، أو استخدام البطاقات التعليمية) يعد أكثر فعالية بمراحل من القراءة السلبية.
+        </p>
+
+        <!-- صندوق صياغة الفائدة المعرفية -->
+        <div class="formula-block">
+          <div class="formula-expression" style="font-size: 1.05rem; line-height: 1.8;">
+            التفاعل النشط <strong>يجبر الدماغ على استدعاء الإشارات وتقوية الروابط</strong> عبر المشابك باستمرار، مما يثبت المعلومات بشكل أعمق وأسرع مقارنة بالتلقي السلبي للمعلومة.
+          </div>
+          <span class="formula-caption">استنتاج علمي: دور الممارسة النشطة في تحفيز المرونة العصبية.</span>
+        </div>
+      </section>
+
+      <!-- تذييل الكاتب ونبذته التعريفية -->
+      <footer class="article-author-bio-footer">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80" alt="فاطمة هيثم حسن" class="bio-avatar">
+        <div class="bio-details">
+          <h4>حول كاتبة المقال</h4>
+          <p>فاطمة هيثم حسن، باحثة في تخصصات علم الأعصاب المعرفي ومهتمة بآليات التعلم الفعال وتطبيقات المرونة العصبية في تحسين كفاءة التحصيل الأكاديمي.</p>
+        </div>
+      </footer>
+
+      <!-- بوابة حث الطالب على قياس الفهم -->
+      <section class="understanding-check-panel">
+        <div class="check-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="check-content">
+          <h3 class="check-title">هل أنت مستعد لقياس مدى استيعابك؟</h3>
+          <p class="check-description">أهلاً بك! لقد أنهيت قراءة مقال "كيف يتعلم الدماغ؟". اختبر فهمك الآن لحصد نقاط الخبرة والانتقال للوحدة التالية ضمن مسار PF1.</p>
+          <div class="check-actions">
+           <a href="../unit1.html" class="btn btn-primary" id="btn-start-quiz">ابدأ اختبار الفهم السريع <i class="fas fa-arrow-left"></i></a>
+<a href="../unit.html" class="btn btn-secondary">العودة لفضاء الوحدة</a>
+</div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي -->
+<script src="article.js"></script>
+</body>
+</html>

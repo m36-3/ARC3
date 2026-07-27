@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تدوين الملاحظات: المفهوم، الأساليب، والتقنيات الرقمية</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الأكاديمية لضمان راحة العين أثناء القراءة الطويلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<!-- شريط تقدم القراءة اللاصق في أعلى الشاشة -->
+<div class="reading-progress-header" aria-hidden="true">
+  <div class="progress-bar-fill" id="article-reading-progress" style="width: 0%;"></div>
+</div>
+
+<main class="article-page-container">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="dashboard.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات البحثية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=note-taking">المستوى الأكاديمي</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">تدوين الملاحظات</span>
+  </nav>
+
+  <!-- ترويسة المقال ومعلومات الباحث الناشر -->
+  <header class="article-hero">
+    <div class="article-category-row">
+      <span class="category-pill">المهارات الأكاديمية وإدارة المعلومات</span>
+      
+      <!-- شريط أدوات القارئ التفاعلية -->
+      <div class="article-actions-group">
+        <button class="action-icon-btn" id="btn-theme-toggle" title="تفعيل الوضع الليلي للقراءة" aria-label="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-bookmark" title="حفظ المقال للمراجعة لاحقاً" aria-label="حفظ المقال">
+          <i class="far fa-bookmark"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-share" title="نسخ رابط المقال" aria-label="مشاركة المقال">
+          <i class="fas fa-share-nodes"></i>
+        </button>
+        <button class="action-icon-btn" onclick="window.print()" title="طباعة المقال كملف PDF" aria-label="طباعة">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="article-title">تدوين الملاحظات: المفهوم، الأساليب، والتقنيات الرقمية</h1>
+    <p class="article-subtitle">دراسة تحليلية لعمليات إدارة المعلومات المعرفية، مقارنة التدوين اليدوي والرقمي، واستعراض أبرز أساليب تدوين الملاحظات.</p>
+
+    <!-- بطاقة الكاتب والبيانات الإحصائية للمقال -->
+    <div class="article-metadata-panel">
+      <div class="author-profile">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">فريق البحث الأكاديمي</span>
+          <span class="author-institution">وحدة تطوير المهارات الأكاديمية • فريق البحث الموحد</span>
+        </div>
+      </div>
+      
+      <div class="article-stats-grid">
+        <div class="stat-badge"><i class="far fa-clock"></i> 7 دقائق قراءة</div>
+        <div class="stat-badge"><i class="fas fa-shield-halved"></i> مستوى متقدم</div>
+        <div class="stat-badge"><i class="far fa-calendar"></i> نُشر في 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- فضاء القراءة والتصميم ثنائي الأعمدة -->
+  <div class="article-workspace-grid">
+    
+    <!-- العمود الأيمن: الفهرس اللاصق التفاعلي (Scrollspy Sidebar) -->
+    <aside class="toc-sidebar" aria-label="فهرس محتويات المقال">
+      <div class="toc-sticky-wrapper">
+        <h3 class="toc-title">محتويات المقال</h3>
+        <nav class="toc-navigation">
+          <ul class="toc-list" id="dynamic-toc-list">
+            <li><a href="#section-concept" class="toc-link active">1. مفهوم تدوين الملاحظات</a></li>
+            <li><a href="#section-reasons" class="toc-link">2. أسباب وأهمية تدوين الملاحظات</a></li>
+            <li><a href="#section-methods" class="toc-link">3. أساليب وطرق تدوين الملاحظات</a></li>
+            <li><a href="#section-digital" class="toc-link">4. التدوين الإلكتروني الحديث</a></li>
+            <li><a href="#section-references" class="toc-link">5. المصادر والمراجع</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: متن المقال العلمي المنسق -->
+    <article class="article-body-wrapper" id="article-content">
+      
+      <!-- المقطع الأول: مفهوم تدوين الملاحظات -->
+      <section id="section-concept" class="article-section">
+        <p class="paragraph-lead">
+          يعتبر تدوين الملاحظات جزءًا جوهريًا من السلوك البشري المعقد المرتبط بإدارة المعلومات، حيث يتطلب مجموعة من العمليات العقلية المتنوعة وتفاعلها مع وظائف معرفية أخرى.
+        </p>
+        <p>
+          يجب على من يقوم بتدوين الملاحظات استيعاب المعلومات وتصفيتها، وتنظيم وإعادة بناء هياكل المعرفة، وفهم وكتابة تفسيره للمعلومات، وفي النهاية تخزين ودمج المواد الجديدة والنتيجة هي تمثيل معرفي وحفظ للذاكرة.
+        </p>
+        <p>
+          أظهرت الدراسات أن الطلاب الذين دونوا ملاحظاتهم يدويًا حققوا نتائج أفضل في الامتحانات مقارنةً بمن كتبوا على الآلة الكاتبة، ويعود ذلك إلى المعالجة العميقة للمحتوى عبر إعادة صياغته بشكل انتقائي، بدلاً من النسخ الحرفي للكلمات، والذي ينتشر أكثر في التدوين على الآلة الكاتبة.
+        </p>
+
+        <!-- بطاقة تنويه للمفاهيم الأساسية -->
+        <div class="callout-box info-box">
+          <i class="fas fa-circle-info callout-icon"></i>
+          <div class="callout-content">
+            <h4>المعالجة العميقة مقابل النسخ الحرفي</h4>
+            <p>الكتابة اليدوية تجبر الدماغ على تحليل وتصفية الكلمات وإعادة صياغتها، بينما يؤدي الطباعة السريعة غالباً إلى نسخ حرفي يقلل من الفهم الاستيعابي.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثاني: أسباب وأهمية تدوين الملاحظات -->
+      <section id="section-reasons" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">أسباب وأهمية تدوين الملاحظات</h2>
+          <button class="btn-copy-heading" data-anchor="section-reasons" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          يُعتبر تدوين الملاحظات أداة فعّالة لتعزيز التعلم وتقوية الذاكرة حيث يمنح كاتب الملاحظات القدرة على اختيار المعلومات وتنظيم الأفكار خلال المحاضرة.
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>فهم أفضل للمحتوى:</strong> تساعد إعادة صياغة هذه الملاحظات بأسلوب مبسط على فهم المحتوى المقدم في الفصل بشكل أفضل.</li>
+          <li><strong>المعالجة السريعة:</strong> لاحقًا، يمكن الاستفادة من الملاحظات لمعالجة المعلومات سريعًا وتذكرها واستخدامها بفاعلية.</li>
+          <li><strong>التعلم المستقل:</strong> تدوين الملاحظات حول المفردات المختلفة المستخدمة في المحاضرات يُعزز تعلم الكلمات الجديدة ويشجع الأفراد المشاركين بفعالية على التعلم المستقل.</li>
+        </ul>
+      </section>
+
+      <!-- المقطع الثالث: أساليب وطرق تدوين الملاحظات -->
+      <section id="section-methods" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">أساليب وطرق تدوين الملاحظات</h2>
+          <button class="btn-copy-heading" data-anchor="section-methods" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          تتعدد الأساليب المتبعة لتسجيل وترتيب الأفكار، ومن أبرزها:
+        </p>
+
+        <div class="clinical-note-card" style="margin-top: 20px;">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-list-check"></i> المنهجيات التقليدية والهيكلية</span>
+          </div>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>1. التدوين الخطي</h5>
+              <p>تسجيل المعلومات وفقًا لترتيب استلامها (مخططات زمنية لمحاضرة أو نص). محتمل فيها النسخ الحرفي لكل ما يُقال.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>2. الخطوط العريضة (التخطيط التفصيلي)</h5>
+              <p>تنظيم الأفكار والمعلومات بشكل منطقي ومنظم لتقليل وقت التحرير والمراجعة واستيعاب كميات كبيرة سريعاً.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>3. طريقة الجملة</h5>
+              <p>تسجيل كل موضوع كجملة قصيرة وبسيطة في سطر منفصل؛ تناسب الدروس السريعة المكتظة بالمعلومات دون تصنيف رئيسي أو فرعي.</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top: 20px;">
+          <strong>4. رسم الخرائط:</strong> تستخدم الخرائط التنظيم المكاني والرسوم البيانية لتجميع المعلومات، وتُكتب الأفكار في هيكل يعتمد على نظام العقدة-الرابط مع خطوط تربط الأفكار ببعضها. تُرسم الخرائط الذهنية على شكل شجرة تبدأ من نقطة مركزية أو هدف في منتصف الصفحة، ثم تتفرع الأفكار للخارج لتحديد جميع الأفكار المرتبطة بذلك الهدف، وغالباً ما تُستخدم الألوان والرسوم الصغيرة والرموز لتسهيل تصور المعلومات كما تُستخدم في التخطيط وكتابة المقالات.
+        </p>
+      </section>
+
+      <!-- المقطع الرابع: التدوين الإلكتروني الحديث -->
+      <section id="section-digital" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">طرق تدوين الملاحظات إلكترونيًا</h2>
+          <button class="btn-copy-heading" data-anchor="section-digital" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          أدى الاستخدام المتزايد لأجهزة الكمبيوتر المحمولة في الجامعات والكليات إلى زيادة تدوين الملاحظات إلكترونيًا. يقوم العديد من الطلاب بكتابة ملاحظاتهم في معالجات الكلمات أو بإعداد ملاحظات رقمية مكتوبة بخط اليد باستخدام أجهزة لوحية للرسومات أو كمبيوترات لوحية مع أقلام رقمية، بمساعدة برامج تدوين الملاحظات.
+        </p>
+        <p>
+          تحظى التطبيقات عبر الإنترنت باهتمام متزايد من الطلاب، حيث يمكنهم إرسال ملاحظاتهم عبر البريد الإلكتروني، أو الاستفادة من الميزات التعاونية لهذه التطبيقات، كما يمكنهم أيضًا تنزيل النصوص كملف على أجهزة الكمبيوتر المحلية. ومن الشائع أيضًا أن يستخدم المحاضرون هذه التقنيات، بما في ذلك السبورة الإلكترونية، خاصة في معاهد التكنولوجيا.
+        </p>
+
+        <!-- صندوق صياغة الفائدة المعرفية -->
+        <div class="formula-block" style="margin-top: 20px;">
+          <div class="formula-expression" style="font-size: 1.05rem; line-height: 1.8;">
+            التدوين الرقمي يعزز التعاون الحي ومشاركة المعارف، بينما يظل الدمج بين الأدوات الرقمية والتحليل الواعي مفتاح التفوق الدراسي.
+          </div>
+          <span class="formula-caption">رؤية تحليلية: مستقبل تدوين الملاحظات في بيئات التعلم الذكية.</span>
+        </div>
+      </section>
+
+      <!-- المقطع الخامس: المصادر والمراجع -->
+      <section id="section-references" class="article-section">
+        <h2 class="section-heading">المراجع البحثية</h2>
+        <div class="references-section">
+          <h4 class="references-title"><i class="fas fa-bookmark"></i> المصادر والمراجع المعتمدة</h4>
+          <ul class="references-list">
+            <li><strong>[1]</strong> ويكيبيديا الموسوعة الحرة. تدوين الملاحظات. متاح على الرابط: <a href="https://ar.wikipedia.org/wiki/%D8%AA%D8%AF%D9%88%D9%8A%D9%86_%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%AD%D8%B8%D8%A7%D8%AA" target="_blank" style="color: var(--primary);">ويكيبيديا العربية - تدوين الملاحظات</a>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- تذييل الكاتب ونبذته التعريفية -->
+      <footer class="article-author-bio-footer">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="bio-avatar">
+        <div class="bio-details">
+          <h4>حول فريق النشر</h4>
+          <p>فريق بحثي أكاديمي مختص بتحليل سلوكيات التعلم وإدارة المعلومات المعرفية والمهارات الدراسية الحديثة.</p>
+        </div>
+      </footer>
+
+      <!-- بوابة حث الطالب على قياس الفهم -->
+      <section class="understanding-check-panel">
+        <div class="check-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="check-content">
+          <h3 class="check-title">هل أنت مستعد لقياس مدى استيعابك؟</h3>
+          <p class="check-description">أهلاً بك! لقد أنهيت قراءة مقال "تدوين الملاحظات". اختبر فهمك الآن لحصد نقاط الخبرة والانتقال للمستوى التالي.</p>
+          <div class="check-actions">
+            <a href="quiz.html" class="btn btn-primary" id="btn-start-quiz">ابدأ اختبار الفهم السريع <i class="fas fa-arrow-left"></i></a>
+            <a href="unit.html" class="btn btn-secondary">العودة لفضاء الوحدة</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي -->
+<script src="article.js"></script>
+</body>
+</html>

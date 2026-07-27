@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التفكير التأملي: المفهوم، الأهمية، المهارات والمراحل</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الأكاديمية لضمان راحة العين أثناء القراءة الطويلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<!-- شريط تقدم القراءة اللاصق في أعلى الشاشة -->
+<div class="reading-progress-header" aria-hidden="true">
+  <div class="progress-bar-fill" id="article-reading-progress" style="width: 0%;"></div>
+</div>
+
+<main class="article-page-container">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="dashboard.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات البحثية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=reflective-thinking">المستوى الأكاديمي</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">التفكير التأملي</span>
+  </nav>
+
+  <!-- ترويسة المقال ومعلومات الباحث الناشر -->
+  <header class="article-hero">
+    <div class="article-category-row">
+      <span class="category-pill">المهارات المعرفية وعلم النفس الإدراكي</span>
+      
+      <!-- شريط أدوات القارئ التفاعلية -->
+      <div class="article-actions-group">
+        <button class="action-icon-btn" id="btn-theme-toggle" title="تفعيل الوضع الليلي للقراءة" aria-label="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-bookmark" title="حفظ المقال للمراجعة لاحقاً" aria-label="حفظ المقال">
+          <i class="far fa-bookmark"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-share" title="نسخ رابط المقال" aria-label="مشاركة المقال">
+          <i class="fas fa-share-nodes"></i>
+        </button>
+        <button class="action-icon-btn" onclick="window.print()" title="طباعة المقال كملف PDF" aria-label="طباعة">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="article-title">التفكير التأملي: المفهوم، الأهمية، المهارات والمراحل</h1>
+    <p class="article-subtitle">دراسة تحليلية لأنماط التفكير الواعي، استعراض مهارات التفكير التأملي الخمس، وتتبع مراحله المنهجية في حل المشكلات.</p>
+
+    <!-- بطاقة الكاتب والبيانات الإحصائية للمقال -->
+    <div class="article-metadata-panel">
+      <div class="author-profile">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">فريق البحث الأكاديمي</span>
+          <span class="author-institution">وحدة علم النفس المعرفي وتطوير مهارات التفكير • فريق البحث الموحد</span>
+        </div>
+      </div>
+      
+      <div class="article-stats-grid">
+        <div class="stat-badge"><i class="far fa-clock"></i> 7 دقائق قراءة</div>
+        <div class="stat-badge"><i class="fas fa-shield-halved"></i> مستوى متقدم</div>
+        <div class="stat-badge"><i class="far fa-calendar"></i> نُشر في 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- فضاء القراءة والتصميم ثنائي الأعمدة -->
+  <div class="article-workspace-grid">
+    
+    <!-- العمود الأيمن: الفهرس اللاصق التفاعلي (Scrollspy Sidebar) -->
+    <aside class="toc-sidebar" aria-label="فهرس محتويات المقال">
+      <div class="toc-sticky-wrapper">
+        <h3 class="toc-title">محتويات المقال</h3>
+        <nav class="toc-navigation">
+          <ul class="toc-list" id="dynamic-toc-list">
+            <li><a href="#section-concept" class="toc-link active">1. مفهوم التفكير التأملي</a></li>
+            <li><a href="#section-importance" class="toc-link">2. أهمية التفكير التأملي</a></li>
+            <li><a href="#section-skills" class="toc-link">3. مهارات التفكير التأملي الخمس</a></li>
+            <li><a href="#section-stages" class="toc-link">4. مراحل التفكير التأملي</a></li>
+            <li><a href="#section-conclusion" class="toc-link">5. الخاتمة والمراجع</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: متن المقال العلمي المنسق -->
+    <article class="article-body-wrapper" id="article-content">
+      
+      <!-- المقطع الأول: مفهوم التفكير التأملي -->
+      <section id="section-concept" class="article-section">
+        <p class="paragraph-lead">
+          يعتبر التفكير أهم الصفات التي تميز الإنسان عن سائر المخلوقات، والتفكير لغة هو إمعان النظر في الشيء، واصطلاحا هو نشاط ذهني أو عقلي يختلف عن الإحساس والإدراك ويتجاوز الإثنين معاً إلى أفكار مجردة.
+        </p>
+        <p>
+          التفكير التأملي هو نمط من أنماط التفكير التي تعتمد على الموضوعية في حل المشكلات وتفسير الظواهر. وهو عملية ذهنية نشطة واعية حول اعتقادات وخبرات الفرد بحيث يتمكن من خلالها الوصول إلى النتائج والحلول لمشكلات تعترضه.
+        </p>
+
+        <!-- بطاقة تنويه للمفاهيم الأساسية -->
+        <div class="callout-box info-box">
+          <i class="fas fa-circle-info callout-icon"></i>
+          <div class="callout-content">
+            <h4>الطبيعة الفوق معرفية للتفكير التأملي</h4>
+            <p>هو تفكير فوق معرفي، يتضمن استراتيجيات حل المشكلات، واتخاذ القرار، وفرض الفروض وتفسير النتائج، والوصول للحل الأمثل للمشكلة بوعي واستبصار تام.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثاني: أهمية التفكير التأملي -->
+      <section id="section-importance" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">أهمية التفكير التأملي</h2>
+          <button class="btn-copy-heading" data-anchor="section-importance" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          تُعد ممارسة التفكير التأملي أداة تطويرية قوية، حيث تكسب الشخص القدرة على:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>ربط المعرفة:</strong> ربط المعرفة الجديدة بالخبرات السابقة.</li>
+          <li><strong>تطبيق الاستراتيجيات:</strong> تطبيق استراتيجيات محددة على مهام جديدة.</li>
+          <li><strong>الوعي الذاتي:</strong> فهم أسلوب تفكيره وتحليله بعمق.</li>
+          <li><strong>إدارة المتناقضات:</strong> عمل ترتيب للمتناقضات والمقارنة بينها بدقة.</li>
+          <li><strong>العمق المعرفي:</strong> التعمق في الأمور والظواهر وعدم الاكتفاء بالقشور.</li>
+        </ul>
+      </section>
+
+      <!-- المقطع الثالث: مهارات التفكير التأملي -->
+      <section id="section-skills" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">مهارات التفكير التأملي الخمس</h2>
+          <button class="btn-copy-heading" data-anchor="section-skills" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          يشتمل التفكير التأملي على منظومة متكاملة من المهارات الأساسية:
+        </p>
+
+        <div class="clinical-note-card" style="margin-top: 20px;">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-brain"></i> المنظومة المهارية للتأمل الذهني</span>
+          </div>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>1. الرؤية البصرية</h5>
+              <p>القدرة على عرض جوانب المشكلة والتعرف على مكوناتها عبر الرسوم أو الأشكال لاكتشاف العلاقات بصرياً.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>2. الكشف عن المغالطات</h5>
+              <p>القدرة على تحديد الفجوات، والعلاقات غير الصحيحة، أو الخطوات الخاطئة في مسار الحل.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>3. الوصول إلى استنتاجات</h5>
+              <p>القدرة على التوصل لعلاقة منطقية من خلال مضمون المشكلة والوصول لنتائج مناسبة.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>4. إعطاء تفسيرات مقنعة</h5>
+              <p>إعطاء معنى منطقي للنتائج بالاعتماد على المعلومات السابقة وخصائص المشكلة.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>5. وضع حلول مقترحة</h5>
+              <p>وضع خطوات منطقية لحل المشكلة قائمة على تطورات ذهنية دقيقة للموقف.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الرابع: مراحل التفكير التأملي -->
+      <section id="section-stages" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">مراحل التفكير التأملي</h2>
+          <button class="btn-copy-heading" data-anchor="section-stages" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          يمر التفكير التأملي بسلسلة مراحل منهجية متتالية:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>الوعي بالمشكلة:</strong> الإدراك الأولي لوجود تحدٍ أو عائق يتطلب تفكيراً.</li>
+          <li><strong>فهم المشكلة:</strong> تفكيك عناصر الموقف واستيعاب أبعاده.</li>
+          <li><strong>وضع الحلول وتصنيف البيانات:</strong> صياغة الفروض واكتشاف العلاقات الرابطة بين المعطيات.</li>
+          <li><strong>استنباط نتائج الحلول:</strong> استشراف مآلات الحلول المقترحة وقبولها أو رفضها نظرياً.</li>
+          <li><strong>الاختبار العملي (التجريب):</strong> التحقق العملي من الحلول وقبول أو رفض النتيجة النهائية.</li>
+        </ul>
+      </section>
+
+      <!-- المقطع الخامس: الخاتمة والمراجع -->
+      <section id="section-conclusion" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">خاتمة المقال والمراجع</h2>
+          <button class="btn-copy-heading" data-anchor="section-conclusion" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          إذن التفكير التأملي هو تفكير فوق معرفي، يتضمن استراتيجيات حل المشكلات، واتخاذ القرار، وفرض الفروض وتفسير النتائج، والوصول للحل الأمثل للمشكلة. وهو نشاط عقلي مميز بشكل غير مباشر، يعتمد على القوانين العامة للظواهر، وينطلق من النظر والاعتبار والتدبر والخبرة الحسية ويعكس العلاقات بين الظواهر، كما يرتبط بشكل دقيق بالنشاط العلمي للإنسان ويدل على عمق شخصيته.
+        </p>
+
+        <div class="references-section" style="margin-top: 30px;">
+          <h4 class="references-title"><i class="fas fa-bookmark"></i> المصادر والمراجع المعتمدة</h4>
+          <ul class="references-list">
+            <li><strong>[1]</strong> تعليم جديد. ما هو التفكير التأملي. متاح على الرابط: <a href="https://www.new-educ.com/%D9%85%D8%A7-%D9%87%D9%88-%D8%A7%D9%84%D8%AA%D9%81%D9%83%D9%8A%D8%B1-%D8%A7%D9%84%D8%AA%D8%A3%D9%85%D9%84%D9%8A" target="_blank" style="color: var(--primary);">منصة تعليم جديد</a>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- تذييل الكاتب ونبذته التعريفية -->
+      <footer class="article-author-bio-footer">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="bio-avatar">
+        <div class="bio-details">
+          <h4>حول فريق النشر</h4>
+          <p>فريق بحثي أكاديمي مختص بدراسة آليات علم النفس المعرفي وتطوير استراتيجيات التفكير المتقدم لدى المتعلمين.</p>
+        </div>
+      </footer>
+
+      <!-- بوابة حث الطالب على قياس الفهم -->
+      <section class="understanding-check-panel">
+        <div class="check-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="check-content">
+          <h3 class="check-title">هل أنت مستعد لقياس مدى استيعابك؟</h3>
+          <p class="check-description">أهلاً بك! لقد أنهيت قراءة مقال "التفكير التأملي". اختبر فهمك الآن لحصد نقاط الخبرة والانتقال للمستوى التالي.</p>
+          <div class="check-actions">
+            <a href="quiz.html" class="btn btn-primary" id="btn-start-quiz">ابدأ اختبار الفهم السريع <i class="fas fa-arrow-left"></i></a>
+            <a href="article011 - Copy (9).HTML" class="btn btn-secondary">  الدرس القادم</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي -->
+<script src="article.js"></script>
+</body>
+</html>

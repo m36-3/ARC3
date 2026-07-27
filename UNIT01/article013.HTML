@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ما هو الاستدعاء النشط؟ (Active Recall)</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الأكاديمية لضمان راحة العين أثناء القراءة الطويلة -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+
+<!-- شريط تقدم القراءة اللاصق في أعلى الشاشة -->
+<div class="reading-progress-header" aria-hidden="true">
+  <div class="progress-bar-fill" id="article-reading-progress" style="width: 0%;"></div>
+</div>
+
+<main class="article-page-container">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="dashboard.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات البحثية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=active-recall">المستوى الأكاديمي</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">ما هو الاستدعاء النشط؟</span>
+  </nav>
+
+  <!-- ترويسة المقال ومعلومات الباحث الناشر -->
+  <header class="article-hero">
+    <div class="article-category-row">
+      <span class="category-pill">استراتيجيات الذاكرة والتعلم</span>
+      
+      <!-- شريط أدوات القارئ التفاعلية -->
+      <div class="article-actions-group">
+        <button class="action-icon-btn" id="btn-theme-toggle" title="تفعيل الوضع الليلي للقراءة" aria-label="تبديل الوضع الليلي">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-bookmark" title="حفظ المقال للمراجعة لاحقاً" aria-label="حفظ المقال">
+          <i class="far fa-bookmark"></i>
+        </button>
+        <button class="action-icon-btn" id="btn-share" title="نسخ رابط المقال" aria-label="مشاركة المقال">
+          <i class="fas fa-share-nodes"></i>
+        </button>
+        <button class="action-icon-btn" onclick="window.print()" title="طباعة المقال كملف PDF" aria-label="طباعة">
+          <i class="fas fa-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h1 class="article-title">ما هو الاستدعاء النشط؟ (Active Recall)</h1>
+    <p class="article-subtitle">دراسة تحليلية لتقنية الاسترجاع الواعي للمعلومات، وكيفية دمجها مع التكرار المتباعد لتجاوز وهم الكفاءة وتحقيق الاحتفاظ طويل الأمد.</p>
+
+    <!-- بطاقة الكاتب والبيانات الإحصائية للمقال -->
+    <div class="article-metadata-panel">
+      <div class="author-profile">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="author-avatar">
+        <div class="author-info">
+          <span class="author-name">الباحثة فاطمة   </span>
+          <span class="author-institution">الباحثة فاطمة</span>
+        </div>
+      </div>
+      
+      <div class="article-stats-grid">
+        <div class="stat-badge"><i class="far fa-clock"></i> 2 دقائق قراءة</div>
+        <div class="stat-badge"><i class="fas fa-shield-halved"></i> مستوى تمهيدي</div>
+        <div class="stat-badge"><i class="far fa-calendar"></i> نُشر في 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- فضاء القراءة والتصميم ثنائي الأعمدة -->
+  <div class="article-workspace-grid">
+    
+    <!-- العمود الأيمن: الفهرس اللاصق التفاعلي (Scrollspy Sidebar) -->
+    <aside class="toc-sidebar" aria-label="فهرس محتويات المقال">
+      <div class="toc-sticky-wrapper">
+        <h3 class="toc-title">محتويات المقال</h3>
+        <nav class="toc-navigation">
+          <ul class="toc-list" id="dynamic-toc-list">
+            <li><a href="#section-definition" class="toc-link active">1. مفهوم الاستدعاء النشط</a></li>
+            <li><a href="#section-mechanism" class="toc-link">2. آلية العمل والتكرار المتباعد</a></li>
+            <li><a href="#section-passive" class="toc-link">3. مخاطر التعلم السلبي</a></li>
+            <li><a href="#section-applications" class="toc-link">4. طرق التطبيق العملية</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: متن المقال العلمي المنسق -->
+    <article class="article-body-wrapper" id="article-content">
+      
+      <!-- المقطع الأول: مفهوم الاستدعاء النشط -->
+      <section id="section-definition" class="article-section">
+        <p class="paragraph-lead">
+          الاستدعاء النشط (Active Recall) هو تقنية نقوم من خلالها باسترجاع المعلومات من ذاكرتنا بدلاً من تصفح الملاحظات، وبدلاً من إعادة قراءة الصفحة نضع الكتاب جانباً وننظر كم يمكننا أن نتذكر بمفردنا.
+        </p>
+        <p>
+          وهو أسلوب دراسة فعال للغاية ومدعوم علمياً حيث نقوم باسترجاع المعلومات عمداً من ذاكرتنا بدلاً من إعادة قراءة الملاحظات أو تحديدها (بالقلم الفسفوري) بشكل سلبي. من خلال إجبار عقلنا على "إخراج" المعرفة، فإننا نقوي المسارات العصبية ونعزز الاحتفاظ بالمعلومات على المدى الطويل ونتعرف بسهولة على الفجوات في الفهم.
+        </p>
+
+        <!-- بطاقة تنويه للمفاهيم الأساسية -->
+        <div class="callout-box info-box">
+          <i class="fas fa-circle-info callout-icon"></i>
+          <div class="callout-content">
+            <h4>الجوهر المعرفي</h4>
+            <p>الاستدعاء النشط يقلب معادلة الدراسة التقليدية؛ فالتركيز ليس على إدخال المعلومات بل على كفاءة إخراجها واسترجاعها.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثاني: آلية العمل والتكرار المتباعد -->
+      <section id="section-mechanism" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">كيف يعمل الاستدعاء النشط والتكرار المتباعد؟</h2>
+          <button class="btn-copy-heading" data-anchor="section-mechanism" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          إنه يعمل بسبب الطريقة التي تُبنى بها الذاكرة؛ ففي كل مرة نستحضر فيها معلومة إلى ذهننا فإننا نقوي المسار العبلي المؤدي إليها، وكلما بذلنا جهداً أكبر أصبح هذا المسار أقوى. تخيل الأمر كطريق في غابة؛ في المرة الأولى يكون الممر صعب المتابعة، ولكن بسيرك فيه مراراً وتكراراً يصبح أكثر وضوحاً، والتذكر يعمل بنفس الطريقة تماماً. وهناك فكرتان تفسران سبب فعالية هذا الأسلوب: تأثير الاختبار والتكرار المتباعد.
+        </p>
+
+        <div class="clinical-note-card" style="margin-top: 20px;">
+          <div class="card-header-row">
+            <span class="note-pill"><i class="fas fa-clock-rotate-left"></i> الدمج مع التكرار المتباعد</span>
+          </div>
+          <p style="margin-bottom: 12px; font-size: 0.95rem;">لتحقيق أقصى قدر من الاحتفاظ بالمعلومات، نقوم بربط الاستدعاء النشط بالتكرار المتباعد عبر المنهجية التالية:</p>
+          <div class="intervals-grid">
+            <div class="interval-subcard">
+              <h5>جدولة المراجعة</h5>
+              <p>تتضمن مراجعة المادة نفسها على فترات تزداد تدريجياً (بعد يوم، ثم 3 أيام، ثم أسبوع، ثم شهر).</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>توقيت الجهد</h5>
+              <p>بذل الجهد للتذكر قبل النسيان بقليل يعيد ضبط مؤقت النسيان، مما يثبت الذاكرة بشكل دائم.</p>
+            </div>
+            <div class="interval-subcard">
+              <h5>النتيجة المعرفية</h5>
+              <p>تحويل الذاكرة قصيرة المدى إلى شبكة عصبية راسخة وطويلة الأمد.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المقطع الثالث: مخاطر التعلم السلبي -->
+      <section id="section-passive" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">لماذا يفشل التعلم السلبي؟</h2>
+          <button class="btn-copy-heading" data-anchor="section-passive" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          تمنحك أساليب الدراسة السلبية مثل إعادة القراءة أو التظليل (بالقلم الفسفوري) "وهماً زائفاً بالكفاءة" لأن النص يبدو مألوفاً لعينيك، لكن دماغك لم يقم في الواقع بالجهد الثقيل المطلوب لحفظه.
+        </p>
+
+        <!-- صندوق صياغة الفائدة المعرفية -->
+        <div class="formula-block" style="margin-top: 20px;">
+          <div class="formula-expression" style="font-size: 1.05rem; line-height: 1.8;">
+            يعمل الاستدعاء النشط على تحفيز منطقة <strong>"الحصين" (Hippocampus)</strong> في الدماغ ويجبر عقلنا على العمل، مما يحول مجرد التعرف السطحي قصير المدى إلى إتقان حقيقي طويل المدى.
+          </div>
+          <span class="formula-caption">إضاءة عصبية: دور الحصين في ترسيخ المعرفة الفعالة.</span>
+        </div>
+      </section>
+
+      <!-- المقطع الرابع: طرق التطبيق العملية -->
+      <section id="section-applications" class="article-section">
+        <div class="heading-wrapper">
+          <h2 class="section-heading">كيف نطبق الاستدعاء النشط؟</h2>
+          <button class="btn-copy-heading" data-anchor="section-applications" title="نسخ رابط هذه الفقرة"><i class="fas fa-link"></i></button>
+        </div>
+        <p>
+          يُعد الاستدعاء النشط أحد أبسط التغييرات التي يمكننا إدخالها على روتين دراستنا وأحد أكثرها فعالية على الإطلاق. إليك أبرز الطرق لتطبيقه عملياً:
+        </p>
+        <ul class="article-bullet-list">
+          <li><strong>1. البطاقات التعليمية (Flashcards):</strong> نختبر أنفسنا رقمياً وننطق الإجابة قبل رؤيتها.</li>
+          <li><strong>2. تفريغ الدماغ (Brain Dump):</strong> نغلق الكتاب ونكتب كل ما نتذكره على ورقة بيضاء.</li>
+          <li><strong>3. تقنية فاينمان (The Feynman Technique):</strong> نشرح المفهوم ببساطة كأننا نعلّمه لشخص مبتدئ.</li>
+          <li><strong>4. أسئلة كورنيل (Cornell Notes):</strong> نكتب أسئلتنا الخاصة حول المنهج لنختبر أنفسنا لاحقاً.</li>
+        </ul>
+        <p style="margin-top: 15px;">
+          بدلاً من قراءة الملاحظات نفسها مراراً وتكراراً، نقوم باستخراج المعلومات من الذاكرة، وهذا الجهد المبذول يحول ما نتعلمه إلى معرفة راسخة طويلة الأمد.
+        </p>
+      </section>
+
+      <!-- تذييل الكاتب ونبذته التعريفية -->
+      <footer class="article-author-bio-footer">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80" alt="فريق البحث الأكاديمي" class="bio-avatar">
+        <div class="bio-details">
+          <h4>حول فريق النشر</h4>
+          <p>فريق بحثي أكاديمي مختص بنشر استراتيجيات الكفاءة الدراسية وعلوم الذاكرة لتطوير الأداء الأكاديمي للطلاب.</p>
+        </div>
+      </footer>
+
+      <!-- بوابة حث الطالب على قياس الفهم -->
+      <section class="understanding-check-panel">
+        <div class="check-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="check-content">
+          <h3 class="check-title">هل أنت مستعد لقياس مدى استيعابك؟</h3>
+          <p class="check-description">أهلاً بك! لقد أنهيت قراءة مقال "ما هو الاستدعاء النشط؟". اختبر فهمك الآن لحصد نقاط الخبرة والانتقال للمستوى التالي.</p>
+          <div class="check-actions">
+            <a href="quiz.html" class="btn btn-primary" id="btn-start-quiz">ابدأ اختبار الفهم السريع <i class="fas fa-arrow-left"></i></a>
+            <a href="article011 - Copy (3).HTML" class="btn btn-secondary">  الدرس القادم</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي -->
+<script src="article.js"></script>
+</body>
+</html>
