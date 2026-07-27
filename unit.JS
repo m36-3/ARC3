@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // مصفوفة ملفات المقالات للـ 8 أنشطة الحالية
     const articleFiles = [
-        "UNIT01/article011.HTML",
+        "UNIT01/article011.html",
         "UNIT01/article012.HTML",
         "UNIT01/article013.HTML",
         "UNIT01/article014.HTML",
