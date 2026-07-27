@@ -1,0 +1,320 @@
+/* ==========================================================================
+   تنسيقات صفحة الأدوات المساعدة - منصة المسارات البحثية
+   ========================================================================== */
+
+/* متغيرات الألوان العامة المتطابقة مع الهوية البصرية للمنصة */
+:root {
+    --primary-teal: #0f766e;       /* اللون الفيروزي الداكن للمسارات */
+    --primary-purple: #6d28d9;     /* اللون البنفسجي لورش العمل */
+    --text-main: #1e293b;           /* لون النصوص الأساسي */
+    --text-muted: #64748b;          /* لون النصوص الفرعي */
+    --bg-light: #f8fafc;            /* خلفية الكروت والأزرار */
+    --border-color: #e2e8f0;        /* لون الحدود الناعمة */
+    --danger-red: #ef4444;          /* لون شارات اليوتيوب */
+    --success-green: #10b981;        /* لون شارة مجاني */
+    --warning-orange: #f59e0b;       /* لون شارة مدفوع/محدود */
+    --transition-fast: all 0.3s ease;
+}
+
+/* حاوية الصفحة الرئيسية */
+.tools-container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    font-family: inherit;
+}
+
+/* ترويسة الصفحة */
+.tools-container .page-header {
+    margin-bottom: 40px;
+    text-align: right;
+}
+
+.tools-container .page-title {
+    font-size: 2.2rem;
+    color: var(--text-main);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.tools-container .page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   أزرار التصفية السريعة (Tabs)
+   ========================================================================== */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.tab-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.tab-btn:hover {
+    background-color: #f1f5f9;
+    color: var(--text-main);
+    border-color: var(--text-muted);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-teal);
+    color: #ffffff;
+    border-color: var(--primary-teal);
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+}
+
+/* ==========================================================================
+   شبكة الكروت (Tools Grid)
+   ========================================================================== */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* كرت الأداة الفاخر */
+.tool-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.tool-card-main {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* رأس الكرت (الأيقونة والعنوان) */
+.tool-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.tool-icon-wrapper {
+    width: 54px;
+    height: 54px;
+    background-color: var(--bg-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: 1px solid #f1f5f9;
+}
+
+.tool-icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tool-title-area {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tool-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* شارات الحالة (مجاني / مدفوع) */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.badge-free {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success-green);
+}
+
+.badge-paid {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warning-orange);
+}
+
+/* وصف الأداة */
+.tool-description {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1; /* يضمن توازي الأزرار أسفل الكروت دائماً */
+}
+
+/* أزرار الإجراءات */
+.tool-actions {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-tool {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    text-decoration: none;
+    border: none;
+}
+
+.btn-visit {
+    background-color: var(--primary-teal);
+    color: #ffffff;
+}
+
+.btn-visit:hover {
+    background-color: #0d635c;
+}
+
+.btn-alternatives {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-alternatives:hover {
+    background-color: #e2e8f0;
+}
+
+/* ==========================================================================
+   قائمة اليوتيوب المنسدلة الذكية (YouTube Dropdown)
+   ========================================================================== */
+.youtube-dropdown-wrapper {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--bg-light);
+}
+
+.dropdown-trigger-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    text-align: right;
+}
+
+.dropdown-trigger-btn:hover {
+    background-color: #f1f5f9;
+}
+
+.dropdown-trigger-btn .chevron-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    color: var(--text-muted);
+}
+
+/* دوران السهم عند الفتح */
+.dropdown-trigger-btn.is-active .chevron-icon {
+    transform: rotate(180deg);
+}
+
+/* قائمة الروابط الداخلية المنسدلة */
+.dropdown-content-list {
+    border-top: 1px solid var(--border-color);
+    background-color: #ffffff;
+}
+
+.dropdown-item-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px solid #f8fafc;
+    transition: var(--transition-fast);
+}
+
+.dropdown-item-link:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item-link i {
+    font-size: 1rem;
+    color: var(--danger-red);
+}
+
+.dropdown-item-link:hover {
+    background-color: rgba(239, 68, 68, 0.04);
+    color: var(--danger-red);
+    padding-right: 20px; /* حركة إزاحة خفيفة وجذابة عند التحويم */
+}
+
+/* ==========================================================================
+   التجاوب مع الشاشات المختلفة (Responsive)
+   ========================================================================== */
+@media (max-width: 640px) {
+    .tools-container .page-title {
+        font-size: 1.75rem;
+    }
+    .category-tabs {
+        gap: 8px;
+    }
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 0.88rem;
+    }
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+}

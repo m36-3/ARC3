@@ -1,0 +1,521 @@
+/**
+ * Project: Research Tracks Platform (منصة المسارات البحثية)
+ * File: profile.css
+ * Role: Senior CSS Front-End Engineer Architecture Core
+ * Description: Production-ready pure CSS stylesheet for the profile lifecycle layout.
+ *              Maintains visual parity with the established design system framework.
+ */
+
+/* ==========================================================================
+   1. DESIGN SYSTEM VARIABLES & ROOT CONFIGURATION
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --clr-bg-main: #ffffff;
+    --clr-bg-subtle: #f8fafc;
+    --clr-primary: #0f4c81; /* Core Classic Blue Theme */
+    --clr-primary-light: #1d639f;
+    --clr-accent-purple: #6c5ce7;
+    --clr-accent-gradient: linear-gradient(135deg, #0f4c81 0%, #6c5ce7 100%);
+    --clr-achievement-gradient: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    --clr-text-main: #1e293b;
+    --clr-text-muted: #64748b;
+    --clr-border: #e2e8f0;
+    --clr-error: #ef4444;
+    --clr-error-bg: #fef2f2;
+    --clr-focus-glow: rgba(15, 76, 129, 0.15);
+
+    /* Elevation Shadows */
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-card: 0 20px 25px -5px rgba(15, 76, 129, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+
+    /* Layout Properties */
+    --radius-card: 24px;
+    --radius-badge: 12px;
+    --radius-input: 12px;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==========================================================================
+   2. KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   3. GLOBAL RESET & BASE RULES (RTL SPECIFIC)
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.profile-page-bg {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--clr-bg-subtle);
+    color: var(--clr-text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ==========================================================================
+   4. SIMULATED DEVICE STATUS BAR
+   ========================================================================== */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    background-color: var(--clr-primary);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--clr-bg-main);
+    z-index: 101;
+}
+
+.status-icons-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ==========================================================================
+   5. HEADER & TOP NAVIGATION
+   ========================================================================== */
+.profile-nav-header {
+    background-color: var(--clr-primary);
+    color: var(--clr-bg-main);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-soft);
+}
+
+.container.nav-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-back-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px; /* Accessible Touch Point Target */
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: var(--transition-bounce);
+}
+
+.btn-back-link:hover, .btn-back-link:focus {
+    transform: scale(1.08) translateX(2px);
+    background-color: rgba(255, 255, 255, 0.25);
+    outline: none;
+}
+
+.nav-back-icon {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
+
+.nav-centered-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav-spacer {
+    width: 44px; /* Structural balancing counterpart to back button width */
+}
+
+/* ==========================================================================
+   6. MAIN VIEW LAYOUT CONTAINER
+   ========================================================================== */
+.profile-main-layout {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 32px 24px;
+}
+
+.profile-view-wrapper {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ==========================================================================
+   7. PROFILE CARD IDENTITY SECTION
+   ========================================================================== */
+.profile-identity-card {
+    background-color: var(--clr-bg-main);
+    border-radius: var(--radius-card);
+    padding: 32px 24px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(15, 76, 129, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Large Blue Avatar Circle Design */
+.profile-avatar-wrapper, .avatar-circle-blue {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--clr-accent-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 16px rgba(15, 76, 129, 0.2);
+}
+
+.avatar-dynamic-letter {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--clr-bg-main);
+}
+
+.user-details-group {
+    margin-bottom: 24px;
+}
+
+.profile-user-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--clr-text-main);
+    margin-bottom: 6px;
+}
+
+.profile-user-email {
+    font-size: 14px;
+    color: var(--clr-text-muted);
+}
+
+/* User ID Presentation Card and Copy Block */
+.user-id-badge-card {
+    width: 100%;
+    background-color: var(--clr-bg-subtle);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-badge);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.id-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.id-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--clr-text-muted);
+    text-transform: uppercase;
+}
+
+.id-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--clr-primary);
+    letter-spacing: 1px;
+}
+
+.btn-icon-action-copy {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px; /* Accessible Interactive Element Minimum */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.btn-icon-action-copy:hover, .btn-icon-action-copy:focus {
+    background-color: var(--clr-border);
+    outline: none;
+}
+
+.action-icon-img {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================================================
+   8. ACHIEVEMENT CARD (PURPLE GRADIENT SYSTEM)
+   ========================================================================== */
+.achievement-gradient-card {
+    background: var(--clr-achievement-gradient);
+    color: var(--clr-bg-main);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.achievement-header-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.achievement-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.achievement-shield-icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+.achievement-title-text {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.achievement-stats-row {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-badge);
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.metric-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.metric-counter-display {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.metric-label-text {
+    font-size: 13px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   9. INTERACTIVE ACTION BUTTON GROUP
+   ========================================================================== */
+.profile-action-buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: var(--radius-input);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-primary {
+    background: var(--clr-accent-gradient);
+    color: var(--clr-bg-main);
+    box-shadow: 0 4px 12px rgba(15, 76, 129, 0.15);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 76, 129, 0.25);
+    outline: none;
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background-color: var(--clr-bg-main);
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-border);
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: var(--clr-bg-subtle);
+    border-color: var(--clr-primary);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   10. MENU SELECTION AND DIRECTORY CARDS
+   ========================================================================== */
+.profile-menu-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-navigation-card {
+    background-color: var(--clr-bg-main);
+    border-radius: var(--radius-badge);
+    padding: 16px;
+    border: 1px solid var(--clr-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+/* Hover and Focus State Tracking Visual Bounds Elevations */
+.menu-navigation-card:hover, .menu-navigation-card:focus {
+    transform: scale(1.01) translateX(-4px);
+    border-color: var(--clr-primary-light);
+    box-shadow: var(--shadow-soft);
+    outline: none;
+}
+
+.menu-card-meta-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.menu-card-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.menu-card-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--clr-text-main);
+}
+
+.menu-card-arrow {
+    width: 18px;
+    height: 18px;
+    opacity: 0.4;
+    transition: var(--transition-smooth);
+}
+
+.menu-navigation-card:hover .menu-card-arrow {
+    opacity: 0.8;
+}
+
+/* Specialized System Sign Out Configurations */
+.menu-card-logout-trigger {
+    background: none;
+    width: 100%;
+    text-align: right;
+}
+
+.menu-card-logout-trigger:hover, .menu-card-logout-trigger:focus {
+    border-color: var(--clr-error);
+    background-color: var(--clr-error-bg);
+}
+
+.logout-icon-color {
+    filter: invert(36%) sepia(84%) saturate(4649%) hue-rotate(345deg) brightness(97%) contrast(92%);
+}
+
+.logout-text-color {
+    color: var(--clr-error);
+}
+
+/* ==========================================================================
+   11. RESPONSIVE BREAKPOINTS (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .status-bar {
+        padding: 6px 16px;
+    }
+
+    .container.nav-wrapper {
+        padding: 10px 16px;
+    }
+
+    .profile-main-layout {
+        padding: 16px;
+    }
+
+    .profile-identity-card {
+        padding: 24px 16px;
+    }
+
+    .profile-avatar-wrapper, .avatar-circle-blue {
+        width: 84px;
+        height: 84px;
+    }
+
+    .avatar-dynamic-letter {
+        font-size: 34px;
+    }
+
+    .profile-user-name {
+        font-size: 19px;
+    }
+
+    .achievement-gradient-card {
+        padding: 16px;
+    }
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد - منصة المسارات البحثية</title>
+    <!-- Links to structural system architectural design files -->
+    <link rel="stylesheet" href="Register.css">
+</head>
+<body id="register-page-body" class="auth-page-bg">
+
+    <!-- Top simulated system context header environment -->
+    
+
+    <!-- Global Application Navigation Header -->
+    <header id="register-header" class="auth-header">
+        <div id="header-nav-container" class="container nav-wrapper">
+            <a id="link-back-login" href="login.html" class="btn-back-link" aria-label="العودة إلى صفحة تسجيل الدخول">
+                <img id="img-arrow-back" class="nav-back-icon" src="/assets/icons/arrow-right-simple.svg" alt="أيقونة سهم العودة">
+            </a>
+            <div id="register-logo-wrapper" class="auth-logo-area">
+                <img id="register-site-logo" class="auth-logo-img" src="/assets/images/logo.png" alt="شعار منصة المسارات البحثية">
+                <span id="register-logo-text" class="auth-logo-text">منصة المسارات البحثية</span>
+            </div>
+            <div id="header-spacer" class="nav-spacer" aria-hidden="true"></div>
+        </div>
+    </header>
+
+    <!-- Core Dynamic Layout Core Registration Area -->
+    <main id="register-main-content" class="auth-main-layout">
+        <div id="register-card-container" class="auth-card-wrapper">
+            
+            <!-- Central Form Control Registration Block Card -->
+            <article id="card-register-box" class="auth-card">
+                
+                <!-- Visual identity consistent asset presentation -->
+                <div id="register-illustration-wrapper" class="auth-media-area">
+                    <img id="img-register-illustration" class="auth-illustration" src="/assets/images/register.png" alt="رسم توضيحي لإنشاء حساب بحثي جديد">
+                </div>
+
+                <!-- Registration Title Headings Hierarchy -->
+                <header id="register-card-header" class="auth-card-title-group">
+                    <h1 id="txt-register-main-title" class="auth-main-title">إنشاء حساب</h1>
+                    <p id="txt-register-sub-title" class="auth-subtitle">أنشئ حسابك وابدأ رحلتك البحثية</p>
+                </header>
+
+                <!-- Functional Application Onboarding Registration Form -->
+                <form id="form-user-register" class="auth-form" action="/api/auth/register" method="POST">
+                    
+                    <!-- Input Block: Full Name -->
+                    <div id="group-name-field" class="form-control-group">
+                        <label id="lbl-input-name" for="input-register-name" class="form-label">الاسم الكامل</label>
+                        <div id="wrapper-name-input" class="input-with-icon">
+                            <input type="text" id="input-register-name" class="form-input" name="name" required placeholder="أدخل اسمك الثلاثي" aria-required="true" aria-labelledby="lbl-input-name">
+                        </div>
+                    </div>
+
+                    <!-- Input Block: Email Address -->
+                    <div id="group-email-field" class="form-control-group">
+                        <label id="lbl-input-email" for="input-register-email" class="form-label">البريد الإلكتروني</label>
+                        <div id="wrapper-email-input" class="input-with-icon">
+                            <input type="email" id="input-register-email" class="form-input" name="email" required placeholder="example@research.edu" aria-required="true" aria-labelledby="lbl-input-email">
+                        </div>
+                    </div>
+
+                    <!-- Input Block: Phone Number -->
+                    <div id="group-phone-field" class="form-control-group">
+                        <label id="lbl-input-phone" for="input-register-phone" class="form-label">رقم الهاتف</label>
+                        <div id="wrapper-phone-input" class="input-with-icon">
+                            <input type="tel" id="input-register-phone" class="form-input" name="phone" required placeholder="07XXXXXXXXX" aria-required="true" aria-labelledby="lbl-input-phone">
+                        </div>
+                    </div>
+
+                    <!-- Input Block: Country -->
+                    <div id="group-country-field" class="form-control-group">
+                        <label id="lbl-input-country" for="select-register-country" class="form-label">الدولة</label>
+                        <div id="wrapper-country-select" class="select-action-wrapper">
+                            <select id="select-register-country" class="form-select" name="country" required aria-required="true" aria-labelledby="lbl-input-country">
+                                <option value="" disabled selected hidden>اختر المحافظة</option>
+                                <option value="IQ">العراق</option>
+                                <option value="EG">مصر</option>
+                                <option value="SA">المملكة العربية السعودية</option>
+                                <option value="AE">الإمارات العربية المتحدة</option>
+                                <option value="JO">الأردن</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Input Block: University -->
+                    <div id="group-university-field" class="form-control-group">
+                        <label id="lbl-input-university" for="input-register-university" class="form-label">الجامعة / المؤسسة البحثية</label>
+                        <div id="wrapper-university-input" class="input-with-icon">
+                            <input type="text" id="input-register-university" class="form-input" name="university" required placeholder="اسم جامعتك أو جهة عملك" aria-required="true" aria-labelledby="lbl-input-university">
+                        </div>
+                    </div>
+
+                    <!-- Input Block: Research Interest -->
+                    <div id="group-interest-field" class="form-control-group">
+                        <label id="lbl-input-interest" for="select-register-interest" class="form-label">المجال البحثي الاهتمامي</label>
+                        <div id="wrapper-interest-select" class="select-action-wrapper">
+                            <select id="select-register-interest" class="form-select" name="research_interest" required aria-required="true" aria-labelledby="lbl-input-interest">
+                                <option value="" disabled selected hidden>اختر مجالك البحثي الرئيسي</option>
+                                <option value="medical_tech">تقنيات طبية وصحية</option>
+                                <option value="edge_ai">ذكاء اصطناعي وحوسبة الطرف (Edge AI)</option>
+                                <option value="data_analytics">تحليل البيانات الضخمة</option>
+                                <option value="engineering">علوم الهندسة والابتكار</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Input Block: Gender Select Criteria -->
+                    <div id="group-gender-field" class="form-control-group">
+                        <label id="lbl-input-gender" for="select-register-gender" class="form-label">الجنس</label>
+                        <div id="wrapper-gender-select" class="select-action-wrapper">
+                            <select id="select-register-gender" class="form-select" name="gender" required aria-required="true" aria-labelledby="lbl-input-gender">
+                                <option value="" disabled selected hidden>اختر الجنس</option>
+                                <option value="male">ذكر</option>
+                                <option value="female">أنثى</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Input Block: Password Configuration -->
+                    <div id="group-password-field" class="form-control-group">
+                        <label id="lbl-input-password" for="input-register-password" class="form-label">كلمة المرور</label>
+                        <div id="wrapper-password-input" class="input-action-wrapper">
+                            <input type="password" id="input-register-password" class="form-input" name="password" required placeholder="••••••••" aria-required="true" aria-labelledby="lbl-input-password">
+                            <button type="button" id="btn-toggle-password" class="btn-input-action" aria-label="إظهار كلمة المرور" aria-controls="input-register-password">
+                                <span id="icon-eye-state-pass" class="eye-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Input Block: Confirm Password Verification -->
+                    <div id="group-confirm-password-field" class="form-control-group">
+                        <label id="lbl-input-confirm-password" for="input-register-confirm" class="form-label">تأكيد كلمة المرور</label>
+                        <div id="wrapper-confirm-input" class="input-action-wrapper">
+                            <input type="password" id="input-register-confirm" class="form-input" name="confirm_password" required placeholder="••••••••" aria-required="true" aria-labelledby="lbl-input-confirm-password">
+                            <button type="button" id="btn-toggle-confirm" class="btn-input-action" aria-label="إظهار تأكيد كلمة المرور" aria-controls="input-register-confirm">
+                                <span id="icon-eye-state-confirm" class="eye-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- System Agreement Terms Policies Requirements Block -->
+                    <div id="group-agreement-terms" class="form-options-row">
+                        <div id="wrapper-checkbox-agreement" class="checkbox-control">
+                            <input type="checkbox" id="chk-agreement-policy" class="form-checkbox" name="agreement_checked" required aria-required="true">
+                            <label id="lbl-checkbox-agreement" for="chk-agreement-policy" class="checkbox-label">
+                                أوافق على كافة <a id="link-agreement-terms" href="#terms" class="auth-link">الشروط والأحكام</a> و <a id="link-agreement-privacy" href="#privacy" class="auth-link">سياسة الخصوصية</a> الخاصة بالمنصة
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Account Submission Interface Execution Target -->
+                    <div id="group-submit-action" class="form-action-group">
+                        <button type="submit" id="btn-submit-register" class="btn btn-primary btn-block" aria-label="اضغط لتأكيد إنشاء حساب جديد">إنشاء حساب</button>
+                    </div>
+
+                    <!-- Architectural System Semantic Divider Component -->
+                    <div id="register-divider-block" class="auth-divider" role="separator">
+                        <span id="txt-divider-text" class="divider-content">أو</span>
+                    </div>
+
+                    <!-- Alternate Flow Path Link Direction Element Area -->
+                    <div id="group-login-action" class="form-secondary-group">
+                        <a id="btn-link-login" href="login.html" class="btn btn-secondary btn-block" role="button" aria-label="الانتقال لصفحة تسجيل الدخول للمستخدمين بالفعل">لديك حساب بالفعل؟ تسجيل الدخول</a>
+                    </div>
+
+                </form>
+
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Site Global Standardized Identity Legal Footer Context -->
+    <footer id="register-footer" class="auth-footer">
+        <div id="footer-links-container" class="container footer-links-wrapper">
+            <nav id="nav-footer-privacy" class="footer-legal-nav" aria-label="روابط الشروط والخصوصية">
+                <a id="link-footer-privacy" href="#privacy" class="footer-link">سياسة الخصوصية</a>
+                <span id="legal-divider-dot" class="legal-separator" aria-hidden="true">•</span>
+                <a id="link-footer-terms" href="#terms" class="footer-link">شروط الاستخدام</a>
+            </nav>
+            <div id="footer-copyright-block" class="footer-copyright-text">
+                <p id="txt-register-copyright">جميع الحقوق محفوظة © منصة المسارات البحثية ٢٠٢٦</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Execution engine logic initialization bindings -->
+    <script type="module" src="Register.js"></script>
+    
+</body>
+</html>

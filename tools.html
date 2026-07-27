@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأدوات المساعدة والمستشار البحثي</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="components.css">
+    <!-- ملف الستايل الخاص بهذه الصفحة سننشئه في الخطوة القادمة -->
+    <link rel="stylesheet" href="tools.css">
+    <!-- مكتبة FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body id="tools-page">
+
+    <!-- الهيدر العلوي الموحد للمنصة -->
+<!-- الهيدر العلوي الموحد والمحمي من الانكسار البصري -->
+<header id="main-header" class="site-header" style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 10px 0; width: 100%;">
+    <div class="container header-flex" style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 20px; flex-direction: row-reverse;">
+        
+        <!-- منطقة الشعار مع تحديد أبعاد الصورة بدقة منيعة للضخامة -->
+        <div class="logo-area" style="display: flex; align-items: center; gap: 12px;">
+            <img src="logo.jpg" alt="شعار المنصة" style="width: 45px; height: 45px; object-fit: contain; border-radius: 8px;">
+            <span style="font-weight: 800; font-size: 1.15rem; color: #1e293b;">منصة المسارات البحثية</span>
+        </div>
+        
+        <!-- قائمة التنقل أفقية وموزونة بالكامل وبدون نقاط -->
+        <nav class="nav-menu">
+            <ul style="display: flex; align-items: center; gap: 25px; list-style: none; margin: 0; padding: 0; flex-direction: row-reverse;">
+                <li><a href="index.html" style="text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: color 0.2s;">الرئيسية</a></li>
+                <li><a href="levels.html" style="text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: color 0.2s;">المسارات البحثية</a></li>
+                <li><a href="tools.html" class="active" style="text-decoration: none; color: #0f766e; font-weight: 700; font-size: 0.95rem; position: relative; padding-bottom: 4px;">الأدوات المساعدة</a></li>
+            </ul>
+        </nav>
+        
+    </div>
+</header>
+
+    <main class="tools-container container">
+        <!-- ترويسة الصفحة -->
+        <header class="page-header">
+            <h1 class="page-title">الحقيبة البرمجية والأدوات المساعدة</h1>
+            <p class="page-subtitle">دليلك الأكاديمي الشامل لأقوى الأدوات، البرمجيات، والمكتبات العالمية المخصصة لدعم رحلتك البحثية.</p>
+        </header>
+
+        <!-- [أولاً] أزرار التنقل السريع بين التصنيفات (تصفية سريعة) -->
+        <section class="category-tabs" aria-label="تصنيفات الأدوات">
+            <button class="tab-btn active" data-filter="all">كل الأدوات</button>
+            <button class="tab-btn" data-filter="references">إدارة المراجع</button>
+            <button class="tab-btn" data-filter="writing">الكتابة الأكاديمية</button>
+            <button class="tab-btn" data-filter="stats">التحليل الإحصائي</button>
+            <button class="tab-btn" data-filter="ai">ذكاء اصطناعي وتدقيق</button>
+            <button class="tab-btn" data-filter="libraries">مكتبات عالمية</button>
+            <button class="tab-btn" data-filter="centers">مراكز بحثية وجامعات</button>
+        </section>
+
+        <!-- [ثانياً] شبكة الكروت للأدوات -->
+        <section class="tools-grid" id="tools-wrapper">
+            <!-- Microsoft Word -->
+<article class="tool-card" data-category="writing">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/732/732228.png" alt="Microsoft Word">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">Microsoft Word</h3>
+                <span class="badge badge-paid"><i class="fas fa-credit-card"></i> مدفوع / اشتراك جامعي</span>
+            </div>
+        </div>
+        <p class="tool-description">البرنامج الأساسي والأكثر شيوعاً لكتابة وتنسيق الأبحاث والرسائل العلمية، ودعم معايير التنسيق العالمي وتكامل أدوات المراجع.</p>
+        <div class="tool-actions">
+            <a href="https://www.microsoft.com/microsoft-365/word" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Google Docs, Overleaf">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> خفايا التنسيق الأكاديمي</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> تنسيق رسائل الماجستير والدكتوراه بـ Word</a>
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> عمل الفهارس والجداول التلقائية</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Microsoft Excel -->
+<article class="tool-card" data-category="stats">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/732/732221.png" alt="Microsoft Excel">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">Microsoft Excel</h3>
+                <span class="badge badge-paid"><i class="fas fa-credit-card"></i> مدفوع / اشتراك جامعي</span>
+            </div>
+        </div>
+        <p class="tool-description">الأداة اللامعة لتنظيم البيانات الخام للبحوث، تنظيف الجداول، وإجراء العمليات الحسابية والرسوم البيانية الإحصائية الأساسية.</p>
+        <div class="tool-actions">
+            <a href="https://www.microsoft.com/microsoft-365/excel" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Google Sheets, SPSS">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> إحصاء بـ Excel</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> تحليل الاستبيانات وحساب الثبات والصدق بـ Excel</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Cochrane Library -->
+<article class="tool-card" data-category="libraries">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/3004/3004416.png" alt="Cochrane Library">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">مكتبة كوكرين الطبية</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني / مدفوع جزئياً</span>
+            </div>
+        </div>
+        <p class="tool-description">المرجع العالمي الأول للطب القائم على الأدلة (Evidence-Based Medicine) والمراجعات المنهجية (Systematic Reviews) والمقالات الطبية عالية الموثوقية.</p>
+        <div class="tool-actions">
+            <a href="https://www.cochranelibrary.com" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> زيارة المكتبة</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: PubMed, Embase, Scopus">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> شروحات كوكرين</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> كيفية البحث في Cochrane واستخراج المراجعات المنهجية</a>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- WHO Institutional Repository (IRIS) -->
+<article class="tool-card" data-category="libraries">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/2966/2966327.png" alt="WHO IRIS">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">مستودع منظمة الصحة العالمية</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني بالكامل</span>
+            </div>
+        </div>
+        <p class="tool-description">المكتبة الرقمية الرسمية لمنظمة الصحة العالمية (WHO) والتي تحتوي على كافة التقارير الطبية، الإحصائيات الوبائية، والدراسات الصحية المعتمدة عالمياً.</p>
+        <div class="tool-actions">
+            <a href="https://iris.who.int" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> تصفح التقارير</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: CDC Stacks, PubMed">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> البيانات الصحية</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> طريقة اقتباس تقارير منظمة الصحة العالمية في الأبحاث</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- EndNote (References القسم الأول) -->
+<article class="tool-card" data-category="references">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="EndNote">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">Clarivate EndNote</h3>
+                <span class="badge badge-paid"><i class="fas fa-credit-card"></i> مدفوع (اشتراك مؤسسي)</span>
+            </div>
+        </div>
+        <p class="tool-description">البرنامج العملاق التابع لمؤسسة Clarivate لتوثيق وأرشفة المراجع البحثية وضبط وتنسيق الاستشهادات وفق آلاف المجلات العالمية.</p>
+        <div class="tool-actions">
+            <a href="https://endnote.com" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Zotero, Mendeley">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> دليل EndNote</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> شرح كامل لبرنامج اندنوت من الصفر</a>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- RStudio (Stats القسم الثالث) -->
+<article class="tool-card" data-category="stats">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111620.png" alt="RStudio">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">R / RStudio</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني ومفتوح المصدر</span>
+            </div>
+        </div>
+        <p class="tool-description">البيئة البرمجية الأقوى عالمياً للباحثين المتقدمين في الإحصاء الحيوي، البيانات الكبيرة، ورسم المخططات البيانية فائقة الدقة بنظام الأكواد البرمجية.</p>
+        <div class="tool-actions">
+            <a href="https://posit.co" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Python, SPSS, Jamovi">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> كورس لغة R</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> التحليل الإحصائي بلغة R للباحثين والأطباء</a>
+            </div>
+        </div>
+    </div>
+</article>
+            <!-- Zotero -->
+<article class="tool-card" data-category="references">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/9560/9560126.png" alt="Zotero">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">Zotero</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني بالكامل</span>
+            </div>
+        </div>
+        <p class="tool-description">برنامج مفتوح المصدر ممتاز لجمع وتنظيم واستشهاد المراجع البحثية، ويتميز بملحق متصفح ذكي لالتقاط الأوراق العلمية بضغطة زر.</p>
+        <div class="tool-actions">
+            <a href="https://www.zotero.org" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Mendeley, EndNote">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> شروحات Zotero</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> تثبيت البرنامج وربطه بالمتصفح</a>
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> إدراج المراجع داخل Word تلقائياً</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Overleaf (LaTeX) -->
+<article class="tool-card" data-category="writing">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/2304/2304226.png" alt="Overleaf">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">Overleaf (LaTeX)</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني / محدود</span>
+            </div>
+        </div>
+        <p class="tool-description">محرر LaTeX سحابي يسمح للباحثين بكتابة ونشر الأوراق العلمية والرسائل الأكاديمية بدقة متناهية وبما يتوافق مع القوالب العالمية للمجلات.</p>
+        <div class="tool-actions">
+            <a href="https://www.overleaf.com" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: MS Word, LyX">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> شروحات Overleaf</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> كورس أساسيات LaTeX للمبتدئين</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- SPSS -->
+<article class="tool-card" data-category="stats">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/9357/9357597.png" alt="SPSS">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">IBM SPSS Statistics</h3>
+                <span class="badge badge-paid"><i class="fas fa-credit-card"></i> مدفوع (تجربة مجانية)</span>
+            </div>
+        </div>
+        <p class="tool-description">البرنامج الأشهر عالمياً للتحليل الإحصائي في البحوث الاجتماعية والطبية، ويستخدم لتحليل الاستبيانات وفحص الفرضيات العلمية.</p>
+        <div class="tool-actions">
+            <a href="https://www.ibm.com/products/spss-statistics" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: R Studio, Jamovi, Excel">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> دورات شرح SPSS</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> التحليل الإحصائي من الصفر للاستبيان</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Grammarly & QuillBot -->
+<article class="tool-card" data-category="ai">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/11865/11865334.png" alt="Grammarly">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">Grammarly & QuillBot</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني / مدفوع</span>
+            </div>
+        </div>
+        <p class="tool-description">أدوات ذكاء اصطناعي رائدة للتدقيق الإملائي، وإعادة الصياغة الأكاديمية (Paraphrasing) لتحسين جودة الكتابة الإنجليزية وتجنب الانتحال.</p>
+        <div class="tool-actions">
+            <a href="https://www.quillbot.com" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> QuillBot</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: ChatGPT, DeepL, Hemingway">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> طرق الصياغة الأكاديمية</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> كيف تستخدم QuillBot لإعادة صياغة المقالات</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Google Scholar & Scopus -->
+<article class="tool-card" data-category="libraries">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/2907/2907253.png" alt="Google Scholar">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">الباحث العلمي من جوجل</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني بالكامل</span>
+            </div>
+        </div>
+        <p class="tool-description">محرك بحث مجاني ضخم يتيح للباحثين العثور على أوراق علمية، أطروحات، كتب، وملخصات من ناشرين أكاديميين وجامعات ومستودعات علمية.</p>
+        <div class="tool-actions">
+            <a href="https://scholar.google.com" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> ابدأ البحث</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Scopus, PubMed, Web of Science">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> مهارات التصفح والبحث</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> أسرار البحث المتقدم واستخراج المراجع من جوجل</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- ResearchGate -->
+<article class="tool-card" data-category="centers">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111590.png" alt="ResearchGate">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">شبكة ResearchGate</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني</span>
+            </div>
+        </div>
+        <p class="tool-description">أكبر شبكة اجتماعية وعلمية مخصصة للباحثين والمراكز والجامعات العالمية، تتيح مشاركة الأوراق البحثية، طرح الأسئلة، والتواصل الأكاديمي المباشر.</p>
+        <div class="tool-actions">
+            <a href="https://www.researchgate.net" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> زيارة الشبكة</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Academia.edu, LinkedIn Academic">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> أدلة الاستخدام</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> كيف ترفع أبحاثك وتتواصل مع الباحثين عالمياً</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- SciSpace (Typeset.io) -->
+<article class="tool-card" data-category="ai">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/6125/6125006.png" alt="SciSpace">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">SciSpace AI</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني / مدفوع</span>
+            </div>
+        </div>
+        <p class="tool-description">مساعد ذكاء اصطناعي مذهل يشرح لك الأوراق العلمية المعقدة، ويلخص الجداول والمعادلات، ويجيب على أسئلتك حول أي ملف PDF ترفعه.</p>
+        <div class="tool-actions">
+            <a href="https://typeset.io" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Elicit, Consensus">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> شرح SciSpace</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> مراجعة الدراسات السابقة بالذكاء الاصطناعي</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- XMind -->
+<article class="tool-card" data-category="writing">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/8437/8437346.png" alt="XMind">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">XMind (الخرائط الذهنية)</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني متاح للتنزيل</span>
+            </div>
+        </div>
+        <p class="tool-description">أداة ممتازة لرسم الخرائط الذهنية وهيكلة فصول الأطروحة وتوزيع الأفكار البحثية بصرياً قبل البدء في الكتابة الفعلية.</p>
+        <div class="tool-actions">
+            <a href="https://xmind.app" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> تحميل البرنامج</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Miro, MindMeister">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> مهارات التخطيط</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> كيف تخطط لهيكل بحثك باستخدام XMind</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Connected Papers -->
+<article class="tool-card" data-category="libraries">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/9491/9491714.png" alt="Connected Papers">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">Connected Papers</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني محدد</span>
+            </div>
+        </div>
+        <p class="tool-description">موقع عبقري للباحثين؛ تدخل اسم ورقة علمية واحدة، فيقوم برسم شبكة بصرية تربط لك كل الأبحاث ذات الصلة والمشابهة لها عالمياً.</p>
+        <div class="tool-actions">
+            <a href="https://www.connectedpapers.com" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> ابدأ الرسم البياني</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Research Rabbit, Litmaps">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> البحث الشبكي</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> العثور على الأوراق المخفية والمترابطة</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Jamovi -->
+<article class="tool-card" data-category="stats">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/4861/4861514.png" alt="Jamovi">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">Jamovi</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مفتوح المصدر ومجاني</span>
+            </div>
+        </div>
+        <p class="tool-description">برنامج إحصائي حديث وبديل مجاني تماماً لـ SPSS. يتميز بواجهة رسومية غاية في السهولة والجمال ويقوم بتحديث الجداول الإحصائية فورياً.</p>
+        <div class="tool-actions">
+            <a href="https://www.jamovi.org" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: SPSS, JASP, R Studio">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> كورس Jamovi</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> كورس كامل للتحليل الإحصائي ببرنامج Jamovi</a>
+            </div>
+        </div>
+    </div>
+</article>
+<!-- Core AC -->
+<article class="tool-card" data-category="centers">
+    <div class="tool-card-main">
+        <div class="tool-header">
+            <div class="tool-icon-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="CORE">
+            </div>
+            <div class="tool-title-area">
+                <h3 class="tool-title">مستودع CORE الأكاديمي</h3>
+                <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني ومفتوح</span>
+            </div>
+        </div>
+        <p class="tool-description">أكبر مجمع في العالم للمقالات البحثية ذات الوصول المفتوح (Open Access) من مستودعات المجلات ومواقع الجامعات ومراكز البحث الحكومية.</p>
+        <div class="tool-actions">
+            <a href="https://core.ac.uk" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> تصفح الأبحاث</a>
+            <button class="btn-tool btn-alternatives" title="البدائل: Base-Search, OpenAIRE">البدائل</button>
+        </div>
+        <div class="youtube-dropdown-wrapper">
+            <button class="dropdown-trigger-btn">
+                <span><i class="fab fa-youtube text-danger"></i> دليل التصفح</span>
+                <i class="fas fa-chevron-down chevron-icon"></i>
+            </button>
+            <div class="dropdown-content-list" style="display: none;">
+                <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> الوصول للأبحاث الكاملة مجاناً</a>
+            </div>
+        </div>
+    </div>
+</article>
+            <!-- نموذج كرت: أداة إدارة مراجع (مثال: Mendeley) -->
+            <article class="tool-card" data-category="references">
+                <div class="tool-card-main">
+                    <div class="tool-header">
+                        <div class="tool-icon-wrapper">
+                            <img src="https://cdn-icons-png.flaticon.com/128/9643/9643905.png" alt="Mendeley">
+                        </div>
+                        <div class="tool-title-area">
+                            <h3 class="tool-title">Mendeley</h3>
+                            <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">أداة احترافية من Elsevier لإدارة وتنظيم المراجع وتوليد الاستشهادات المرجعية بشكل تلقائي في الأبحاث.</p>
+                    
+                    <!-- أزرار الإجراءات الرئيسية -->
+                    <div class="tool-actions">
+                        <a href="https://www.mendeley.com" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> الموقع الرسمي</a>
+                        <button class="btn-tool btn-alternatives" title="البدائل المتاحة: Zotero, EndNote"><i class="fas fa-exchange-alt"></i> البدائل</button>
+                    </div>
+
+                    <!-- نظام القائمة المنسدلة لشروحات يوتيوب داخل الكرت -->
+                    <div class="youtube-dropdown-wrapper">
+                        <button class="dropdown-trigger-btn">
+                            <span><i class="fab fa-youtube text-danger"></i> قوائم شرح اليوتيوب</span>
+                            <i class="fas fa-chevron-down chevron-icon"></i>
+                        </button>
+                        <div class="dropdown-content-list" style="display: none;">
+                            <a href="https://youtube.com/playlist?list=EXAMPLE1" target="_blank" class="dropdown-item-link">
+                                <i class="fas fa-play-circle"></i> شرح أساسيات البرنامج (دورة كاملة)
+                            </a>
+                            <a href="https://youtube.com/playlist?list=EXAMPLE2" target="_blank" class="dropdown-item-link">
+                                <i class="fas fa-play-circle"></i> ربط وتنسيق المراجع مع Word
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- نموذج كرت: مكتبات عالمية (مثال: PubMed) -->
+            <article class="tool-card" data-category="libraries">
+                <div class="tool-card-main">
+                    <div class="tool-header">
+                        <div class="tool-icon-wrapper">
+                            <img src="https://cdn-icons-png.flaticon.com/128/2907/2907253.png" alt="PubMed">
+                        </div>
+                        <div class="tool-title-area">
+                            <h3 class="tool-title">PubMed المكتبة الوطنية</h3>
+                            <span class="badge badge-free"><i class="fas fa-gift"></i> مجاني</span>
+                        </div>
+                    </div>
+                    <p class="tool-description">أكبر محرك بحث ومكتبة عالمية مجانية للمصادر البحثية والمقالات الطبية والبيولوجية الحيوية.</p>
+                    
+                    <div class="tool-actions">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" class="btn-tool btn-visit"><i class="fas fa-external-link-alt"></i> زيارة المكتبة</a>
+                        <button class="btn-tool btn-alternatives" title="البدائل: Google Scholar, Scopus"><i class="fas fa-exchange-alt"></i> البدائل</button>
+                    </div>
+
+                    <div class="youtube-dropdown-wrapper">
+                        <button class="dropdown-trigger-btn">
+                            <span><i class="fab fa-youtube text-danger"></i> أدلة البحث المتقدم</span>
+                            <i class="fas fa-chevron-down chevron-icon"></i>
+                        </button>
+                        <div class="dropdown-content-list" style="display: none;">
+                            <a href="#" class="dropdown-item-link"><i class="fas fa-play-circle"></i> مهارات البحث المتقدم MeSH</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <!-- الفوتر السفلي الموحد للمنصة -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p>جميع الحقوق محفوظة © منصة المسارات البحثية ٢٠٢٦</p>
+        </div>
+    </footer>
+
+    <!-- ملف الجافاسكربت الخاص بالصفحة لتشغيل القوائم المنسدلة والتصفية -->
+    <script src="tools.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | منصة المسارات البحثية</title>
+    <link rel="stylesheet" href="login.css">
+        <style>
+        /* تنسيقات سريعة ومرنة متوافقة مع الهوية البصرية اللطيفة */
+        .login-container {
+            max-width: 450px;
+            margin: 60px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        .form-control:focus {
+            border-color: var(--primary-color, #0f4c81);
+            outline: none;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            color: #ff4d4d;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color, #0f4c81);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #0c3d66;
+        }
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="login-container">
+        <h2 style="text-align: center; margin-bottom: 24px; color: var(--primary-color, #0f4c81);">تسجيل الدخول للجلسة البحثية</h2>
+        
+        <!-- تم إضافة منع الإرسال التلقائي لحظر الـ Refresh المزعج -->
+        <form id="login-form" onsubmit="return false;" novalidate>
+            <!-- حقل البريد الإلكتروني -->
+            <div class="form-group">
+                <label for="login-email">البريد الإلكتروني الأكاديمي</label>
+                <input type="email" id="login-email" class="form-control" placeholder="example@university.edu" required autocomplete="email">
+                <div class="error-message" id="email-error">يرجى إدخال بريد إلكتروني صحيح.</div>
+            </div>
+
+            <!-- حقل كلمة المرور -->
+            <div class="form-group">
+                <label for="login-password">كلمة المرور</label>
+                <input type="password" id="login-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+                <div class="error-message" id="password-error">كلمة المرور يجب ألا تقل عن 6 رموز.</div>
+            </div>
+
+            <!-- تذكرني -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me" style="font-size: 0.9rem; color: #555; cursor: pointer;">تذكرني على هذا الجهاز</label>
+            </div>
+
+            <!-- تم تحويل النوع إلى button صريح لمنع سلوك الـ submit الافتراضي للمتصفح -->
+            <button type="button" class="btn-submit" id="btn-login-submit">الدخول إلى المنصة</button>
+        </form>
+
+        <div class="form-footer">
+            <p>ليس لديك حساب باحث بعد؟ <a href="signup.html" style="color: var(--primary-color, #0f4c81); text-decoration: none; font-weight: bold;">أنشئ حسابك الآن</a></p>
+            <p style="margin-top: 10px;"><a href="index.html" style="color: #666; text-decoration: none; font-size: 0.85rem;">← العودة للرئيسية</a></p>
+        </div>
+    </div>
+
+    <!-- استدعاء الملفات البرمجية بالترتيب الصحيح -->
+    <script src="database.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فضاء عمل الوحدة 0.1 - المنصة التعليمية الفاخرة</title>
+  
+  <!-- ربط الخطوط العربية والأجنبية الفاخرة لضمان جودة العرض البصري -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ربط مكتبة الأيقونات الموحدة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ربط ملف التنسيق الخاص بالصفحة -->
+  <link rel="stylesheet" href="unit.css">
+</head>
+<body>
+
+<main class="unit-page-container">
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="index.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="levels.html">المستويات الدراسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item"><a href="level.html?level=2">المستوى التمهيدي</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">مسار الوحدة 0.1</span>
+  </nav>
+
+  <!-- فضاء العمل ثنائي الأعمدة -->
+  <div class="unit-workspace">
+    
+    <!-- العمود الأيمن: شريط التقدم الجانبي والجدول الزمني الملتصق (Sticky Sidebar) -->
+    <aside class="unit-sidebar" aria-label="مؤشر تقدم الوحدة الدراسية">
+      <div class="sidebar-sticky-box">
+        <div class="sidebar-header">
+          <div class="unit-code-indicator">الوحدة 0.1</div>
+          <h3 class="sidebar-title">تعلم كيف تتعلم </h3>
+        </div>
+
+        <!-- عجلة التقدم الدائرية التفاعلية (يتم تحديثها تلقائياً بالـ JavaScript) -->
+        <div class="progress-radial-wrapper">
+          <div class="radial-progress-svg-container">
+            <svg class="radial-progress-svg" viewBox="0 0 36 36">
+              <path class="radial-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="radial-fill" id="radial-progress-bar" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="radial-text">
+              <span class="percentage" id="radial-percentage-text">0%</span>
+              <span class="label">جاري التعلم</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- خريطة الأنشطة الرأسية التفاعلية -->
+        <nav class="activities-timeline" aria-label="جدول الأنشطة">
+          <ul class="timeline-list" id="sidebar-timeline-list">
+            <li class="timeline-item" data-target="1">
+              <span class="status-indicator-dot"><i class="fas fa-brain"></i></span>
+              <span class="activity-nav-title">1. كيف يتعلم الدماغ؟</span>
+            </li>
+            <li class="timeline-item" data-target="2">
+              <span class="status-indicator-dot"><i class="fas fa-bolt"></i></span>
+              <span class="activity-nav-title">2. التعلم النشط</span>
+            </li>
+            <li class="timeline-item" data-target="3">
+              <span class="status-indicator-dot"><i class="fas fa-sync-alt"></i></span>
+              <span class="activity-nav-title">3. الاسترجاع النشط</span>
+            </li>
+            <li class="timeline-item" data-target="4">
+              <span class="status-indicator-dot"><i class="fas fa-history"></i></span>
+              <span class="activity-nav-title">4. التكرار المتباعد</span>
+            </li>
+            <li class="timeline-item" data-target="5">
+              <span class="status-indicator-dot"><i class="fas fa-project-diagram"></i></span>
+              <span class="activity-nav-title">5. خرائط المفاهيم</span>
+            </li>
+            <li class="timeline-item" data-target="6">
+              <span class="status-indicator-dot"><i class="fas fa-pen-nib"></i></span>
+              <span class="activity-nav-title">6. تدوين الملاحظات</span>
+            </li>
+            <li class="timeline-item" data-target="7">
+              <span class="status-indicator-dot"><i class="fas fa-clock"></i></span>
+              <span class="activity-nav-title">7. إدارة الوقت</span>
+            </li>
+            <li class="timeline-item" data-target="8">
+              <span class="status-indicator-dot"><i class="fas fa-calendar-check"></i></span>
+              <span class="activity-nav-title">8. بناء العادات</span>
+            </li>
+            <li class="timeline-item" data-target="9">
+              <span class="status-indicator-dot"><i class="fas fa-puzzle-piece"></i></span>
+              <span class="activity-nav-title">9. حل المشكلات</span>
+            </li>
+            <li class="timeline-item" data-target="10">
+              <span class="status-indicator-dot"><i class="fas fa-glasses"></i></span>
+              <span class="activity-nav-title">10. التفكير التأملي</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- العمود الأيسر: بطاقة تقديم الوحدة وقائمة الأنشطة التفصيلية -->
+    <section class="unit-main-content">
+      
+      <!-- بطاقة تقديم وتلخيص الوحدة -->
+      <section class="unit-summary-hero-card" id="overview-panel">
+        <div class="summary-hero-body">
+          <div class="hero-tag-row">
+            <span class="hero-pill-category">تمهيدي</span>
+            <span class="prerequisites-check"><i class="fas fa-circle-check"></i> المتطلبات السابقة مكتملة</span>
+          </div>
+          <h1 class="summary-hero-title"> تعلم كيفية التعلم</h1>
+          <p class="summary-hero-desc">
+            تطوير المهارات العملية للتعلم وفهم كيفية التعامل مع المعلومات الجديدة.
+          </p>
+
+          <div class="hero-metrics-grid">
+            <div class="metric-capsule">
+              <i class="fas fa-hourglass-half"></i>
+              <div>
+                <span class="meta-label">الوقت المقدر</span>
+                <span class="meta-val">1. ساعات</span>
+              </div>
+            </div>
+            <div class="metric-capsule">
+              <i class="fas fa-signal"></i>
+              <div>
+                <span class="meta-label">درجة الصعوبة</span>
+                <span class="meta-val">مبتدئ</span>
+              </div>
+            </div>
+            <div class="metric-capsule">
+              <i class="fas fa-award text-warning"></i>
+              <div>
+                <span class="meta-label">المكافأة المتوقعة</span>
+                <span class="meta-val">+200 نقطة خبرة</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-objectives-panel">
+          <h3 class="panel-subtitle">الكفاءات السريرية المكتسبة</h3>
+          <ul class="objectives-bullet-list">
+            <li>مهارات التفكير المنطقي.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- فاصل المخطط الزمني للأنشطة -->
+      <div class="journey-timeline-divider">
+        <h2>مسار الأنشطة خطوة بخطوة</h2>
+        <p>يجب إتمام الخطوات بالترتيب المنهجي المقترح. كل إنجاز يفتح لك النشاط التالي تلقائياً.</p>
+      </div>
+      <!-- حاوية الأنشطة (تفاعلية بالكامل مع جافا سكريبت) -->
+      <div class="activities-container" id="activities-wrapper">
+
+        <!-- 
+          ========================================================
+          دليل المطور العربي: كيف تضيف نشاطاً تعليمياً جديداً؟
+          ========================================================
+          1. انسخ هيكل بطاقة النشاط <article> بالكامل.
+          2. تأكد من تحديد المعرف (id) الفريد للبطاقة (مثال: id="activity-9").
+          3. قم بتعديل القيم والسمات البرمجية التالية:
+             - data-id: رقم النشاط المتسلسل (مثال: data-id="9").
+             - data-xp: عدد نقاط الخبرة المكتسبة عند الإكمال (مثال: data-xp="100").
+          4. عدّل العناوين والنصوص والأيقونات بما يتناسب مع النشاط الجديد.
+          ========================================================
+        -->
+
+        <!-- النشاط 1 (المقال الأول) -->
+        <article class="activity-row-card" id="activity-1" data-id="1" data-xp="100">
+          <!-- أيقونة النشاط -->
+          <div class="activity-icon-container">
+            <i class="fas fa-brain"></i>
+          </div>
+
+          <!-- تفاصيل النشاط -->
+          <div class="activity-details">
+            <div class="activity-top-row">
+              <span class="activity-seq">النشاط 01 / 10</span>
+              <span class="status-text-badge">جاري جلب الحالة...</span>
+            </div>
+            <h3 class="activity-title">كيف يتعلم الدماغ؟</h3>
+            <p class="activity-description">مقال تعريفي حول الآليات العصبية للتعلم، وكيفية تكوين المسارات الذاكرية واستقبال المعلومات ومعالجتها في القشرة المخية.</p>
+            <div class="activity-meta">
+              <span><i class="far fa-clock"></i> 10 دقائق قراءة</span>
+              <span><i class="fas fa-award text-warning"></i> +100 نقطة خبرة</span>
+            </div>
+          </div>
+
+          <!-- منطقة الأفعال (يتحكم بها السكربت بالكامل ويوجه للمجلد UNIT01) -->
+          <div class="activity-action-area">
+            <button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> جاري التحميل...</button>
+          </div>
+        </article>
+
+        <!-- النشاط 2 (المقال الثاني) -->
+        <article class="activity-row-card" id="activity-2" data-id="2" data-xp="150">
+          <!-- أيقونة النشاط -->
+          <div class="activity-icon-container">
+            <i class="fas fa-bolt"></i>
+          </div>
+          
+          <!-- تفاصيل النشاط -->
+          <div class="activity-details">
+            <div class="activity-top-row">
+              <span class="activity-seq">النشاط 02 / 10</span>
+              <span class="status-text-badge">جاري جلب الحالة...</span>
+            </div>
+            <h3 class="activity-title">التعلم النشط والاسترجاع</h3>
+            <p class="activity-description">مقالة تفصل الفرق بين التعلم السلبي والتعلم النشط، مع التركيز على تقنيات الاسترجاع النشط لتعزيز ترسيخ المعلومات في الذاكرة طويلة المدى.</p>
+            <div class="activity-meta">
+              <span><i class="far fa-file-alt"></i> 15 دقيقة قراءة</span>
+              <span><i class="fas fa-award text-warning"></i> +150 نقطة خبرة</span>
+            </div>
+          </div>
+          
+          <!-- منطقة الأفعال (يتحكم بها السكربت بالكامل ويوجه للمقال الثاني) -->
+          <div class="activity-action-area">
+            <button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> جاري التحميل...</button>
+          </div>
+        </article>
+<!-- النشاط 3 -->
+<article class="activity-row-card" id="activity-3" data-id="3" data-xp="100">
+  <div class="activity-icon-container"><i class="fas fa-history"></i></div>
+  <div class="activity-details">
+    <div class="activity-top-row">
+      <span class="activity-seq">النشاط 03 / 08</span>
+      <span class="status-text-badge">جاري جلب الحالة...</span>
+    </div>
+    <h3 class="activity-title">استراتيجية التكرار المتباعد</h3>
+    <p class="activity-description">دليل عملي حول كيفية توزيع فترات المراجعة عبر الزمن لمحاربة منحنى النسيان وتحقيق استبقاء معلومات فائق الكفاءة.</p>
+    <div class="activity-meta">
+      <span><i class="fas fa-chart-line"></i> 12 دقيقة قراءة</span>
+      <span><i class="fas fa-award text-warning"></i> +100 نقطة خبرة</span>
+    </div>
+  </div>
+  <div class="activity-action-area"></div>
+</article>
+
+<!-- النشاط 4 -->
+<article class="activity-row-card" id="activity-4" data-id="4" data-xp="150">
+  <div class="activity-icon-container"><i class="fas fa-project-diagram"></i></div>
+  <div class="activity-details">
+    <div class="activity-top-row">
+      <span class="activity-seq">النشاط 04 / 08</span>
+      <span class="status-text-badge">جاري جلب الحالة...</span>
+    </div>
+    <h3 class="activity-title">خرائط المفاهيم وتنظيم المعرفة</h3>
+    <p class="activity-description">تعلّم كيفية بناء خرائط ذهنية ومفاهيمية تربط الأفكار المعقدة ببعضها البعض لإنشاء هيكل معرفي متكامل وسهل الاستدعاء.</p>
+    <div class="activity-meta">
+      <span><i class="fas fa-sitemap"></i> 20 دقيقة قراءة</span>
+      <span><i class="fas fa-award text-warning"></i> +150 نقطة خبرة</span>
+    </div>
+  </div>
+  <div class="activity-action-area"></div>
+</article>
+
+<!-- النشاط 5 -->
+<article class="activity-row-card" id="activity-5" data-id="5" data-xp="50">
+  <div class="activity-icon-container"><i class="fas fa-pen-nib"></i></div>
+  <div class="activity-details">
+    <div class="activity-top-row">
+      <span class="activity-seq">النشاط 05 / 08</span>
+      <span class="status-text-badge">جاري جلب الحالة...</span>
+    </div>
+    <h3 class="activity-title">فن تدوين الملاحظات</h3>
+    <p class="activity-description">تقنيات متقدمة لتدوين الملاحظات بأسلوب فعال يخدم الفهم والتذكر، بعيداً عن النسخ التقليدي للنصوص.</p>
+    <div class="activity-meta">
+      <span><i class="fas fa-clipboard"></i> 10 دقائق قراءة</span>
+      <span><i class="fas fa-award text-warning"></i> +50 نقطة خبرة</span>
+    </div>
+  </div>
+  <div class="activity-action-area"></div>
+</article>
+
+<!-- النشاط 6 -->
+<article class="activity-row-card" id="activity-6" data-id="6" data-xp="100">
+  <div class="activity-icon-container"><i class="fas fa-clock"></i></div>
+  <div class="activity-details">
+    <div class="activity-top-row">
+      <span class="activity-seq">النشاط 06 / 08</span>
+      <span class="status-text-badge">جاري جلب الحالة...</span>
+    </div>
+    <h3 class="activity-title">إدارة الوقت وبناء العادات</h3>
+    <p class="activity-description">دمج استراتيجيات الوقت مع علم بناء العادات لضمان الاستمرارية الأكاديمية والإنتاجية العالية يومياً.</p>
+    <div class="activity-meta">
+      <span><i class="fas fa-calendar-check"></i> 15 دقيقة قراءة</span>
+      <span><i class="fas fa-award text-warning"></i> +100 نقطة خبرة</span>
+    </div>
+  </div>
+  <div class="activity-action-area"></div>
+</article>
+
+<!-- النشاط 7 -->
+<article class="activity-row-card" id="activity-7" data-id="7" data-xp="200">
+  <div class="activity-icon-container"><i class="fas fa-puzzle-piece"></i></div>
+  <div class="activity-details">
+    <div class="activity-top-row">
+      <span class="activity-seq">النشاط 07 / 08</span>
+      <span class="status-text-badge">جاري جلب الحالة...</span>
+    </div>
+    <h3 class="activity-title">حل المشكلات والتفكير التأملي</h3>
+    <p class="activity-description">تطبيق استراتيجيات التفكير النقدي لحل المشكلات المعقدة وتوظيف التفكير التأملي لتقييم وتطوير الأداء الدراسي الذاتي.</p>
+    <div class="activity-meta">
+      <span><i class="fas fa-glasses"></i> 20 دقيقة قراءة</span>
+      <span><i class="fas fa-award text-warning"></i> +200 نقطة خبرة</span>
+    </div>
+  </div>
+  <div class="activity-action-area"></div>
+</article>
+
+<!-- النشاط 8 -->
+<article class="activity-row-card" id="activity-8" data-id="8" data-xp="0">
+  <div class="activity-icon-container"><i class="fas fa-trophy"></i></div>
+  <div class="activity-details">
+    <div class="activity-top-row">
+      <span class="activity-seq">النشاط 08 / 08</span>
+      <span class="status-text-badge">جاري جلب الحالة...</span>
+    </div>
+    <h3 class="activity-title">مكافأة الإتقان الأكاديمي</h3>
+    <p class="activity-description">تهانينا! لقد أتممت الرحلة المعرفية حول طرق التعلم الفعال. احصل على شارتك الرقمية وانتقل للمستوى التالي.</p>
+    <div class="activity-meta">
+      <span><i class="fas fa-medal"></i> شارة "المتعلم الذكي"</span>
+    </div>
+  </div>
+  <div class="activity-action-area"></div>
+</article>
+  </div>
+<!-- شريط التنقل السفلي السلس -->
+      <footer class="journey-navigation-bar">
+        <button class="btn btn-secondary" id="btn-prev-activity">
+          <i class="fas fa-arrow-right"></i> الخطوة السابقة
+        </button>
+        <div class="nav-middle-status">
+          <span id="current-step-indicator">جاري تحميل الحالة الدراسية...</span>
+        </div>
+        <button class="btn btn-primary" id="btn-next-activity">
+          الخطوة التالية <i class="fas fa-arrow-left"></i>
+        </button>
+      </footer>
+
+    </section>
+
+  </div>
+
+  <!-- حاوية التنبيهات المنبثقة لنقاط الخبرة (Toasts) -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+</main>
+
+<!-- ربط ملفات التفاعل البرمجي للمسار التفاعلي -->
+<script src="unit.js"></script>
+</body>
+</html>

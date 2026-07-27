@@ -1,0 +1,271 @@
+/* ==========================================================================
+   HOME PAGE SPECIFIC STYLES (css/pages/home.css)
+   منصة المسارات البحثية - أنماط الصفحة الرئيسية
+   ========================================================================== */
+
+/* قسم بنر الهيرو الترحيبي والرسوم التوضيحية */
+#hero-section {
+    padding: 24px 0;
+}
+
+.hero-wrapper {
+    background: linear-gradient(135deg, var(--color-hero-bg) 0%, #0d4a87 100%);
+    border-radius: var(--radius-lg);
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+#hero-main-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+#hero-sub-title {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    justify-content: center;
+}
+
+#img-researcher-illustration {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* توزيع شبكة الخدمات 2x2 (Grid Container) */
+#services-section {
+    padding: 30px 0;
+}
+
+#services-main-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 24px;
+}
+
+.grid-container-2x2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* التخصيص اللوني الكامل للبطاقات الأربعة لتطابق الصور بدقة */
+.track-card { background-color: var(--color-card-teal); }
+.workshop-card { background-color: var(--color-card-purple); }
+.publishing-card { background-color: var(--color-card-navy); }
+.tools-card { background-color: var(--color-card-cyan); }
+
+.card-icon-area {
+    margin-bottom: 20px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    font-weight: 400;
+    margin-bottom: auto;
+}
+
+/* بطاقة الإعلانات الأفقية (بطاقة فيزا للآخر الإصدارات) */
+#latest-research-section {
+    padding: 16px 0;
+}
+
+.horizontal-announcement-card {
+    background-color: var(--color-white);
+    border: 1px solid #f0f4f8;
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+}
+
+.announcement-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.announcement-icon-wrapper {
+    background-color: rgba(11, 58, 119, 0.05);
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.announcement-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.announcement-subtext {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* قسم الإحصائيات السفلي */
+#statistics-section {
+    padding: 40px 0;
+    background-color: rgba(15, 44, 89, 0.02);
+    border-top: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+    margin-top: 20px;
+}
+
+.statistics-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent-blue);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+/* ==========================================================================
+   قواعد الاستجابة للشاشات الكبيرة والتابلت (Responsive Queries)
+   ========================================================================== */
+
+@media (min-width: 481px) {
+    .grid-container-2x2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .statistics-wrapper {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 769px) {
+    .hero-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 60px 80px;
+        min-height: 380px;
+    }
+
+    .hero-content {
+        text-align: right;
+        max-width: 50%;
+    }
+
+    #hero-main-title {
+        font-size: 3rem;
+    }
+
+    .hero-image-wrapper {
+        max-width: 45%;
+    }
+
+    .grid-container-2x2 {
+        gap: 30px;
+    }
+
+    .service-card {
+        padding: 40px 32px;
+        min-height: 300px;
+    }
+}
+/* تنسيق الكروت المظللة والمغلقة مؤقتاً مع إضافة تأثير السلاسل والقفل */
+.card-disabled {
+    opacity: 0.55;                 /* تظليل الكرت */
+    filter: grayscale(60%);       /* سحب الألوان لتبدو غير نشطة */
+    cursor: not-allowed !important; /* تغيير شكل الماوس لعلامة المنع */
+    pointer-events: none;         /* إلغاء النقر */
+    position: relative;            /* مهم جداً لضبط موقع القفل */
+    overflow: hidden;              /* لمنع خروج عناصر السلاسل */
+}
+
+/* إضافة طبقة القفل والسلاسل الذكية في منتصف الكرت تماماً */
+.card-disabled::after {
+    content: "\f023";             /* رمز القفل المحمي من مكتبة FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;             /* حجم القفل ليكون واضحاً وقوياً */
+    color: rgba(255, 255, 255, 0.85); /* لون أبيض ثلجي شبه شفاف ليتناسب مع كل الخلفيات */
+    background: rgba(15, 23, 42, 0.4); /* خلفية دائرية داكنة ناعمة خلف القفل لإبرازه */
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    backdrop-filter: blur(2px);   /* تأثير زجاجي ضبابي خلف القفل ليعطي إيحاء السلاسل المقفلة */
+    animation: lockPulse 2s infinite ease-in-out; /* حركة نبض خفيفة تزيد من جمالية التصميم */
+}
+
+/* حركة نبض خفيفة جداً للقفل لجذب الانتباه البصري */
+@keyframes lockPulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+    50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+}
+
+/* إلغاء حركات التحويم تماماً للكروت المقفلة */
+.card-disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* تعتيم السهم السفلي الداخلي */
+.card-disabled .card-action-btn {
+    opacity: 0.3 !important;
+    background-color: #cbd5e1 !important;
+}

@@ -1,0 +1,462 @@
+<link rel="stylesheet" href="levels.css">
+<!-- واجهة متوافقة بالكامل مع التوجيه العربي و 9 مستويات تعليمية -->
+<main class="levels-page-container" dir="rtl">
+  
+  <!-- مسار التنقل (Breadcrumb) -->
+  <nav class="breadcrumb" aria-label="مسار التنقل">
+    <span class="breadcrumb-item"><a href="index.html">الرئيسية</a></span>
+    <span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>
+    <span class="breadcrumb-item active" aria-current="page">المستويات الدراسية</span>
+  </nav>
+
+  <!-- ترويسة الصفحة ومعلومات التقدم المحدثة لـ 9 مستويات -->
+  <header class="page-header">
+    <div class="header-left">
+      <h1 class="page-title">خريطة التعلم</h1>
+      <p class="page-subtitle">ابدأ رحلتك الأكاديمية. تقدم عبر مستويات مدروسة ومصممة خصيصاً لبناء كفاءتك خطوة بخطوة.</p>
+    </div>
+    
+    <!-- بطاقة التقدم الإجمالي التفاعلية -->
+    <div class="overall-progress-card">
+      <div class="progress-info">
+        <span class="progress-label">التقدم الإجمالي للمنهج</span>
+        <span class="progress-percentage" id="overall-percentage">0%</span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" style="width: 0%;"></div>
+      </div>
+      <div class="progress-meta">
+        <span id="overall-completed-meta"><strong>0 / 9</strong> مستويات مكتملة</span>
+        <span><strong>7 وحدات</strong> لكل مستوى</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- شريط أدوات البحث والتصفية -->
+  <section class="controls-toolbar" aria-label="أدوات التصفية والترتيب">
+    <div class="search-box-wrapper">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="search-input" placeholder="ابحث عن مستوى، مهارة، أو موضوع..." aria-label="بحث عن مستويات">
+      <button id="clear-search" class="clear-search-btn" aria-label="مسح البحث" style="display: none;">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="filters-group">
+      <div class="select-wrapper">
+        <select id="status-filter" aria-label="تصفية حسب الحالة">
+          <option value="all">جميع الحالات</option>
+          <option value="completed">المكتملة فقط</option>
+          <option value="current">الجارية حالياً</option>
+          <option value="locked">المغلقة فقط</option>
+        </select>
+        <i class="fas fa-chevron-down select-arrow"></i>
+      </div>
+
+      <div class="select-wrapper">
+        <select id="difficulty-filter" aria-label="تصفية حسب الصعوبة">
+          <option value="all">جميع المستويات</option>
+          <option value="beginner">مبتدئ</option>
+          <option value="intermediate">متوسط</option>
+          <option value="advanced">متقدم</option>
+          <option value="expert">خبير</option>
+        </select>
+        <i class="fas fa-chevron-down select-arrow"></i>
+      </div>
+
+      <div class="select-wrapper">
+        <select id="sort-by" aria-label="ترتيب المستويات">
+          <option value="sequence">الترتيب الزمني (الافتراضي)</option>
+          <option value="difficulty-asc">الصعوبة: من الأسهل للأصعب</option>
+          <option value="difficulty-desc">الصعوبة: من الأصعب للأسهل</option>
+          <option value="xp">المكافآت: الأعلى أولاً</option>
+        </select>
+        <i class="fas fa-chevron-down select-arrow"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- مسار الخريطة وحاوية البطاقات -->
+  <div class="roadmap-layout">
+    <div class="roadmap-connector-column" aria-hidden="true">
+      <div class="connector-line-wrapper">
+        <div class="connector-line-background"></div>
+        <div class="connector-line-progress" id="roadmap-progress-fill" style="height: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- قائمة المستويات التسعة المصلحة -->
+    <section class="levels-list" id="levels-container" aria-label="المستويات المتاحة">
+      
+      <!-- [1] المستوى التمهيدي (مستوى البداية الحالي) -->
+      <article class="level-card" data-level="1" data-status="current" data-difficulty="beginner" data-xp="1200">
+        <div class="roadmap-node-marker current" aria-hidden="true">
+          <div class="pulse-ring"></div>
+          <span class="node-number">1</span>
+        </div>
+        
+        <div class="level-card-main">
+          <div class="level-badge-row">
+            <span class="level-number-badge">المستوى التمهيدي</span>
+            <span class="status-badge badge-current"><i class="fas fa-play-circle"></i> قيد الدراسة</span>
+          </div>
+          
+          <div class="level-card-header">
+            <h2 class="level-title">المستوى التمهيدي: التأسيس</h2>
+            <p class="level-description">إتقان بعض الأمور الأساسية والمهارات الأولية التي تعتبر مدخلاً رئيسياً للمنصة التعليمية.</p>
+          </div>
+
+          <div class="level-metadata-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div class="meta-item"><i class="fas fa-book-open"></i> <span><strong>7</strong> وحدات</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i> <span><strong>10</strong> ساعات</span></div>
+            <div class="meta-item"><i class="fas fa-signal icon-beginner"></i> <span>مبتدئ</span></div>
+            <div class="meta-item"><i class="fas fa-trophy icon-xp"></i> <span><strong>1200</strong> نقطة</span></div>
+          </div>
+
+          <div class="level-progress-section">
+            <div class="progress-info">
+              <span class="progress-caption">تقدم المستوى</span>
+              <span class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar-container mini">
+              <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="level-card-actions">
+            <button class="btn btn-secondary toggle-details-btn" aria-expanded="false">
+              <span>عرض ملخص المنهج</span>
+              <i class="fas fa-chevron-down transition-icon"></i>
+            </button>
+            <!-- الحاوية المخصصة للتحكم بالزر برمجياً بالكامل -->
+            <div class="dynamic-action-area" data-level="1">
+              <a href="unit1.HTML" class="btn btn-primary">استئناف التعلم <i class="fas fa-arrow-left"></i></a>
+            </div>
+          </div>
+
+          <div class="level-expanded-details" style="display: none;">
+            <div class="details-divider"></div>
+            <h3 class="expanded-heading">الوحدات المتضمنة</h3>
+            <ul class="units-list">
+              <li><i class="fas fa-dot-circle text-primary"></i> تعلم كيفية التعلم (الوحدة الحالية)</li>
+              <li><i class="far fa-circle text-disabled"></i> المهارات الرقمية</li>
+              <li><i class="far fa-circle text-disabled"></i> فهم البيئة الأكاديمية</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- [2] المستوى الثاني (مغلق بانتظار الأول) -->
+      <article class="level-card locked-level" data-level="2" data-status="locked" data-difficulty="intermediate" data-xp="1800">
+        <div class="roadmap-node-marker locked" aria-hidden="true"><i class="fas fa-lock"></i></div>
+
+        <div class="level-card-main">
+          <div class="level-badge-row">
+            <span class="level-number-badge">المستوى 02</span>
+            <span class="status-badge badge-locked"><i class="fas fa-lock"></i> مغلق</span>
+          </div>
+
+          <div class="level-card-header">
+            <h2 class="level-title">المهارات السريرية والتشخيص</h2>
+            <p class="level-description">تطوير المهارات السريرية العملية. تعلم طرق أخذ التاريخ الطبي، وخطوات الفحص البدني.</p>
+          </div>
+
+          <div class="level-metadata-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div class="meta-item"><i class="fas fa-book-open"></i> <span><strong>7</strong> وحدات</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i> <span><strong>120</strong> ساعة</span></div>
+            <div class="meta-item"><i class="fas fa-signal icon-intermediate"></i> <span>متوسط</span></div>
+            <div class="meta-item"><i class="fas fa-trophy icon-xp"></i> <span><strong>1800</strong> نقطة</span></div>
+          </div>
+
+          <div class="level-progress-section">
+            <div class="progress-info">
+              <span class="progress-caption">تقدم المستوى</span>
+              <span class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar-container mini">
+              <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="level-card-actions">
+            <button class="btn btn-secondary toggle-details-btn" aria-expanded="false">
+              <span>عرض ملخص المنهج</span>
+              <i class="fas fa-chevron-down transition-icon"></i>
+            </button>
+            <div class="dynamic-action-area" data-level="2">
+              <button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> مغلق</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- [من 3 إلى 9] بقية المستويات التسعة كأمثلة هيكلية مغلقة تماماً وبشكل مرن هندسياً -->
+      <article class="level-card locked-level" data-level="3" data-status="locked" data-difficulty="advanced" data-xp="2500">
+        <div class="roadmap-node-marker locked" aria-hidden="true"><i class="fas fa-lock"></i></div>
+        <div class="level-card-main">
+          <div class="level-badge-row">
+            <span class="level-number-badge">المستوى 03</span>
+            <span class="status-badge badge-locked"><i class="fas fa-lock"></i> مغلق</span>
+          </div>
+          <div class="level-card-header">
+            <h2 class="level-title">الممارسة السريرية المتقدمة</h2>
+            <p class="level-description">تعمق في الأطر الفيزيولوجية المرضية، والآليات الدوائية المعقدة المتكاملة.</p>
+          </div>
+          <div class="level-progress-section">
+            <div class="progress-info"><span class="progress-value">0%</span></div>
+            <div class="progress-bar-container mini"><div class="progress-bar-fill" style="width: 0%;"></div></div>
+          </div>
+          <div class="level-card-actions">
+            <button class="btn btn-secondary toggle-details-btn" aria-expanded="false"><span>عرض ملخص المنهج</span><i class="fas fa-chevron-down transition-icon"></i></button>
+            <div class="dynamic-action-area" data-level="3"><button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> مغلق</button></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="level-card-main">
+          <div class="level-badge-row">
+            <span class="level-number-badge">المستوى 02</span>
+            <span class="status-badge badge-locked"><i class="fas fa-lock"></i> مغلق</span>
+          </div>
+
+          <div class="level-card-header">
+            <h2 class="level-title">المهارات السريرية والتشخيص</h2>
+            <p class="level-description">تطوير المهارات السريرية العملية. تعلم طرق أخذ التاريخ الطبي، وخطوات الفحص البدني.</p>
+          </div>
+
+          <div class="level-metadata-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div class="meta-item"><i class="fas fa-book-open"></i> <span><strong>7</strong> وحدات</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i> <span><strong>120</strong> ساعة</span></div>
+            <div class="meta-item"><i class="fas fa-signal icon-intermediate"></i> <span>متوسط</span></div>
+            <div class="meta-item"><i class="fas fa-trophy icon-xp"></i> <span><strong>1800</strong> نقطة</span></div>
+          </div>
+
+          <div class="level-progress-section">
+            <div class="progress-info">
+              <span class="progress-caption">تقدم المستوى</span>
+              <span class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar-container mini">
+              <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="level-card-actions">
+            <button class="btn btn-secondary toggle-details-btn" aria-expanded="false">
+              <span>عرض ملخص المنهج</span>
+              <i class="fas fa-chevron-down transition-icon"></i>
+            </button>
+            <div class="dynamic-action-area" data-level="2">
+              <button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> مغلق</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="level-card-main">
+          <div class="level-badge-row">
+            <span class="level-number-badge">المستوى 02</span>
+            <span class="status-badge badge-locked"><i class="fas fa-lock"></i> مغلق</span>
+          </div>
+
+          <div class="level-card-header">
+            <h2 class="level-title">المهارات السريرية والتشخيص</h2>
+            <p class="level-description">تطوير المهارات السريرية العملية. تعلم طرق أخذ التاريخ الطبي، وخطوات الفحص البدني.</p>
+          </div>
+
+          <div class="level-metadata-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div class="meta-item"><i class="fas fa-book-open"></i> <span><strong>7</strong> وحدات</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i> <span><strong>120</strong> ساعة</span></div>
+            <div class="meta-item"><i class="fas fa-signal icon-intermediate"></i> <span>متوسط</span></div>
+            <div class="meta-item"><i class="fas fa-trophy icon-xp"></i> <span><strong>1800</strong> نقطة</span></div>
+          </div>
+
+          <div class="level-progress-section">
+            <div class="progress-info">
+              <span class="progress-caption">تقدم المستوى</span>
+              <span class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar-container mini">
+              <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="level-card-actions">
+            <button class="btn btn-secondary toggle-details-btn" aria-expanded="false">
+              <span>عرض ملخص المنهج</span>
+              <i class="fas fa-chevron-down transition-icon"></i>
+            </button>
+            <div class="dynamic-action-area" data-level="2">
+              <button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> مغلق</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="level-card-main">
+          <div class="level-badge-row">
+            <span class="level-number-badge">المستوى 02</span>
+            <span class="status-badge badge-locked"><i class="fas fa-lock"></i> مغلق</span>
+          </div>
+
+          <div class="level-card-header">
+            <h2 class="level-title">المهارات السريرية والتشخيص</h2>
+            <p class="level-description">تطوير المهارات السريرية العملية. تعلم طرق أخذ التاريخ الطبي، وخطوات الفحص البدني.</p>
+          </div>
+
+          <div class="level-metadata-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div class="meta-item"><i class="fas fa-book-open"></i> <span><strong>7</strong> وحدات</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i> <span><strong>120</strong> ساعة</span></div>
+            <div class="meta-item"><i class="fas fa-signal icon-intermediate"></i> <span>متوسط</span></div>
+            <div class="meta-item"><i class="fas fa-trophy icon-xp"></i> <span><strong>1800</strong> نقطة</span></div>
+          </div>
+
+          <div class="level-progress-section">
+            <div class="progress-info">
+              <span class="progress-caption">تقدم المستوى</span>
+              <span class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar-container mini">
+              <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="level-card-actions">
+            <button class="btn btn-secondary toggle-details-btn" aria-expanded="false">
+              <span>عرض ملخص المنهج</span>
+              <i class="fas fa-chevron-down transition-icon"></i>
+            </button>
+            <div class="dynamic-action-area" data-level="2">
+              <button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> مغلق</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="level-card-main">
+          <div class="level-badge-row">
+            <span class="level-number-badge">المستوى 02</span>
+            <span class="status-badge badge-locked"><i class="fas fa-lock"></i> مغلق</span>
+          </div>
+
+          <div class="level-card-header">
+            <h2 class="level-title">المهارات السريرية والتشخيص</h2>
+            <p class="level-description">تطوير المهارات السريرية العملية. تعلم طرق أخذ التاريخ الطبي، وخطوات الفحص البدني.</p>
+          </div>
+
+          <div class="level-metadata-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div class="meta-item"><i class="fas fa-book-open"></i> <span><strong>7</strong> وحدات</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i> <span><strong>120</strong> ساعة</span></div>
+            <div class="meta-item"><i class="fas fa-signal icon-intermediate"></i> <span>متوسط</span></div>
+            <div class="meta-item"><i class="fas fa-trophy icon-xp"></i> <span><strong>1800</strong> نقطة</span></div>
+          </div>
+
+          <div class="level-progress-section">
+            <div class="progress-info">
+              <span class="progress-caption">تقدم المستوى</span>
+              <span class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar-container mini">
+              <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="level-card-actions">
+            <button class="btn btn-secondary toggle-details-btn" aria-expanded="false">
+              <span>عرض ملخص المنهج</span>
+              <i class="fas fa-chevron-down transition-icon"></i>
+            </button>
+            <div class="dynamic-action-area" data-level="2">
+              <button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> مغلق</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="level-card-main">
+          <div class="level-badge-row">
+            <span class="level-number-badge">المستوى 02</span>
+            <span class="status-badge badge-locked"><i class="fas fa-lock"></i> مغلق</span>
+          </div>
+
+          <div class="level-card-header">
+            <h2 class="level-title">المهارات السريرية والتشخيص</h2>
+            <p class="level-description">تطوير المهارات السريرية العملية. تعلم طرق أخذ التاريخ الطبي، وخطوات الفحص البدني.</p>
+          </div>
+
+          <div class="level-metadata-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div class="meta-item"><i class="fas fa-book-open"></i> <span><strong>7</strong> وحدات</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i> <span><strong>120</strong> ساعة</span></div>
+            <div class="meta-item"><i class="fas fa-signal icon-intermediate"></i> <span>متوسط</span></div>
+            <div class="meta-item"><i class="fas fa-trophy icon-xp"></i> <span><strong>1800</strong> نقطة</span></div>
+          </div>
+
+          <div class="level-progress-section">
+            <div class="progress-info">
+              <span class="progress-caption">تقدم المستوى</span>
+              <span class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar-container mini">
+              <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="level-card-actions">
+            <button class="btn btn-secondary toggle-details-btn" aria-expanded="false">
+              <span>عرض ملخص المنهج</span>
+              <i class="fas fa-chevron-down transition-icon"></i>
+            </button>
+            <div class="dynamic-action-area" data-level="2">
+              <button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> مغلق</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="level-card-main">
+          <div class="level-badge-row">
+            <span class="level-number-badge">المستوى 02</span>
+            <span class="status-badge badge-locked"><i class="fas fa-lock"></i> مغلق</span>
+          </div>
+
+          <div class="level-card-header">
+            <h2 class="level-title">المهارات السريرية والتشخيص</h2>
+            <p class="level-description">تطوير المهارات السريرية العملية. تعلم طرق أخذ التاريخ الطبي، وخطوات الفحص البدني.</p>
+          </div>
+
+          <div class="level-metadata-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div class="meta-item"><i class="fas fa-book-open"></i> <span><strong>7</strong> وحدات</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i> <span><strong>120</strong> ساعة</span></div>
+            <div class="meta-item"><i class="fas fa-signal icon-intermediate"></i> <span>متوسط</span></div>
+            <div class="meta-item"><i class="fas fa-trophy icon-xp"></i> <span><strong>1800</strong> نقطة</span></div>
+          </div>
+
+          <div class="level-progress-section">
+            <div class="progress-info">
+              <span class="progress-caption">تقدم المستوى</span>
+              <span class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar-container mini">
+              <div class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="level-card-actions">
+            <button class="btn btn-secondary toggle-details-btn" aria-expanded="false">
+              <span>عرض ملخص المنهج</span>
+              <i class="fas fa-chevron-down transition-icon"></i>
+            </button>
+            <div class="dynamic-action-area" data-level="2">
+              <button class="btn btn-disabled" disabled><i class="fas fa-lock"></i> مغلق</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- حالة عدم وجود نتائج عند البحث -->
+      <div id="no-results" class="empty-state" style="display: none;">
+        <div class="empty-state-icon"><i class="fas fa-search-minus"></i></div>
+        <h3 class="empty-state-title">لا توجد مستويات تطابق بحثك</h3>
+        <button id="reset-filters-btn" class="btn btn-primary">إعادة ضبط الفلاتر</button>
+      </div>
+
+    </section>
+  </div>
+</main>
+<script src="levels.js"></script>

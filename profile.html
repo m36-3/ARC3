@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي - منصة المسارات البحثية</title>
+    <!-- Structural system architectural stylesheet link -->
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body id="profile-page-body" class="profile-page-bg">
+
+    <!-- Global Navigation Header Layer -->
+    <header id="profile-header" class="profile-nav-header">
+        <div id="header-nav-container" class="container nav-wrapper">
+            <a id="link-back-dashboard" href="index.html" class="btn-back-link" aria-label="العودة إلى لوحة القيادة">
+                <img id="img-arrow-back" class="nav-back-icon" src="/assets/icons/arrow-right-simple.svg" alt="أيقونة سهم العودة">
+            </a>
+            <h1 id="txt-profile-nav-title" class="nav-centered-title">الحساب</h1>
+            <div id="header-spacer" class="nav-spacer" aria-hidden="true"></div>
+        </div>
+    </header>
+
+    <!-- Core Dynamic Layout Core Profile Content -->
+    <main id="profile-main-content" class="profile-main-layout">
+        <div id="profile-view-container" class="profile-view-wrapper">
+
+            <!-- Profile Central User Information Block Card -->
+            <section id="card-profile-identity" class="profile-identity-card" aria-label="بيانات الحساب الشخصية">
+                <div id="profile-avatar-wrapper" class="avatar-circle-blue">
+                    <!-- Dynamic Letter Injection Target from JavaScript Session Store -->
+                    <span id="txt-profile-avatar-letter" class="avatar-dynamic-letter">م</span>
+                </div>
+                
+                <div id="profile-user-details" class="user-details-group">
+                    <h2 id="txt-profile-user-name" class="profile-user-name">مصطفى إبراهيم حسان</h2>
+                    <p id="txt-profile-user-email" class="profile-user-email">mustafa@research.edu</p>
+                </div>
+
+                <!-- User ID Presentation and Clipboard Interaction Area -->
+                <div id="wrapper-user-id-card" class="user-id-badge-card">
+                    <div id="label-id-group" class="id-text-group">
+                        <span id="lbl-user-id" class="id-title">رقم الحساب المميز (ID)</span>
+                        <span id="txt-profile-user-id" class="id-value">84729105</span>
+                    </div>
+                    <button type="button" id="btn-copy-user-id" class="btn-icon-action-copy" aria-label="نسخ رقم الحساب المميز إلى الحافظة">
+                        <img id="img-icon-copy" class="action-icon-img" src="/assets/icons/copy.svg" alt="أيقونة نسخ">
+                    </button>
+                </div>
+            </section>
+
+            <!-- Academic Metrics and Achievements Gamification Showcase Section -->
+            <section id="card-profile-achievements" class="achievement-gradient-card" aria-label="الإنجازات البحثية والأبحاث المنشورة">
+                <div id="achievement-card-header" class="achievement-header-group">
+                    <div id="achievement-title-layout" class="achievement-title-wrapper">
+                        <img id="img-icon-shield" class="achievement-shield-icon" src="/assets/icons/shield-tick.svg" alt="أيقونة درع التميز">
+                        <h3 id="txt-achievement-title" class="achievement-title-text">إنجازاتك البحثية</h3>
+                    </div>
+                </div>
+                <div id="achievement-metrics-body" class="achievement-stats-row">
+                    <div id="metric-papers-block" class="metric-stat-item">
+                        <span id="txt-metric-papers-count" class="metric-counter-display">0</span>
+                        <span id="lbl-metric-papers" class="metric-label-text">الأبحاث المنشورة</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Essential Control Form Navigation Routes Interactivity Layer -->
+            <div id="profile-actions-layout" class="profile-action-buttons-group">
+                <a id="btn-link-track-progress" href="progress.html" class="btn btn-primary btn-block" role="button" aria-label="متابعة التطور ومؤشرات الأداء">متابعة التطور</a>
+                <a id="btn-link-edit-profile" href="edit-profile.html" class="btn btn-secondary btn-block" role="button" aria-label="تعديل ملف البيانات الشخصية">تعديل الملف</a>
+            </div>
+
+            <!-- Context Management Sub-Navigation Interactive Cards Grid Directory -->
+            <nav id="profile-menu-navigation" class="profile-menu-cards-list" aria-label="قائمة التحكم والمسارات">
+                
+                <!-- Menu Card: Projects Log -->
+                <a id="menu-item-projects" href="projects-log.html" class="menu-navigation-card" role="link">
+                    <div id="wrapper-projects-meta" class="menu-card-meta-group">
+                        <img id="img-menu-icon-projects" class="menu-card-icon" src="/assets/icons/folder.svg" alt="أيقونة المجلد">
+                        <span id="txt-menu-label-projects" class="menu-card-label">سجل المشاريع</span>
+                    </div>
+                    <img id="img-arrow-left-projects" class="menu-card-arrow" src="/assets/icons/arrow-left-simple.svg" alt="أيقونة سهم انتقال">
+                </a>
+
+                <!-- Menu Card: Courses Log -->
+                <a id="menu-item-courses" href="courses-log.html" class="menu-navigation-card" role="link">
+                    <div id="wrapper-courses-meta" class="menu-card-meta-group">
+                        <img id="img-menu-icon-courses" class="menu-card-icon" src="/assets/icons/book.svg" alt="أيقونة الكتاب">
+                        <span id="txt-menu-label-courses" class="menu-card-label">سجل الدورات</span>
+                    </div>
+                    <img id="img-arrow-left-courses" class="menu-card-arrow" src="/assets/icons/arrow-left-simple.svg" alt="أيقونة سهم انتقال">
+                </a>
+
+                <!-- Menu Card: Performance Review -->
+                <a id="menu-item-performance" href="performance.html" class="menu-navigation-card" role="link">
+                    <div id="wrapper-performance-meta" class="menu-card-meta-group">
+                        <img id="img-menu-icon-performance" class="menu-card-icon" src="/assets/icons/status-up.svg" alt="أيقونة رسم بياني صاعد">
+                        <span id="txt-menu-label-performance" class="menu-card-label">تقييم الأداء</span>
+                    </div>
+                    <img id="img-arrow-left-performance" class="menu-card-arrow" src="/assets/icons/arrow-left-simple.svg" alt="أيقونة سهم انتقال">
+                </a>
+
+                <!-- Menu Card: Account Settings -->
+                <a id="menu-item-settings" href="settings.html" class="menu-navigation-card" role="link">
+                    <div id="wrapper-settings-meta" class="menu-card-meta-group">
+                        <img id="img-menu-icon-settings" class="menu-card-icon" src="/assets/icons/setting.svg" alt="أيقونة الترس">
+                        <span id="txt-menu-label-settings" class="menu-card-label">إعدادات الحساب</span>
+                    </div>
+                    <img id="img-arrow-left-settings" class="menu-card-arrow" src="/assets/icons/arrow-left-simple.svg" alt="أيقونة سهم انتقال">
+                </a>
+
+                <!-- Menu Card: Logout Session Destroy Operation Trigger -->
+                <button type="button" id="menu-item-logout" class="menu-navigation-card menu-card-logout-trigger" aria-label="تسجيل الخروج من الحساب">
+                    <div id="wrapper-logout-meta" class="menu-card-meta-group">
+                        <img id="img-menu-icon-logout" class="menu-card-icon logout-icon-color" src="/assets/icons/logout.svg" alt="أيقونة تسجيل الخروج">
+                        <span id="txt-menu-label-logout" class="menu-card-label logout-text-color">تسجيل الخروج</span>
+                    </div>
+                    <img id="img-arrow-left-logout" class="menu-card-arrow" src="/assets/icons/arrow-left-simple.svg" alt="أيقونة سهم انتقال">
+                </button>
+
+            </nav>
+
+        </div>
+    </main>
+
+    <!-- Execution Engine Script Initialization Bindings -->
+    <script type="module" src="profile.js"></script>
+</body>
+</html>

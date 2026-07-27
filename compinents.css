@@ -1,0 +1,197 @@
+/* ==========================================================================
+   ANALYTICS & SHARED SYSTEM COMPONENTS (css/components.css)
+   منصة المسارات البحثية - المكونات المشتركة
+   ========================================================================== */
+
+/* الحاوية الرئيسية لتوسيط المحتوى */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* الأزرار الأساسية وأنظمة التحويم (Buttons & Interaction) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--color-accent-blue);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-hero-bg);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: rgba(15, 44, 89, 0.05);
+    color: var(--color-text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(15, 44, 89, 0.1);
+    transform: translateY(-2px);
+}
+
+/* أزرار الأيقونات المنفردة (مثل جرس الإشعارات) */
+.btn-icon-only {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition: var(--transition-smooth);
+}
+
+.btn-icon-only:hover {
+    background-color: rgba(15, 44, 89, 0.05);
+}
+
+/* الأنماط الهيكلية المشتركة لكروت الخدمة */
+.service-card {
+    border-radius: var(--radius-lg);
+    padding: 30px 24px;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+}
+
+/* زر الحركة الدائري الصغير المتواجد أسفل كل كرت */
+.card-action-btn {
+    background-color: var(--color-white);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.card-action-btn img {
+    width: 20px;
+    height: 20px;
+    transition: var(--transition-smooth);
+}
+
+/* شريط التنقل السفلي الذكي للموبايل المثبت في الشاشة */
+.bottom-navigation-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    padding: 12px 0;
+    border-top: 1px solid #eef2f5;
+}
+
+.bottom-nav-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.bottom-nav-item img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    transition: var(--transition-smooth);
+}
+
+.bottom-nav-item:hover, 
+.bottom-nav-item.active {
+    color: var(--color-accent-blue);
+}
+
+.bottom-nav-item:hover img, 
+.bottom-nav-item.active img {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+/* تنسيق الكروت المظللة والمغلقة مؤقتاً مع إضافة تأثير السلاسل والقفل */
+.card-disabled {
+    opacity: 0.55;                 /* تظليل الكرت */
+    filter: grayscale(60%);       /* سحب الألوان لتبدو غير نشطة */
+    cursor: not-allowed !important; /* تغيير شكل الماوس لعلامة المنع */
+    pointer-events: none;         /* إلغاء النقر */
+    position: relative;            /* مهم جداً لضبط موقع القفل */
+    overflow: hidden;              /* لمنع خروج عناصر السلاسل */
+}
+
+/* إضافة طبقة القفل والسلاسل الذكية في منتصف الكرت تماماً */
+.card-disabled::after {
+    content: "\f023";             /* رمز القفل المحمي من مكتبة FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;             /* حجم القفل ليكون واضحاً وقوياً */
+    color: rgba(255, 255, 255, 0.85); /* لون أبيض ثلجي شبه شفاف ليتناسب مع كل الخلفيات */
+    background: rgba(15, 23, 42, 0.4); /* خلفية دائرية داكنة ناعمة خلف القفل لإبرازه */
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    backdrop-filter: blur(2px);   /* تأثير زجاجي ضبابي خلف القفل ليعطي إيحاء السلاسل المقفلة */
+    animation: lockPulse 2s infinite ease-in-out; /* حركة نبض خفيفة تزيد من جمالية التصميم */
+}
+
+/* حركة نبض خفيفة جداً للقفل لجذب الانتباه البصري */
+@keyframes lockPulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+    50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+}
+
+/* إلغاء حركات التحويم تماماً للكروت المقفلة */
+.card-disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* تعتيم السهم السفلي الداخلي */
+.card-disabled .card-action-btn {
+    opacity: 0.3 !important;
+    background-color: #cbd5e1 !important;
+}

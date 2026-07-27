@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة المسارات البحثية</title>
+    <!-- الروابط الخارجية للملفات التعريفية للمظهر والخطوط -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body id="page-top">
+
+    <!-- الهيدر العلوي / شريط التنقل الرئيسي للموقع -->
+    <header id="main-header" class="site-header">
+        <div id="header-container" class="container">
+            <div id="logo-wrapper" class="logo-area">
+                <img id="site-logo" src="logo.jpg" alt="شعار منصة المسارات البحثية">
+                <span id="logo-text">منصة المسارات البحثية</span>
+            </div>
+            
+            <!-- تحسين شريط البحث هندسياً ليعطي مظهراً جذاباً وعصرياً -->
+            <div id="search-wrapper" class="search-bar-area" style="position: relative; display: flex; align-items: center; max-width: 400px; width: 100%; margin: 0 15px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/622/622669.png" alt="بحث" style="position: absolute; right: 12px; width: 16px; height: 16px; opacity: 0.5;">
+                <input type="search" id="input-search-platform" placeholder="ابحث عن مسارات، باحثين، أو أوراق علمية..." aria-label="البحث في المنصة" 
+                       style="width: 100%; padding: 10px 40px 10px 15px; border: 1px solid #e2e8f0; border-radius: 25px; font-size: 0.9rem; outline: none; transition: all 0.3s ease; background-color: #f8fafc;">
+            </div>
+            
+            <nav id="desktop-nav" class="nav-menu" aria-label="التنقل الرئيسي">
+                <ul id="nav-list">
+                    <li><a id="nav-item-home" href="index.html" class="active">الرئيسية</a></li>
+                    <li><a id="nav-item-tracks" href="levels.html">المسارات البحثية</a></li>
+                    <li><a id="nav-item-publish" href="#services-grid">دليل النشر</a></li>
+                    <li><a id="nav-item-tools" href="tools.html">الأدوات المساعدة</a></li>
+                </ul>
+            </nav>
+
+            <!-- كتلة الهوية الموحدة للزائر -->
+            <div id="auth-actions" class="auth-buttons">
+                <div id="auth-nav-container">
+                    <a href="login.html" id="btn-login" class="btn btn-link">تسجيل الدخول</a>
+                </div>
+
+                <div id="user-zone" style="display: none;">
+                    <a id="btn-profile-link" href="profile.html" class="btn btn-secondary" role="button">
+                        <span id="nav-user-name">الملف الشخصي</span>
+                    </a>
+                    <button id="btn-logout" class="btn btn-primary">تسجيل الخروج</button>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي للموقع -->
+    <main id="main-content">
+
+        <!-- بنر الهيرو الرئيسي -->
+        <section id="hero-section" class="hero-banner">
+            <div id="hero-container" class="container hero-wrapper">
+                <div id="hero-text-content" class="hero-content">
+                    <h1 id="hero-main-title" class="hero-title">ابدأ رحلتك البحثية معنا.</h1>
+                    <p id="hero-sub-title" class="hero-subtitle">اكتشف، تعلم، انشر</p>
+                </div>
+                <div id="hero-media" class="hero-image-wrapper">
+<div class="banner-svg-wrapper" style="width: 100%; max-width: 280px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+    <!-- أيقونة SVG متطورة تمثل باحثة أكاديمية مع رسوم بيانية مدمجة مع الهوية البصرية -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="auto" style="fill: none; stroke: #ffffff; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.2));">
+        <!-- شاشة الجدولة والبيانات -->
+        <rect x="2" y="3" width="20" height="14" rx="2" style="stroke: #7dd3fc; stroke-width: 1.5;" />
+        <line x1="2" y1="13" x2="22" y2="13" />
+        <!-- قاعدة الشاشة -->
+        <path d="M12 17v4M8 21h8" />
+        <!-- الرسوم البيانية المتصاعدة داخل الشاشة -->
+        <path d="M6 10l3-3 4 4 4-4" style="stroke: #ffffff; stroke-width: 1.8;" />
+        <circle cx="6" cy="10" r="1" style="fill: #ffffff;" />
+        <circle cx="9" cy="7" r="1" style="fill: #ffffff;" />
+        <circle cx="13" cy="11" r="1" style="fill: #ffffff;" />
+        <circle cx="17" cy="7" r="1" style="fill: #ffffff;" />
+        <!-- عناصر البحث العلمي (عدسة مكبرة بجانب الشاشة) -->
+        <circle cx="18" cy="16" r="3" style="fill: #0f172a; stroke: #7dd3fc; stroke-width: 1.5;" />
+        <line x1="20" y1="18" x2="22" y2="20" style="stroke: #7dd3fc; stroke-width: 2;" />
+    </svg>
+</div>
+                </div>
+            </div>
+        </section>
+
+<!-- قسم خدماتنا البحثية (الشبكة الذكية 2x2 المربوطة بالكامل) -->
+<!-- قسم خدماتنا البحثية (الشبكة الذكية 2x2 بعد تظليل دليل النشر وورش العمل) -->
+<section id="services-section" class="services-area">
+    <div id="services-container" class="container">
+        <h2 id="services-main-heading" class="section-title">خدماتنا البحثية</h2>
+        
+        <div id="services-grid" class="grid-container-2x2">
+            
+            <!-- [1] كرت المسارات البحثية - نشط ومفتوح -->
+            <a href="levels.html" style="text-decoration: none; color: inherit; display: block;">
+                <article id="card-research-tracks" class="service-card track-card" style="cursor: pointer;">
+                    <div id="wrapper-track-icon" class="card-icon-area">
+                        <img id="icon-track" src="https://cdn-icons-png.flaticon.com/128/9951/9951076.png" alt="أيقونة خريطة المسارات البحثية">
+                    </div>
+                    <h3 id="title-track-card" class="card-heading">المسارات البحثية</h3>
+                    <p id="desc-track-card" class="card-description">استكشف مجالات البحث المتاحة</p>
+                    <span id="btn-arrow-tracks" class="card-action-btn" aria-label="الانتقال للمسارات البحثية">
+                        <img id="icon-arrow-tracks" src="https://cdn-icons-png.flaticon.com/128/1252/1252305.png" alt="سهم الانتقال">
+                    </span>
+                </article>
+            </a>
+
+            <!-- [2] كرت التدريب وورش العمل - مظلل ومقفل مؤقتاً -->
+            <article id="card-workshops" class="service-card workshop-card card-disabled" title="هذه الخدمة ستتوفر قريباً">
+                <div id="wrapper-workshop-icon" class="card-icon-area">
+                    <img id="icon-workshop" src="https://cdn-icons-png.flaticon.com/128/4311/4311195.png" alt="أيقونة قبعة التخرج والتدريب">
+                </div>
+                <h3 id="title-workshop-card" class="card-heading">التدريب وورش العمل</h3>
+                <p id="desc-workshop-card" class="card-description">قريباً.. سجل في الدورات القادمة</p>
+                <button id="btn-arrow-workshops" class="card-action-btn" aria-label="الخدمة غير متوفرة حالياً" disabled>
+                    <img id="icon-arrow-workshops" src="https://cdn-icons-png.flaticon.com/128/10308/10308918.png" alt="سهم الانتقال">
+                </button>
+            </article>
+
+            <!-- [3] كرت دليل النشر - مظلل ومقفل مؤقتاً -->
+            <article id="card-publishing-guide" class="service-card publishing-card card-disabled" title="هذه الخدمة ستتوفر قريباً">
+                <div id="wrapper-publishing-icon" class="card-icon-area">
+                    <img id="icon-publishing" src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="أيقونة كتاب النشر المفتوح">
+                </div>
+                <h3 id="title-publishing-card" class="card-heading">دليل النشر</h3>
+                <p id="desc-publishing-card" class="card-description">قريباً.. خطوات النشر العلمي</p>
+                <button id="btn-arrow-publishing" class="card-action-btn" aria-label="الخدمة غير متوفرة حالياً" disabled>
+                    <img id="icon-arrow-publishing" src="https://cdn-icons-png.flaticon.com/128/10308/10308918.png" alt="سهم الانتقال">
+                </button>
+            </article>
+
+            <!-- [4] كرت الأدوات المساعدة - نشط ومفتوح -->
+            <a href="tools.html" style="text-decoration: none; color: inherit; display: block;">
+                <article id="card-research-advisor" class="service-card tools-card" style="cursor: pointer;">
+                    <div id="wrapper-tools-icon" class="card-icon-area">
+                        <img id="icon-tools" src="https://cdn-icons-png.flaticon.com/128/1055/1055683.png" alt="أيقونة الأدوات والذكاء الاصطناعي">
+                    </div>
+                    <h3 id="title-tools-card" class="card-heading">الأدوات المساعدة</h3>
+                    <p id="desc-tools-card" class="card-description">برامج مكتبية ومساعدة وذكاء اصطناعي</p>
+                    <span id="btn-arrow-tools" class="card-action-btn" aria-label="الانتقال للأدوات المساعدة">
+                        <img id="icon-arrow-tools" src="https://cdn-icons-png.flaticon.com/128/10308/10308918.png" alt="سهم الانتقال">
+                    </span>
+                </article>
+            </a>
+
+        </div>
+    </div>
+</section>
+        <!-- قسم أحدث الأبحاث والإصدارات -->
+        <section id="latest-research-section" class="latest-research-area">
+            <div id="latest-research-container" class="container">
+                <div id="card-visa-announcement" class="horizontal-announcement-card">
+                    <div id="visa-right-block" class="announcement-right">
+                        <div id="wrapper-visa-icon" class="announcement-icon-wrapper">
+                            <img id="icon-visa-shield" src="https://cdn-icons-png.flaticon.com/128/1067/1067357.png" data-src="https://cdn-icons-png.flaticon.com/128/1067/1067357.png" alt="أيقونة بطاقة الحماية">
+                        </div>
+                        <div id="visa-text-wrapper" class="announcement-text">
+                            <h3 id="title-visa-card" class="announcement-heading">مقالات باحثينا</h3>
+                            <p id="desc-visa-card" class="announcement-subtext">آخر إصدارات الأبحاث</p>
+                        </div>
+                    </div>
+                    <button id="btn-arrow-visa" class="announcement-action-btn" aria-label="عرض تفاصيل بطاقة الفيزا والأبحاث">
+                        <img id="icon-arrow-visa" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" data-src="https://cdn-icons-png.flaticon.com/128/271/271220.png" alt="سهم توجيهي">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الإحصائيات البحثية للمنصة -->
+        <section id="statistics-section" class="statistics-area">
+            <div id="statistics-container" class="container statistics-wrapper">
+                <div id="stat-item-tracks" class="stat-box">
+                    <span id="num-stat-tracks" class="stat-number">0</span>
+                    <p id="label-stat-tracks" class="stat-label">مسار بحثي مفعل</p>
+                </div>
+                <div id="stat-item-researchers" class="stat-box">
+                    <span id="num-stat-researchers" class="stat-number">27</span>
+                    <p id="label-stat-researchers" class="stat-label">باحث وباحثة</p>
+                </div>
+                <div id="stat-item-papers" class="stat-box">
+                    <span id="num-stat-papers" class="stat-number">0</span>
+                    <p id="label-stat-papers" class="stat-label">ورقة علمية منشورة</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- الفوتر السفلي -->
+    <footer id="main-footer" class="site-footer">
+        
+        <!-- نظام النقل السفلي للموبايل -->
+        <nav id="mobile-bottom-nav" class="bottom-navigation-bar" aria-label="التنقل السفلي للهواتف">
+            <div id="bottom-nav-container" class="bottom-nav-wrapper">
+                
+                <a id="tab-home" href="#hero-section" class="bottom-nav-item active">
+                    <img id="icon-tab-home" src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png" data-src="https://cdn-icons-png.flaticon.com/128/1946/1946436.png" alt="">
+                    <span id="label-tab-home">الرئيسية</span>
+                </a>
+
+                <a id="tab-tracks" href="levels.html" class="bottom-nav-item">
+                    <img id="icon-tab-tracks" src="https://cdn-icons-png.flaticon.com/128/7183/7183999.png" data-src="https://cdn-icons-png.flaticon.com/128/7183/7183999.png" alt="">
+                    <span id="label-tab-tracks">المسارات</span>
+                </a>
+
+                <a id="tab-workshops" href="#services-grid" class="bottom-nav-item">
+                    <img id="icon-tab-workshops" src="https://cdn-icons-png.flaticon.com/128/2684/2684284.png" data-src="https://cdn-icons-png.flaticon.com/128/2684/2684284.png" alt="">
+                    <span id="label-tab-workshops">ورش العمل</span>
+                </a>
+
+                <a id="tab-publish" href="#services-grid" class="bottom-nav-item">
+                    <img id="icon-tab-publish" src="https://cdn-icons-png.flaticon.com/128/3389/3389032.png" data-src="https://cdn-icons-png.flaticon.com/128/3389/3389032.png" alt="">
+                    <span id="label-tab-publish">النشر</span>
+                </a>
+
+                <a id="tab-profile" href="#profile" class="bottom-nav-item">
+                    <img id="icon-tab-profile" src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" data-src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="">
+                    <span id="label-tab-profile">ملفي</span>
+                </a>
+
+            </div>
+        </nav>
+
+        <div id="footer-legal-area" class="footer-bottom">
+            <div id="footer-container" class="container legal-text-wrapper">
+                <p id="txt-copyright">جميع الحقوق محفوظة © منصة المسارات البحثية ٢٠٢٦</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="database.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

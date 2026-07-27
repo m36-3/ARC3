@@ -1,0 +1,523 @@
+/**
+ * Project: Research Tracks Platform (منصة المسارات البحثية)
+ * File: login.css
+ * Role: Senior CSS Front-End Engineer Architecture Core
+ * Description: Production-ready architectural pure CSS style sheet providing modern,
+ *              responsive, RTL-compliant visuals for the authentication lifecycle.
+ *              Matches the premium aesthetic of image_0cf67e.jpg.
+ */
+
+/* ==========================================================================
+   1. DESIGN SYSTEM VARIABLES & ROOT CONFIGURATION
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --clr-bg-main: #ffffff;
+    --clr-bg-subtle: #f8fafc;
+    --clr-primary: #0f4c81; /* Core Classic Blue Theme from Header */
+    --clr-primary-light: #1d639f;
+    --clr-accent-purple: #6c5ce7; /* Elegant Purple Gradient Component */
+    --clr-accent-gradient: linear-gradient(135deg, #0f4c81 0%, #6c5ce7 100%);
+    --clr-text-main: #1e293b;
+    --clr-text-muted: #64748b;
+    --clr-border: #e2e8f0;
+    --clr-focus-glow: rgba(15, 76, 129, 0.15);
+    --clr-success: #10b981;
+
+    /* Elevation Shadows */
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-card: 0 20px 25px -5px rgba(15, 76, 129, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Layout Properties */
+    --radius-card: 24px;
+    --radius-input: 12px;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==========================================================================
+   2. KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes inputGlow {
+    from { box-shadow: 0 0 0 0 var(--clr-focus-glow); }
+    to { box-shadow: 0 0 0 4px var(--clr-focus-glow); }
+}
+
+/* ==========================================================================
+   3. GLOBAL RESET & BASE RULES (RTL SPECIFIC)
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.auth-page-bg {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ==========================================================================
+   4. SIMULATED DEVICE STATUS BAR
+   ========================================================================== */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    background-color: var(--clr-bg-main);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--clr-text-main);
+}
+
+.status-icons-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ==========================================================================
+   5. HEADER & TOP NAVIGATION
+   ========================================================================== */
+.auth-header {
+    background-color: var(--clr-bg-main);
+    border-bottom: 1px solid var(--clr-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container.nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-back-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--clr-bg-subtle);
+    transition: var(--transition-bounce);
+}
+
+.btn-back-link:hover {
+    transform: scale(1.08) translateX(2px);
+    background-color: var(--clr-border);
+}
+
+.nav-back-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.auth-logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.auth-logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.auth-logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--clr-primary);
+}
+
+.nav-spacer {
+    width: 40px; /* Equips visual balance against back button */
+}
+
+/* ==========================================================================
+   6. MAIN LAYOUT & CENTRAL LOGIN CARD
+   ========================================================================== */
+.auth-main-layout {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background-color: var(--clr-bg-subtle);
+}
+
+.auth-card-wrapper {
+    width: 100%;
+    max-width: 480px;
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.auth-card {
+    background-color: var(--clr-bg-main);
+    border-radius: var(--radius-card);
+    padding: 40px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(15, 76, 129, 0.04);
+    transition: var(--transition-smooth);
+}
+
+.auth-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 40px -10px rgba(15, 76, 129, 0.12);
+}
+
+/* Illustration Space */
+.auth-media-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.auth-illustration {
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Typography Hierarchy */
+.auth-card-title-group {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-main-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--clr-primary);
+    margin-bottom: 8px;
+}
+
+.auth-subtitle {
+    font-size: 15px;
+    color: var(--clr-text-muted);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   7. CONTROLS, INPUT FIELDS & FORMS
+   ========================================================================== */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--clr-text-main);
+}
+
+.input-with-icon, .input-action-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-input);
+    background-color: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+/* Focus and Interactivity Effects */
+.form-input:focus {
+    border-color: var(--clr-primary);
+    animation: inputGlow 0.3s forwards;
+}
+
+/* Interactive Eye Action Icon */
+.btn-input-action {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye-icon {
+    width: 20px;
+    height: 20px;
+    background-color: var(--clr-text-muted);
+    mask: url('/assets/icons/eye.svg') no-repeat center / contain;
+    -webkit-mask: url('/assets/icons/eye.svg') no-repeat center / contain;
+    transition: var(--transition-smooth);
+}
+
+.btn-input-action:hover .eye-icon {
+    background-color: var(--clr-primary);
+}
+
+/* Context Menu Options Row */
+.form-options-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.checkbox-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.form-checkbox {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid var(--clr-border);
+    accent-color: var(--clr-primary);
+    cursor: pointer;
+}
+
+.checkbox-label {
+    color: var(--clr-text-main);
+    user-select: none;
+    cursor: pointer;
+}
+
+.auth-link {
+    color: var(--clr-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.auth-link:hover {
+    color: var(--clr-accent-purple);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. BUTTONS & UI INTERACTION ANIMATIONS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: var(--radius-input);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+/* Primary Form Submit Button Context */
+.btn-primary {
+    background: var(--clr-accent-gradient);
+    color: var(--clr-bg-main);
+    box-shadow: 0 4px 12px rgba(15, 76, 129, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 76, 129, 0.3);
+    opacity: 0.95;
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary Registration Navigation Configuration */
+.btn-secondary {
+    background-color: var(--clr-bg-subtle);
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--clr-border);
+    color: var(--clr-primary-light);
+    transform: translateY(-2px);
+}
+
+/* Divider Elements Separator */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 12px 0;
+    color: var(--clr-text-muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.auth-divider::before, .auth-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.auth-divider:not(:empty)::before {
+    margin-left: 16px;
+}
+
+.auth-divider:not(:empty)::after {
+    margin-right: 16px;
+}
+
+.divider-content {
+    background-color: var(--clr-bg-main);
+    padding: 0 8px;
+}
+
+/* ==========================================================================
+   9. FOOTER LEGAL SECTIONS
+   ========================================================================== */
+.auth-footer {
+    background-color: var(--clr-bg-main);
+    border-top: 1px solid var(--clr-border);
+    padding: 24px;
+}
+
+.footer-links-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-legal-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-link {
+    font-size: 14px;
+    color: var(--clr-text-muted);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-link:hover {
+    color: var(--clr-primary);
+}
+
+.legal-separator {
+    color: var(--clr-border);
+    user-select: none;
+}
+
+.footer-copyright-text {
+    font-size: 13px;
+    color: var(--clr-text-muted);
+    text-align: center;
+}
+
+/* ==========================================================================
+   10. RESPONSIVE BREAKPOINTS (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Tablet Optimization Blueprint */
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 32px 24px;
+    }
+    
+    .auth-main-title {
+        font-size: 24px;
+    }
+}
+
+/* Mobile Screen Engine Execution */
+@media (max-width: 480px) {
+    .status-bar {
+        padding: 6px 16px;
+    }
+
+    .container.nav-wrapper {
+        padding: 12px 16px;
+    }
+
+    .auth-main-layout {
+        padding: 20px 16px;
+        align-items: flex-start; /* Prevents center clipping on tiny displays */
+    }
+
+    .auth-card {
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+
+    .auth-illustration {
+        max-width: 140px;
+    }
+
+    .form-options-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .footer-links-wrapper {
+        gap: 16px;
+    }
+}
